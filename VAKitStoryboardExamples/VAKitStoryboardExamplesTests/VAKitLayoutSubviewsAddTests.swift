@@ -10,14 +10,14 @@ import XCTest
 
 class VAKitLayoutSubviewsAddTests: XCTestCase {
     
-    func testFunction_addSubviews_withSingleView() throws {
+    func testFunction_addSubviews_withSingleView() {
         let parentView = UIView()
         let testView = UIView()
         parentView.addSubviews(testView)
         XCTAssertEqual(parentView, testView.superview)
     }
     
-    func testFunction_addSubviews_withMultipleViews() throws {
+    func testFunction_addSubviews_withMultipleViews() {
         let parentView = UIView()
         let testView = UIView()
         let testView1 = UIView()
