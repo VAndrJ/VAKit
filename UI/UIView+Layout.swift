@@ -15,6 +15,7 @@ extension UIView {
     }
     
     func addAutolayoutSubview(_ subview: UIView) {
-        
+        subview.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(subview)
     }
 }
