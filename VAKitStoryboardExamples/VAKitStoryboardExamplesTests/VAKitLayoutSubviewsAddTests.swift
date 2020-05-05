@@ -16,4 +16,7 @@ class VAKitLayoutSubviewsAddTests: XCTestCase {
         parentView.addSubviews(testView)
         XCTAssertEqual(parentView, testView.superview)
     }
+    
+    func testFunction_addSubviews_withMultipleViews() throws {
+    }
 }
