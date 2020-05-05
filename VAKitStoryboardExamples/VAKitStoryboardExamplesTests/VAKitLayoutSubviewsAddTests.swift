@@ -9,4 +9,7 @@
 import XCTest
 
 class VAKitLayoutSubviewsAddTests: XCTestCase {
+    
+    func testFunction_addSubviews_singleView() throws {
+    }
 }
