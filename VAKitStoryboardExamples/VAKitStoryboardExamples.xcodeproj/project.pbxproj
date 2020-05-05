@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A30C91DD2461FE0700CCDF5E /* VAKitLayoutSubviewsAddTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30C91DC2461FE0700CCDF5E /* VAKitLayoutSubviewsAddTests.swift */; };
+		A30DBE492461FED50020A9F8 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A332EA8D2460ACF700C22AEE /* UIView+Layout.swift */; };
 		A332EA8E2460ACF700C22AEE /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A332EA8D2460ACF700C22AEE /* UIView+Layout.swift */; };
 		A39E121F245DEFB2005AA87C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39E121E245DEFB2005AA87C /* AppDelegate.swift */; };
 		A39E1221245DEFB2005AA87C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39E1220245DEFB2005AA87C /* SceneDelegate.swift */; };
@@ -29,6 +31,7 @@
 /* Begin PBXFileReference section */
 		A30C91D22461FD5C00CCDF5E /* VAKitStoryboardExamplesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VAKitStoryboardExamplesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A30C91D62461FD5C00CCDF5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A30C91DC2461FE0700CCDF5E /* VAKitLayoutSubviewsAddTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAKitLayoutSubviewsAddTests.swift; sourceTree = "<group>"; };
 		A332EA8D2460ACF700C22AEE /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Layout.swift"; path = "../../UI/UIView+Layout.swift"; sourceTree = "<group>"; };
 		A39E121B245DEFB2005AA87C /* VAKitStoryboardExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VAKitStoryboardExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A39E121E245DEFB2005AA87C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				A30C91D62461FD5C00CCDF5E /* Info.plist */,
+				A30C91DC2461FE0700CCDF5E /* VAKitLayoutSubviewsAddTests.swift */,
 			);
 			path = VAKitStoryboardExamplesTests;
 			sourceTree = "<group>";
@@ -165,6 +169,7 @@
 				TargetAttributes = {
 					A30C91D12461FD5C00CCDF5E = {
 						CreatedOnToolsVersion = 11.4;
+						LastSwiftMigration = 1140;
 						TestTargetID = A39E121A245DEFB2005AA87C;
 					};
 					A39E121A245DEFB2005AA87C = {
@@ -216,6 +221,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A30DBE492461FED50020A9F8 /* UIView+Layout.swift in Sources */,
+				A30C91DD2461FE0700CCDF5E /* VAKitLayoutSubviewsAddTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +271,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = VAKitStoryboardExamplesTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -273,6 +281,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vandrj.VAKitStoryboardExamplesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VAKitStoryboardExamples.app/VAKitStoryboardExamples";
@@ -283,6 +292,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = VAKitStoryboardExamplesTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
