@@ -43,5 +43,13 @@ class VAKitLayoutSubviewsAddTests: XCTestCase {
     }
     
     func testFunction_addAutolayoutSubviews_withMultipleViews() {
+        let parentView = UIView()
+        let testView = UIView()
+        let testView1 = UIView()
+        parentView.addAutolayoutSubviews(testView, testView1)
+        XCTAssertEqual(parentView, testView.superview)
+        XCTAssertEqual(false, testView.translatesAutoresizingMaskIntoConstraints)
+        XCTAssertEqual(parentView, testView1.superview)
+        XCTAssertEqual(false, testView1.translatesAutoresizingMaskIntoConstraints)
     }
 }
