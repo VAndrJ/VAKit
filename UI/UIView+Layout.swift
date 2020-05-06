@@ -20,5 +20,6 @@ extension UIView {
     }
     
     func addAutolayoutSubviews(_ subviews: UIView...) {
+        subviews.forEach(addAutolayoutSubview(_:))
     }
 }
