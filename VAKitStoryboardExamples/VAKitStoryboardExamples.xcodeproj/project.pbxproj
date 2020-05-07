@@ -16,6 +16,7 @@
 		A39E1226245DEFB2005AA87C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A39E1224245DEFB2005AA87C /* Main.storyboard */; };
 		A39E1228245DEFB6005AA87C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A39E1227245DEFB6005AA87C /* Assets.xcassets */; };
 		A39E122B245DEFB6005AA87C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A39E1229245DEFB6005AA87C /* LaunchScreen.storyboard */; };
+		A3B201E5246489600083EFE1 /* VAKitLayoutTestSizeConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B201E4246489600083EFE1 /* VAKitLayoutTestSizeConstraints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,7 @@
 		A39E1227245DEFB6005AA87C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A39E122A245DEFB6005AA87C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A39E122C245DEFB6005AA87C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A3B201E4246489600083EFE1 /* VAKitLayoutTestSizeConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAKitLayoutTestSizeConstraints.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 			children = (
 				A30C91D62461FD5C00CCDF5E /* Info.plist */,
 				A30C91DC2461FE0700CCDF5E /* VAKitLayoutSubviewsAddTests.swift */,
+				A3B201E4246489600083EFE1 /* VAKitLayoutTestSizeConstraints.swift */,
 			);
 			path = VAKitStoryboardExamplesTests;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A30DBE492461FED50020A9F8 /* UIView+Layout.swift in Sources */,
+				A3B201E5246489600083EFE1 /* VAKitLayoutTestSizeConstraints.swift in Sources */,
 				A30C91DD2461FE0700CCDF5E /* VAKitLayoutSubviewsAddTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
