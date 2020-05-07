@@ -14,3 +14,7 @@ class VAKitLayoutTestSizeConstraints: XCTestCase {
         
     }
 }
+
+fileprivate class MockView: UIView {
+    
+}
