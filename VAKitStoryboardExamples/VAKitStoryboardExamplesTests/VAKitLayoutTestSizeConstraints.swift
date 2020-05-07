@@ -9,4 +9,8 @@
 import XCTest
 
 class VAKitLayoutTestSizeConstraints: XCTestCase {
+    
+    func testFunction_sizeHeight_returnTypeCheck() {
+        
+    }
 }
