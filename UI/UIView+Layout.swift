@@ -26,4 +26,7 @@ extension UIView {
 
 extension UIView {
     
+    func size(height: CGFloat) -> Self {
+        return self
+    }
 }
