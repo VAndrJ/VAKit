@@ -26,6 +26,7 @@ extension UIView {
 
 extension UIView {
     
+    @discardableResult
     func size(height: CGFloat) -> Self {
         return self
     }
