@@ -30,6 +30,10 @@ class VAKitLayoutTestSizeConstraints: XCTestCase {
     func testFunction_sizeHeight_constraintWithConstantSet() {
         
     }
+    
+    private func layoutViews() {
+        
+    }
 }
 
 fileprivate class MockView: UIView {
