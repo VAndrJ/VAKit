@@ -10,13 +10,16 @@ import XCTest
 
 class VAKitLayoutTestSizeConstraints: XCTestCase {
     var view: UIView!
+    var parentView: UIView!
     
     override func setUp() {
         view = UIView()
+        parentView = UIView(frame: CGRect(x: 0, y: 0, width: 320, height: 480))
     }
     
     override func tearDown() {
         view = nil
+        parentView = nil
     }
     
     func testFunction_sizeHeight_returnTypeCheck() {
@@ -25,6 +28,7 @@ class VAKitLayoutTestSizeConstraints: XCTestCase {
     }
     
     func testFunction_sizeHeight_constraintWithConstantSet() {
+        
     }
 }
 
