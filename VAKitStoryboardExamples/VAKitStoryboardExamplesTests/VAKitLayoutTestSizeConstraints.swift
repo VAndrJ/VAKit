@@ -14,6 +14,9 @@ class VAKitLayoutTestSizeConstraints: XCTestCase {
         let view: UIView = MockView().size(height: 10)
         XCTAssertTrue(view is MockView)
     }
+    
+    func testFunction_sizeHeight_constraintWithConstantSet() {
+    }
 }
 
 fileprivate class MockView: UIView {
