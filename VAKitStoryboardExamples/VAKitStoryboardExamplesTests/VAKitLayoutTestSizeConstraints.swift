@@ -9,9 +9,18 @@
 import XCTest
 
 class VAKitLayoutTestSizeConstraints: XCTestCase {
+    var view: UIView!
+    
+    override func setUp() {
+        view = UIView()
+    }
+    
+    override func tearDown() {
+        view = nil
+    }
     
     func testFunction_sizeHeight_returnTypeCheck() {
-        let view: UIView = MockView().size(height: 10)
+        view = MockView().size(height: 10)
         XCTAssertTrue(view is MockView)
     }
     
