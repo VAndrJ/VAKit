@@ -32,7 +32,9 @@ class VAKitLayoutTestSizeConstraints: XCTestCase {
     }
     
     private func layoutViews() {
-        
+        parentView.addAutolayoutSubview(view)
+        parentView.setNeedsLayout()
+        parentView.layoutIfNeeded()
     }
 }
 
