@@ -27,7 +27,13 @@ extension UIView {
 extension UIView {
     
     @discardableResult
-    func size(height: CGFloat, priority: Float, configuring: (NSLayoutConstraint) -> Void) -> Self {
+    func size(height: CGFloat, priority: Float = 1000) -> Self {
+        self.size(height: height, priority: priority, configuring: { _ in })
+    }
+    
+    @discardableResult
+    func size(height: CGFloat, priority: Float = 1000, configuring: (NSLayoutConstraint) -> Void) -> Self {
+        assert(0...1000 ~= priority)
         let constraint = NSLayoutConstraint(item: self, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: height)
         constraint.isActive = true
         return self
