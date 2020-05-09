@@ -34,6 +34,9 @@ class VAKitLayoutTestSizeConstraints: XCTestCase {
         XCTAssertEqual(height, view.frame.height)
     }
     
+    func testFunction_sizeHeight_constraintPriority() {
+    }
+    
     private func layoutViews() {
         parentView.addAutolayoutSubview(view)
         parentView.setNeedsLayout()
