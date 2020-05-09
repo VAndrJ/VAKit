@@ -43,6 +43,17 @@ class VAKitLayoutTestSizeConstraints: XCTestCase {
     }
     
     func testFunction_sizeHeight_constraintPriorities() {
+        let primaryHeight: CGFloat = 100
+        let secondaryHeight: CGFloat = 10
+        let secondaryPriority: Float = 999
+        var primaryConstraint: NSLayoutConstraint?
+        var secondaryConstraint: NSLayoutConstraint?
+        view.size(height: secondaryHeight, priority: secondaryPriority, configuring: { secondaryConstraint = $0 })
+        view.size(height: primaryHeight, configuring: { primaryConstraint = $0 })
+        layoutViews()
+        constraintPriorityCheck(constraint: secondaryConstraint, priority: secondaryPriority)
+        constraintPriorityCheck(constraint: primaryConstraint, priority: 1000)
+        XCTAssertEqual(primaryHeight, primaryConstraint?.constant)
     }
     
     private func constraintPriorityCheck(constraint: NSLayoutConstraint?, priority: Float, file: StaticString = #file, line: UInt = #line) {
