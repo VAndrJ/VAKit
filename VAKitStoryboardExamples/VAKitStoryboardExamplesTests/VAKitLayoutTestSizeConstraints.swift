@@ -57,6 +57,10 @@ class VAKitLayoutTestSizeConstraints: XCTestCase {
     }
     
     func testFunction_sizeHeight_constraintRelation() {
+        var constraint: NSLayoutConstraint!
+        view.size(height: 10, relation: .greaterThanOrEqual, configuring: { constraint = $0 })
+        XCTAssertNotNil(constraint)
+        XCTAssertEqual(NSLayoutConstraint.Relation.greaterThanOrEqual, constraint.relation)
     }
     
     private func constraintPriorityCheck(constraint: NSLayoutConstraint?, priority: Float, file: StaticString = #file, line: UInt = #line) {
