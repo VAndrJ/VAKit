@@ -35,7 +35,9 @@ extension UIView {
     func size(height: CGFloat, priority: Float = 1000, configuring: (NSLayoutConstraint) -> Void) -> Self {
         assert(0...1000 ~= priority)
         let constraint = NSLayoutConstraint(item: self, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: height)
+        constraint.priority = UILayoutPriority(rawValue: priority)
         constraint.isActive = true
+        configuring(constraint)
         return self
     }
 }
