@@ -64,7 +64,12 @@ class VAKitLayoutTestSizeConstraints: XCTestCase {
     }
     
     func testFunction_sizeHeight_constraintRelationView() {
-        
+        let height: CGFloat = 10
+        let relation: NSLayoutConstraint.Relation = .greaterThanOrEqual
+        view.size(height: height, relation: relation)
+        layoutViews()
+        XCTAssertEqual(height, view.frame.height)
+        XCTAssertEqual(relation, view.constraints.first?.relation)
     }
     
     func testFunction_sizeHeight_constraintActivation() {
