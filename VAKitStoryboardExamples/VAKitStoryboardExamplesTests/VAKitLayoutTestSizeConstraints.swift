@@ -43,6 +43,10 @@ class VAKitLayoutTestSizeConstraints: XCTestCase {
     }
     
     func testFunction_sizeHeight_constraintPriorityView() {
+        let height: CGFloat = 10
+        let priority: Float = 999
+        view.size(height: height, priority: priority)
+        constraintPriorityCheck(constraint: view.constraints.first, priority: priority)
     }
     
     func testFunction_sizeHeight_constraintPriorities() {
