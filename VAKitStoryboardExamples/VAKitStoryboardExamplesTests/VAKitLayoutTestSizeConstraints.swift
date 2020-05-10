@@ -70,6 +70,10 @@ class VAKitLayoutTestSizeConstraints: XCTestCase {
     }
     
     func testFunction_sizeHeight_constraintActivationView() {
+        let height: CGFloat = 10
+        view.size(height: height, isActive: false)
+        layoutViews()
+        XCTAssertNotEqual(height, view.frame.height)
     }
     
     private func constraintPriorityCheck(constraint: NSLayoutConstraint?, priority: Float, file: StaticString = #file, line: UInt = #line) {
