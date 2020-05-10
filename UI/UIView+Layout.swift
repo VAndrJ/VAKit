@@ -29,7 +29,7 @@ extension UIView {
     // MARK: - Here I duplicate method without `configuring` parameter to avoid @escaping
     @discardableResult
     func size(height: CGFloat, relation: NSLayoutConstraint.Relation = .equal, priority: Float = 1000, isActive: Bool = true) -> Self {
-        self.size(height: height, relation: relation, priority: priority, configuring: { _ in })
+        self.size(height: height, relation: relation, priority: priority, isActive: isActive, configuring: { _ in })
     }
     
     @discardableResult
