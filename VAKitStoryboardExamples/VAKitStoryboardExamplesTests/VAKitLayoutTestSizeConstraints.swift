@@ -27,7 +27,7 @@ class VAKitLayoutTestSizeConstraints: XCTestCase {
         XCTAssertTrue(view is MockView)
     }
     
-    func testFunction_sizeHeight_constraintWithConstantSet() {
+    func testFunction_sizeHeight_constraintWithConstantSetView() {
         let height: CGFloat = 10
         view.size(height: height)
         layoutViews()
