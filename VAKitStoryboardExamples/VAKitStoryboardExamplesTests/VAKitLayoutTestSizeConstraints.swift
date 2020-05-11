@@ -22,6 +22,8 @@ class VAKitLayoutTestSizeConstraints: XCTestCase {
         parentView = nil
     }
     
+    // MARK: - Height constraint
+    
     func testFunction_sizeHeight_returnTypeCheck() {
         view = MockView().size(height: 10)
         XCTAssertTrue(view is MockView)
