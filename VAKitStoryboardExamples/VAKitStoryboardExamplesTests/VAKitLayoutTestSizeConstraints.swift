@@ -126,6 +126,10 @@ class VAKitLayoutTestSizeConstraints: XCTestCase {
     }
     
     func testFunction_sizeWidth_constraintWithConstantView() {
+        let width: CGFloat = 10
+        view.size(width: width)
+        layoutViews()
+        XCTAssertEqual(width, view.frame.width)
     }
     
     func testFunction_sizeWidth_constraintPriority() {
