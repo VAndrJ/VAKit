@@ -26,6 +26,7 @@ extension UIView {
 
 extension UIView {
     enum VADevice: String {
+        case unspecified
         case iPhonePortrait
         case iPhoneLandscape
         case iPhoneSmallLandscape
@@ -35,9 +36,9 @@ extension UIView {
         
         init(identifier: String?) {
             if let identifier = identifier {
-                self = VADevice(rawValue: identifier) ?? .iPhonePortrait
+                self = VADevice(rawValue: identifier) ?? .unspecified
             } else {
-                self = .iPhonePortrait
+                self = .unspecified
             }
         }
     }
