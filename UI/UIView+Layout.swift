@@ -25,7 +25,7 @@ extension UIView {
 }
 
 extension UIView {
-    enum VADevice {
+    enum VADevice: String {
         case iPhonePortrait
         case iPhoneLandscape
         case iPhoneSmallLandscape
