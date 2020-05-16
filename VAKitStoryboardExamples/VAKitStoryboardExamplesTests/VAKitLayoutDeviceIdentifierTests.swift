@@ -9,4 +9,13 @@
 import XCTest
 
 class VAKitLayoutDeviceIdentifierTests: XCTestCase {
+    var view: UIView!
+    
+    override func setUp() {
+        view = UIView()
+    }
+    
+    override func tearDown() {
+        view = nil
+    }
 }
