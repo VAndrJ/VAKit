@@ -18,4 +18,7 @@ class VAKitLayoutDeviceIdentifierTests: XCTestCase {
     override func tearDown() {
         view = nil
     }
+    
+    func test_sizeHeight_identifier() {
+    }
 }
