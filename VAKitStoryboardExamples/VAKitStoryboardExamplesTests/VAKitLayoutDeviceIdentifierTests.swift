@@ -1,0 +1,12 @@
+//
+//  VAKitLayoutDeviceIdentifierTests.swift
+//  VAKitStoryboardExamplesTests
+//
+//  Created by VAndrJ on 16.05.2020.
+//  Copyright © 2020 VAndrJ. All rights reserved.
+//
+
+import XCTest
+
+class VAKitLayoutDeviceIdentifierTests: XCTestCase {
+}
