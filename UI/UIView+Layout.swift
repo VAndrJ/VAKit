@@ -32,6 +32,14 @@ extension UIView {
         case iPhoneLargeLandscape
         case iPad
         case iPadSplitPortrait
+        
+        init(identifier: String?) {
+            if let identifier = identifier {
+                self = VADevice(rawValue: identifier) ?? .iPhonePortrait
+            } else {
+                self = .iPhonePortrait
+            }
+        }
     }
     
     @discardableResult
