@@ -25,6 +25,14 @@ extension UIView {
 }
 
 extension UIView {
+    enum VADevice {
+        case iPhonePortrait
+        case iPhoneLandscape
+        case iPhoneSmallLandscape
+        case iPhoneLargeLandscape
+        case iPad
+        case iPadSplitPortrait
+    }
     
     @discardableResult
     func size(height: CGFloat, relation: NSLayoutConstraint.Relation = .equal, priority: Float = 1000, isActive: Bool = true, configuring: (NSLayoutConstraint) -> Void = { _ in }) -> Self {
