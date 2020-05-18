@@ -31,4 +31,8 @@ class VAKitLayoutDeviceIdentifierTests: XCTestCase {
         view.size(height: 10, device: device, configuring: { constraint = $0 })
         XCTAssertEqual(device.rawValue, constraint.identifier)
     }
+    
+    func test_sizeWidth_identifier() {
+        
+    }
 }
