@@ -17,5 +17,7 @@ class VAKitLayoutVADeviceTests: XCTestCase {
     }
     
     func test_VADevice_nilIdentifier() {
+        let device = UIView.VADevice(identifier: nil)
+        XCTAssertEqual(UIView.VADevice.unspecified, device)
     }
 }
