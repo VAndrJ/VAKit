@@ -16,6 +16,7 @@
 		A39E1228245DEFB6005AA87C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A39E1227245DEFB6005AA87C /* Assets.xcassets */; };
 		A39E122B245DEFB6005AA87C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A39E1229245DEFB6005AA87C /* LaunchScreen.storyboard */; };
 		A3B201E5246489600083EFE1 /* VAKitLayoutTestSizeConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B201E4246489600083EFE1 /* VAKitLayoutTestSizeConstraints.swift */; };
+		A3F5368124744DE1006258D0 /* VAKitLayoutVADeviceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F5368024744DE1006258D0 /* VAKitLayoutVADeviceTests.swift */; };
 		A3F7666024730F6300F54775 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F7665F24730F6300F54775 /* UIView+Layout.swift */; };
 		A3F766622473100400F54775 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F7665F24730F6300F54775 /* UIView+Layout.swift */; };
 /* End PBXBuildFile section */
@@ -44,6 +45,7 @@
 		A39E122A245DEFB6005AA87C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A39E122C245DEFB6005AA87C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3B201E4246489600083EFE1 /* VAKitLayoutTestSizeConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAKitLayoutTestSizeConstraints.swift; sourceTree = "<group>"; };
+		A3F5368024744DE1006258D0 /* VAKitLayoutVADeviceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAKitLayoutVADeviceTests.swift; sourceTree = "<group>"; };
 		A3F7665F24730F6300F54775 /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Layout.swift"; path = "../../VAKit/UI/UIView+Layout.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,6 +74,7 @@
 				A30C91DC2461FE0700CCDF5E /* VAKitLayoutSubviewsAddTests.swift */,
 				A3B201E4246489600083EFE1 /* VAKitLayoutTestSizeConstraints.swift */,
 				A321E2A624700BFD00173F6E /* VAKitLayoutDeviceIdentifierTests.swift */,
+				A3F5368024744DE1006258D0 /* VAKitLayoutVADeviceTests.swift */,
 			);
 			path = VAKitStoryboardExamplesTests;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3F766622473100400F54775 /* UIView+Layout.swift in Sources */,
+				A3F5368124744DE1006258D0 /* VAKitLayoutVADeviceTests.swift in Sources */,
 				A321E2A724700BFD00173F6E /* VAKitLayoutDeviceIdentifierTests.swift in Sources */,
 				A3B201E5246489600083EFE1 /* VAKitLayoutTestSizeConstraints.swift in Sources */,
 				A30C91DD2461FE0700CCDF5E /* VAKitLayoutSubviewsAddTests.swift in Sources */,
