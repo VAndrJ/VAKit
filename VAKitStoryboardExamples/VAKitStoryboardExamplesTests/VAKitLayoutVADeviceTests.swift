@@ -11,5 +11,8 @@ import XCTest
 class VAKitLayoutVADeviceTests: XCTestCase {
     
     func test_VADevice_allCasesInit() {
+        UIView.VADevice.allCases.forEach({ device in
+            XCTAssertEqual(device, UIView.VADevice(identifier: device.rawValue))
+        })
     }
 }
