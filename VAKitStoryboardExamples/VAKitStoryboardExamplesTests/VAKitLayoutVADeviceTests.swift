@@ -22,5 +22,7 @@ class VAKitLayoutVADeviceTests: XCTestCase {
     }
     
     func test_VADevice_randomStringIdentifier() {
+        let device = UIView.VADevice(identifier: "qwerty")
+        XCTAssertEqual(UIView.VADevice.unspecified, device)
     }
 }
