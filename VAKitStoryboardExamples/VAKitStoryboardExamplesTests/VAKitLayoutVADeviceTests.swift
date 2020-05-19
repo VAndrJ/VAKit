@@ -9,4 +9,7 @@
 import XCTest
 
 class VAKitLayoutVADeviceTests: XCTestCase {
+    
+    func test_VADevice_allCasesInit() {
+    }
 }
