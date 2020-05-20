@@ -164,6 +164,9 @@ class VAKitLayoutTestSizeConstraints: XCTestCase {
         XCTAssertEqual(priority, constraint!.priority.rawValue, file: file, line: line)
     }
     
+    func testFunction_size_constraintWithConstant() {
+    }
+    
     private func layoutViews() {
         parentView.addAutolayoutSubview(view)
         parentView.setNeedsLayout()
