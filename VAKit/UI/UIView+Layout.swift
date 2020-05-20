@@ -64,4 +64,10 @@ extension UIView {
         configuring(constraint)
         return self
     }
+    
+    @discardableResult
+    func size(size: CGFloat, relation: NSLayoutConstraint.Relation = .equal, priority: Float = 1000, isActive: Bool = true, device: VADevice = .unspecified, configuring: ((width: NSLayoutConstraint, height: NSLayoutConstraint)) -> Void = { _ in }) -> Self {
+        assert(0...1000 ~= priority)
+        return self
+    }
 }
