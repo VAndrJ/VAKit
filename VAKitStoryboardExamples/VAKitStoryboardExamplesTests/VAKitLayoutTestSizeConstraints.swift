@@ -193,6 +193,9 @@ class VAKitLayoutTestSizeConstraints: XCTestCase {
         XCTAssertEqual(relation, heightConstraint.relation)
     }
     
+    func testFunction_size_constraintActivation() {
+    }
+    
     // MARK: - Support
     
     private func constraintPriorityCheck(constraint: NSLayoutConstraint?, priority: Float, file: StaticString = #file, line: UInt = #line) {
