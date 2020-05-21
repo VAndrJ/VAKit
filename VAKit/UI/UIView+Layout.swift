@@ -68,6 +68,16 @@ extension UIView {
     @discardableResult
     func size(_ size: CGFloat, relation: NSLayoutConstraint.Relation = .equal, priority: Float = 1000, isActive: Bool = true, device: VADevice = .unspecified, configuring: ((width: NSLayoutConstraint, height: NSLayoutConstraint)) -> Void = { _ in }) -> Self {
         assert(0...1000 ~= priority)
+        let widthConstraint = NSLayoutConstraint(item: self, attribute: .width, relatedBy: relation, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: size)
+        widthConstraint.priority = UILayoutPriority(rawValue: priority)
+        widthConstraint.identifier = device.rawValue
+        let heightConstraint = NSLayoutConstraint(item: self, attribute: .height, relatedBy: relation, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: size)
+        heightConstraint.priority = UILayoutPriority(rawValue: priority)
+        heightConstraint.identifier = device.rawValue
+        if isActive {
+            NSLayoutConstraint.activate([widthConstraint, heightConstraint])
+        }
+        configuring((widthConstraint, heightConstraint))
         return self
     }
 }
