@@ -52,4 +52,7 @@ class VAKitLayoutDeviceIdentifierTests: XCTestCase {
         XCTAssertEqual(UIView.VADevice.unspecified.rawValue, widthConstraint.identifier)
         XCTAssertEqual(UIView.VADevice.unspecified.rawValue, heightConstraint.identifier)
     }
+    
+    func test_size_identifierCustom() {
+    }
 }
