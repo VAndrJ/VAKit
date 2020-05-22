@@ -25,7 +25,7 @@ class VAKitLayoutDeviceIdentifierTests: XCTestCase {
         XCTAssertEqual(UIView.VADevice.unspecified.rawValue, constraint.identifier)
     }
     
-    func test_sizeHeight_identifierCunstom() {
+    func test_sizeHeight_identifierCustom() {
         let device: UIView.VADevice = .iPhonePortrait
         var constraint: NSLayoutConstraint!
         view.size(height: 10, device: device, configuring: { constraint = $0 })
