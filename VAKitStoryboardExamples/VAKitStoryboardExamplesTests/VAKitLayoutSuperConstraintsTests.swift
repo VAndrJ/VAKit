@@ -9,6 +9,7 @@
 import XCTest
 
 class VAKitLayoutSuperConstraintsTests: XCTestCase {
-    
+    var view: UIView!
+    var parentView: UIView!
     
 }
