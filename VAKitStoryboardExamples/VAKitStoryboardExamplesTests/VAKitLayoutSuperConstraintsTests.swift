@@ -1,5 +1,5 @@
 //
-//  VAKitLayoutTestSuperConstraints.swift
+//  VAKitLayoutSuperConstraintsTests.swift
 //  VAKitStoryboardExamplesTests
 //
 //  Created by Vladimir Andrienko on 23.05.2020.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class VAKitLayoutTestSuperConstraints: XCTestCase {
+class VAKitLayoutSuperConstraintsTests: XCTestCase {
     
     
 }
