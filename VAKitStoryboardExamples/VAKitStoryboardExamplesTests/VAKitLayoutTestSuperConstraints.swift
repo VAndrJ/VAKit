@@ -10,3 +10,7 @@ import XCTest
 
 class VAKitLayoutTestSuperConstraints: XCTestCase {
 }
+
+fileprivate class MockView: UIView {
+    
+}
