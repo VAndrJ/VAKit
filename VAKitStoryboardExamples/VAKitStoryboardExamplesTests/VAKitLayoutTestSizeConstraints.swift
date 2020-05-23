@@ -214,7 +214,3 @@ class VAKitLayoutTestSizeConstraints: XCTestCase {
         parentView.layoutIfNeeded()
     }
 }
-
-fileprivate class MockView: UIView {
-    
-}
