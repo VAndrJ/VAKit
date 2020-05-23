@@ -83,4 +83,9 @@ extension UIView {
         configuring((widthConstraint, heightConstraint))
         return self
     }
+    
+    @discardableResult
+    func toSuper(_ anchor: NSLayoutConstraint.Attribute) -> Self {
+        return self
+    }
 }
