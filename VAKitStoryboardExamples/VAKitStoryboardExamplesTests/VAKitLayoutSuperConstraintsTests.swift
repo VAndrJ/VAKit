@@ -24,5 +24,9 @@ class VAKitLayoutSuperConstraintsTests: XCTestCase {
     }
     
     func test_toSuper_returnViewType() {
+        view = MockView()
+        parentView.addAutolayoutSubview(view)
+        let testView = view.toSuper(.top)
+        XCTAssertTrue(testView is MockView)
     }
 }
