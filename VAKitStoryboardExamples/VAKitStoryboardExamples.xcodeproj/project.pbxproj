@@ -10,6 +10,7 @@
 		A30C91DD2461FE0700CCDF5E /* VAKitLayoutSubviewsAddTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30C91DC2461FE0700CCDF5E /* VAKitLayoutSubviewsAddTests.swift */; };
 		A321E2A724700BFD00173F6E /* VAKitLayoutDeviceIdentifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A321E2A624700BFD00173F6E /* VAKitLayoutDeviceIdentifierTests.swift */; };
 		A346312A2479332F00B8902F /* VAKitLayoutTestSuperConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34631292479332F00B8902F /* VAKitLayoutTestSuperConstraints.swift */; };
+		A346312C247933E500B8902F /* VAKitLayoutTestsSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A346312B247933E500B8902F /* VAKitLayoutTestsSupport.swift */; };
 		A39E121F245DEFB2005AA87C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39E121E245DEFB2005AA87C /* AppDelegate.swift */; };
 		A39E1221245DEFB2005AA87C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39E1220245DEFB2005AA87C /* SceneDelegate.swift */; };
 		A39E1223245DEFB2005AA87C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39E1222245DEFB2005AA87C /* ViewController.swift */; };
@@ -38,6 +39,7 @@
 		A30C91DC2461FE0700CCDF5E /* VAKitLayoutSubviewsAddTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAKitLayoutSubviewsAddTests.swift; sourceTree = "<group>"; };
 		A321E2A624700BFD00173F6E /* VAKitLayoutDeviceIdentifierTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAKitLayoutDeviceIdentifierTests.swift; sourceTree = "<group>"; };
 		A34631292479332F00B8902F /* VAKitLayoutTestSuperConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAKitLayoutTestSuperConstraints.swift; sourceTree = "<group>"; };
+		A346312B247933E500B8902F /* VAKitLayoutTestsSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAKitLayoutTestsSupport.swift; sourceTree = "<group>"; };
 		A39E121B245DEFB2005AA87C /* VAKitStoryboardExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VAKitStoryboardExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A39E121E245DEFB2005AA87C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A39E1220245DEFB2005AA87C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				A321E2A624700BFD00173F6E /* VAKitLayoutDeviceIdentifierTests.swift */,
 				A3F5368024744DE1006258D0 /* VAKitLayoutVADeviceTests.swift */,
 				A34631292479332F00B8902F /* VAKitLayoutTestSuperConstraints.swift */,
+				A346312B247933E500B8902F /* VAKitLayoutTestsSupport.swift */,
 			);
 			path = VAKitStoryboardExamplesTests;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 				A3B201E5246489600083EFE1 /* VAKitLayoutTestSizeConstraints.swift in Sources */,
 				A346312A2479332F00B8902F /* VAKitLayoutTestSuperConstraints.swift in Sources */,
 				A30C91DD2461FE0700CCDF5E /* VAKitLayoutSubviewsAddTests.swift in Sources */,
+				A346312C247933E500B8902F /* VAKitLayoutTestsSupport.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
