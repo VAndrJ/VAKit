@@ -22,4 +22,7 @@ class VAKitLayoutSuperConstraintsTests: XCTestCase {
         view = nil
         parentView = nil
     }
+    
+    func test_toSuper_returnViewType() {
+    }
 }
