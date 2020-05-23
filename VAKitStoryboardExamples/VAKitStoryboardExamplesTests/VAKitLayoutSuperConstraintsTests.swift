@@ -29,4 +29,7 @@ class VAKitLayoutSuperConstraintsTests: XCTestCase {
         let testView = view.toSuper(.top)
         XCTAssertTrue(testView is MockView)
     }
+    
+    func test_toSuper_constraintConstant() {
+    }
 }
