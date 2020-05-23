@@ -1,5 +1,5 @@
 //
-//  VAKitLayoutTestSizeConstraints.swift
+//  VAKitLayoutSizeConstraintsTests.swift
 //  VAKitStoryboardExamplesTests
 //
 //  Created by VAndrJ on 07.05.2020.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class VAKitLayoutTestSizeConstraints: XCTestCase {
+class VAKitLayoutSizeConstraintsTests: XCTestCase {
     var view: UIView!
     var parentView: UIView!
     
