@@ -203,11 +203,6 @@ class VAKitLayoutTestSizeConstraints: XCTestCase {
     
     // MARK: - Support
     
-    private func constraintPriorityCheck(constraint: NSLayoutConstraint?, priority: Float, file: StaticString = #file, line: UInt = #line) {
-        XCTAssertNotNil(constraint, file: file, line: line)
-        XCTAssertEqual(priority, constraint!.priority.rawValue, file: file, line: line)
-    }
-    
     private func layoutViews() {
         parentView.addAutolayoutSubview(view)
         parentView.setNeedsLayout()

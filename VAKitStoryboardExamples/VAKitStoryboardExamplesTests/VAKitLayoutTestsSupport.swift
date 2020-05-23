@@ -7,6 +7,12 @@
 //
 
 import UIKit
+import XCTest
+
+func constraintPriorityCheck(constraint: NSLayoutConstraint?, priority: Float, file: StaticString = #file, line: UInt = #line) {
+    XCTAssertNotNil(constraint, file: file, line: line)
+    XCTAssertEqual(priority, constraint!.priority.rawValue, file: file, line: line)
+}
 
 class MockView: UIView {
     
