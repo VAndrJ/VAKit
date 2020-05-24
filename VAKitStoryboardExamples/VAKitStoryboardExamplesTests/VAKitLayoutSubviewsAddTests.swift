@@ -10,7 +10,7 @@ import XCTest
 
 class VAKitLayoutSubviewsAddTests: XCTestCase {
     
-    func testFunction_addSubviews_withSingleView() {
+    func test_addSubviews_withSingleView() {
         let parentView = UIView()
         let testView = UIView()
         parentView.addSubviews(testView)
