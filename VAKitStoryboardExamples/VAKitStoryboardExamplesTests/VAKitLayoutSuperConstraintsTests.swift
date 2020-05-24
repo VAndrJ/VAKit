@@ -30,6 +30,9 @@ class VAKitLayoutSuperConstraintsTests: XCTestCase {
         XCTAssertTrue(testView is MockView)
     }
     
+    func test_toSuper_constraintConstantDefault() {
+    }
+    
     func test_toSuper_constraintConstant() {
         let constant: CGFloat = 10
         var constraint: NSLayoutConstraint!
