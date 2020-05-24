@@ -85,7 +85,8 @@ extension UIView {
     }
     
     @discardableResult
-    func toSuper(_ anchor: NSLayoutConstraint.Attribute) -> Self {
+    func toSuper(_ anchor: NSLayoutConstraint.Attribute, constant: CGFloat = 0, configuring: (NSLayoutConstraint) -> Void = { _ in }) -> Self {
+        assert(superview != nil)
         return self
     }
 }
