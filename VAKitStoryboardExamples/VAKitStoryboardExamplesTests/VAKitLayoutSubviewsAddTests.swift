@@ -17,7 +17,7 @@ class VAKitLayoutSubviewsAddTests: XCTestCase {
         XCTAssertEqual(parentView, testView.superview)
     }
     
-    func testFunction_addSubviews_withMultipleViews() {
+    func test_addSubviews_withMultipleViews() {
         let parentView = UIView()
         let testView = UIView()
         let testView1 = UIView()
