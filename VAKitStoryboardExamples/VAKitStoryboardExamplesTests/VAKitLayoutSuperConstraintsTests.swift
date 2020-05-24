@@ -31,5 +31,10 @@ class VAKitLayoutSuperConstraintsTests: XCTestCase {
     }
     
     func test_toSuper_constraintConstant() {
+        let constant: CGFloat = 10
+        var constraint: NSLayoutConstraint!
+        parentView.addAutolayoutSubview(view)
+        view.toSuper(.top, constant: constant, configuring: { constraint = $0 })
+        XCTAssertEqual(constant, constraint.constant)
     }
 }
