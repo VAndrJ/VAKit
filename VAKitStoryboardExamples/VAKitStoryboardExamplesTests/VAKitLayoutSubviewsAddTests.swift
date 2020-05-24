@@ -40,7 +40,7 @@ class VAKitLayoutSubviewsAddTests: XCTestCase {
         addAutolayoutSubviewTestCheck(parentView: parentView, childView: testView)
     }
     
-    func testFunction_addAutolayoutSubviews_withMultipleViews() {
+    func test_addAutolayoutSubviews_withMultipleViews() {
         let parentView = UIView()
         let testView = UIView()
         let testView1 = UIView()
