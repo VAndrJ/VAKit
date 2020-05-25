@@ -36,7 +36,7 @@ class VAKitLayoutSizeConstraintsTests: XCTestCase {
         XCTAssertEqual(height, constraint.constant)
     }
     
-    func testFunction_sizeHeight_constraintWithConstantSetView() {
+    func test_sizeHeight_constraintWithConstantSetView() {
         let height: CGFloat = 10
         view.size(height: height)
         layoutViews()
