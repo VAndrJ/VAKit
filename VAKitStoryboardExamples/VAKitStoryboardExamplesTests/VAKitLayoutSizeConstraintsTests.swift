@@ -44,7 +44,9 @@ class VAKitLayoutSizeConstraintsTests: XCTestCase {
     }
     
     func test_sizeHeight_constraintPriorityDefault() {
-        
+        var constraint: NSLayoutConstraint!
+        view.size(height: 10, configuring: { constraint = $0 })
+        constraintPriorityCheck(constraint: constraint, priority: 1000)
     }
     
     func test_sizeHeight_constraintPriority() {
