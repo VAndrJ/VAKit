@@ -51,4 +51,7 @@ class VAKitLayoutSuperConstraintsTests: XCTestCase {
         view.toSuper(.top, configuring: { constraint = $0 })
         constraintPriorityCheck(constraint: constraint, priority: 1000)
     }
+    
+    func test_toSuper_constraintPriority() {
+    }
 }
