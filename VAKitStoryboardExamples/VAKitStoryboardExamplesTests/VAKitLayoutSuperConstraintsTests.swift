@@ -53,5 +53,10 @@ class VAKitLayoutSuperConstraintsTests: XCTestCase {
     }
     
     func test_toSuper_constraintPriority() {
+        var constraint: NSLayoutConstraint!
+        let priority: Float = 999
+        parentView.addAutolayoutSubview(view)
+        view.toSuper(.top, priority: priority, configuring: { constraint = $0 })
+        constraintPriorityCheck(constraint: constraint, priority: priority)
     }
 }
