@@ -81,7 +81,7 @@ class VAKitLayoutSizeConstraintsTests: XCTestCase {
         XCTAssertFalse(constraint.isActive)
     }
     
-    func testFunction_sizeHeight_constraintActivationView() {
+    func test_sizeHeight_constraintActivationView() {
         let height: CGFloat = 10
         view.size(height: height, isActive: false)
         layoutViews()
