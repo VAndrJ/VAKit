@@ -85,9 +85,10 @@ extension UIView {
     }
     
     @discardableResult
-    func toSuper(_ anchor: NSLayoutConstraint.Attribute, constant: CGFloat = 0, configuring: (NSLayoutConstraint) -> Void = { _ in }) -> Self {
+    func toSuper(_ anchor: NSLayoutConstraint.Attribute, constant: CGFloat = 0, priority: Float = 1000, configuring: (NSLayoutConstraint) -> Void = { _ in }) -> Self {
         assert(superview != nil)
         let constraint = NSLayoutConstraint(item: self, attribute: anchor, relatedBy: .equal, toItem: superview, attribute: anchor, multiplier: 1, constant: constant)
+        constraint.priority = UILayoutPriority(rawValue: priority)
         constraint.isActive = true
         configuring(constraint)
         return self
