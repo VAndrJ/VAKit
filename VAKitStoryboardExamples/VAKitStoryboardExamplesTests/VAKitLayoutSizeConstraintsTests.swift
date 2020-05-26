@@ -62,20 +62,6 @@ class VAKitLayoutSizeConstraintsTests: XCTestCase {
         constraintPriorityCheck(constraint: view.constraints.first, priority: priority)
     }
     
-    func testFunction_sizeHeight_constraintPriorities() {
-        let primaryHeight: CGFloat = 100
-        let secondaryHeight: CGFloat = 10
-        let secondaryPriority: Float = 999
-        var primaryConstraint: NSLayoutConstraint?
-        var secondaryConstraint: NSLayoutConstraint?
-        view.size(height: secondaryHeight, priority: secondaryPriority, configuring: { secondaryConstraint = $0 })
-        view.size(height: primaryHeight, configuring: { primaryConstraint = $0 })
-        layoutViews()
-        constraintPriorityCheck(constraint: secondaryConstraint, priority: secondaryPriority)
-        constraintPriorityCheck(constraint: primaryConstraint, priority: 1000)
-        XCTAssertEqual(primaryHeight, primaryConstraint?.constant)
-    }
-    
     func testFunction_sizeHeight_constraintRelation() {
         let relation: NSLayoutConstraint.Relation = .greaterThanOrEqual
         var constraint: NSLayoutConstraint!
