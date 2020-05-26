@@ -44,4 +44,7 @@ class VAKitLayoutSuperConstraintsTests: XCTestCase {
         view.toSuper(.top, constant: constant, configuring: { constraint = $0 })
         XCTAssertEqual(constant, constraint.constant)
     }
+    
+    func test_toSuper_constraintPriorityDefault() {
+    }
 }
