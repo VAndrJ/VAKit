@@ -60,6 +60,9 @@ class VAKitLayoutSuperConstraintsTests: XCTestCase {
         constraintPriorityCheck(constraint: constraint, priority: priority)
     }
     
+    func test_toSuper_constraintRelationDefault() {
+    }
+    
     func test_toSuper_constraintRelation() {
         let relation: NSLayoutConstraint.Relation = .greaterThanOrEqual
         var constraint: NSLayoutConstraint!
