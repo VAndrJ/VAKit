@@ -92,4 +92,7 @@ class VAKitLayoutSuperConstraintsTests: XCTestCase {
         XCTAssertEqual(attribute, constraint.firstAttribute)
         XCTAssertEqual(attribute, constraint.secondAttribute)
     }
+    
+    func test_toSuper_constraintMultiplierDefault() {
+    }
 }
