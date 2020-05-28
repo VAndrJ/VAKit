@@ -88,7 +88,7 @@ extension UIView {
     func toSuper(_ anchor: NSLayoutConstraint.Attribute, constant: CGFloat = 0, multiplier: CGFloat = 1, relation: NSLayoutConstraint.Relation = .equal, priority: Float = 1000, isSafe: Bool = false, isActive: Bool = true, device: VADevice = .unspecified, configuring: (NSLayoutConstraint) -> Void = { _ in }) -> Self {
         assert(0...1000 ~= priority)
         assert(superview != nil)
-        let constraint = NSLayoutConstraint(item: self, attribute: anchor, relatedBy: relation, toItem: superview, attribute: anchor, multiplier: 1, constant: constant)
+        let constraint = NSLayoutConstraint(item: self, attribute: anchor, relatedBy: relation, toItem: isSafe ? superview?.safeAreaLayoutGuide : superview, attribute: anchor, multiplier: multiplier, constant: constant)
         constraint.priority = UILayoutPriority(rawValue: priority)
         constraint.isActive = isActive
         configuring(constraint)
