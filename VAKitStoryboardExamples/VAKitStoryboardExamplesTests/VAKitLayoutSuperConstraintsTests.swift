@@ -78,5 +78,9 @@ class VAKitLayoutSuperConstraintsTests: XCTestCase {
     }
     
     func test_toSuper_constraintActivation() {
+        var constraint: NSLayoutConstraint!
+        parentView.addAutolayoutSubview(view)
+        view.toSuper(.top, isActive: false, configuring: { constraint = $0 })
+        XCTAssertFalse(constraint.isActive)
     }
 }
