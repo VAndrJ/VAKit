@@ -94,5 +94,9 @@ class VAKitLayoutSuperConstraintsTests: XCTestCase {
     }
     
     func test_toSuper_constraintMultiplierDefault() {
+        var constraint: NSLayoutConstraint!
+        parentView.addAutolayoutSubview(view)
+        view.toSuper(.top, configuring: { constraint = $0 })
+        XCTAssertEqual(1, constraint.multiplier)
     }
 }
