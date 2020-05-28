@@ -76,4 +76,7 @@ class VAKitLayoutSuperConstraintsTests: XCTestCase {
         view.toSuper(.top, relation: relation, configuring: { constraint = $0 })
         XCTAssertEqual(relation, constraint.relation)
     }
+    
+    func test_toSuper_constraintActivation() {
+    }
 }
