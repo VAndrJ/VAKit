@@ -23,6 +23,8 @@ class VAKitLayoutSuperConstraintsTests: XCTestCase {
         parentView = nil
     }
     
+    // MARK: - Single constraint to super view
+    
     func test_toSuper_returnViewType() {
         view = MockView()
         parentView.addAutolayoutSubview(view)
