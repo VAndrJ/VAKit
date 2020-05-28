@@ -179,7 +179,7 @@ class VAKitLayoutSizeConstraintsTests: XCTestCase {
         XCTAssertEqual(relation, heightConstraint.relation)
     }
     
-    func testFunction_size_constraintActivation() {
+    func test_size_constraintActivation() {
         var widthConstraint: NSLayoutConstraint!
         var heightConstraint: NSLayoutConstraint!
         view.size(10, isActive: false, configuring: { (widthConstraint, heightConstraint) = $0 })
