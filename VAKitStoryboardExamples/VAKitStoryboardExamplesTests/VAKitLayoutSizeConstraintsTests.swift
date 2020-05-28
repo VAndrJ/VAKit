@@ -160,7 +160,7 @@ class VAKitLayoutSizeConstraintsTests: XCTestCase {
         XCTAssertEqual(size, view.frame.height)
     }
     
-    func testFunction_size_constraintPriority() {
+    func test_size_constraintPriority() {
         let size: CGFloat = 10
         let priority: Float = 999
         var widthConstraint: NSLayoutConstraint!
