@@ -99,4 +99,7 @@ class VAKitLayoutSuperConstraintsTests: XCTestCase {
         view.toSuper(.top, configuring: { constraint = $0 })
         XCTAssertEqual(1, constraint.multiplier)
     }
+    
+    func test_toSuper_constraintMultiplier() {
+    }
 }
