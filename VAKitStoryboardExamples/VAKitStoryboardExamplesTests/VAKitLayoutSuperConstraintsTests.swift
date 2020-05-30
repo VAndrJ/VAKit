@@ -116,5 +116,9 @@ class VAKitLayoutSuperConstraintsTests: XCTestCase {
     }
     
     func test_toSuper_constraintSafeArea() {
+        var constraint: NSLayoutConstraint!
+        parentView.addAutolayoutSubview(view)
+        view.toSuper(.top, isSafe: true, configuring: { constraint = $0 })
+        XCTAssertEqual(parentView.safeAreaLayoutGuide, (constraint.secondItem as? UILayoutGuide))
     }
 }
