@@ -71,5 +71,11 @@ class VAKitLayoutDeviceIdentifierTests: XCTestCase {
     }
     
     func test_toSuper_identifierCustom() {
+        let device: UIView.VADevice = .iPhonePortrait
+        var constraint: NSLayoutConstraint!
+        let parentView = UIView()
+        parentView.addAutolayoutSubview(view)
+        view.toSuper(.top, device: device, configuring: { constraint = $0 })
+        XCTAssertEqual(device.rawValue, constraint.identifier)
     }
 }
