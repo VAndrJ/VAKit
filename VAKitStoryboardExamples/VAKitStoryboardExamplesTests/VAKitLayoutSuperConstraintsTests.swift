@@ -114,4 +114,7 @@ class VAKitLayoutSuperConstraintsTests: XCTestCase {
         view.toSuper(.top, configuring: { constraint = $0 })
         XCTAssertEqual(parentView, (constraint.secondItem as? UIView))
     }
+    
+    func test_toSuper_constraintSafeArea() {
+    }
 }
