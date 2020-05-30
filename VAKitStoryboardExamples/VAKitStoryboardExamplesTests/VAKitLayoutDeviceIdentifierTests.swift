@@ -61,4 +61,7 @@ class VAKitLayoutDeviceIdentifierTests: XCTestCase {
         XCTAssertEqual(device.rawValue, widthConstraint.identifier)
         XCTAssertEqual(device.rawValue, heightConstraint.identifier)
     }
+    
+    func test_toSuper_identifierDefault() {
+    }
 }
