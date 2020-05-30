@@ -90,6 +90,7 @@ extension UIView {
         assert(superview != nil)
         let constraint = NSLayoutConstraint(item: self, attribute: anchor, relatedBy: relation, toItem: isSafe ? superview?.safeAreaLayoutGuide : superview, attribute: anchor, multiplier: multiplier, constant: constant)
         constraint.priority = UILayoutPriority(rawValue: priority)
+        constraint.identifier = device.rawValue
         constraint.isActive = isActive
         configuring(constraint)
         return self
