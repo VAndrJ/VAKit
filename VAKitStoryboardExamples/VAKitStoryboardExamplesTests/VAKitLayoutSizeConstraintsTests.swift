@@ -221,6 +221,9 @@ class VAKitLayoutSizeConstraintsTests: XCTestCase {
         view = MockView().size(width: 1, height: 101)
         XCTAssertTrue(view is MockView)
     }
+    
+    func test_sizeWidthHeight_constraintConstant() {
+    }
     // MARK: - Support
     
     private func layoutViews() {
