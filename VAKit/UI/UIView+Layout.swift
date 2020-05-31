@@ -68,20 +68,27 @@ extension UIView {
     }
     
     @discardableResult
-    func size(_ size: CGFloat, relation: NSLayoutConstraint.Relation = .equal, priority: Float = 1000, isActive: Bool = true, device: VADevice = .unspecified, configuring: ((width: NSLayoutConstraint, height: NSLayoutConstraint)) -> Void = { _ in }) -> Self {
+    func size(width: CGFloat, height: CGFloat, relation: NSLayoutConstraint.Relation = .equal, priority: Float = 1000, isActive: Bool = true, device: VADevice = .unspecified, configuring: ((width: NSLayoutConstraint, height: NSLayoutConstraint)) -> Void = { _ in }) -> Self {
         assert(0...1000 ~= priority)
-        assert(size.sign == .plus)
-        let widthConstraint = NSLayoutConstraint(item: self, attribute: .width, relatedBy: relation, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: size)
-        widthConstraint.priority = UILayoutPriority(rawValue: priority)
-        widthConstraint.identifier = device.rawValue
-        let heightConstraint = NSLayoutConstraint(item: self, attribute: .height, relatedBy: relation, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: size)
-        heightConstraint.priority = UILayoutPriority(rawValue: priority)
-        heightConstraint.identifier = device.rawValue
+        assert(width.sign == .plus)
+        assert(height.sign == .plus)
+        let widthConstraint = NSLayoutConstraint(item: self, attribute: .width, relatedBy: relation, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: width)
+        let heightConstraint = NSLayoutConstraint(item: self, attribute: .height, relatedBy: relation, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: height)
+        let constraints: [NSLayoutConstraint] = [widthConstraint, heightConstraint]
+        constraints.forEach { (constraint: NSLayoutConstraint) in
+            constraint.priority = UILayoutPriority(rawValue: priority)
+            constraint.identifier = device.rawValue
+        }
         if isActive {
-            NSLayoutConstraint.activate([widthConstraint, heightConstraint])
+            NSLayoutConstraint.activate(constraints)
         }
         configuring((widthConstraint, heightConstraint))
         return self
+    }
+    
+    @discardableResult
+    func size(_ constant: CGFloat, relation: NSLayoutConstraint.Relation = .equal, priority: Float = 1000, isActive: Bool = true, device: VADevice = .unspecified, configuring: ((width: NSLayoutConstraint, height: NSLayoutConstraint)) -> Void = { _ in }) -> Self {
+        return size(width: constant, height: constant, relation: relation, priority: priority, isActive: isActive, device: device, configuring: configuring)
     }
     
     @discardableResult
