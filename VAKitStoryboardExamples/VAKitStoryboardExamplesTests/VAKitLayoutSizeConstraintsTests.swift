@@ -223,6 +223,13 @@ class VAKitLayoutSizeConstraintsTests: XCTestCase {
     }
     
     func test_sizeWidthHeight_constraintConstant() {
+        let width: CGFloat = 42
+        let height: CGFloat = 23
+        var widthConstraint: NSLayoutConstraint!
+        var heightConstraint: NSLayoutConstraint!
+        view.size(width: width, height: height, configuring: { (widthConstraint, heightConstraint) = $0 })
+        XCTAssertEqual(width, widthConstraint.constant)
+        XCTAssertEqual(height, heightConstraint.constant)
     }
     // MARK: - Support
     
