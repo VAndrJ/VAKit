@@ -216,6 +216,9 @@ class VAKitLayoutSizeConstraintsTests: XCTestCase {
     }
     
     // MARK: - Size width height
+    
+    func test_sizeWidthHeight_returnViewType() {
+    }
     // MARK: - Support
     
     private func layoutViews() {
