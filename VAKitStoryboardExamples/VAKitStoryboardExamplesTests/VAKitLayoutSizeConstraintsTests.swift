@@ -190,6 +190,9 @@ class VAKitLayoutSizeConstraintsTests: XCTestCase {
         constraintPriorityCheck(constraint: heightConstraint, priority: priority)
     }
     
+    func test_size_constraintRelationDefault() {
+    }
+    
     func test_size_constraintRelation() {
         let relation: NSLayoutConstraint.Relation = .greaterThanOrEqual
         var widthConstraint: NSLayoutConstraint!
