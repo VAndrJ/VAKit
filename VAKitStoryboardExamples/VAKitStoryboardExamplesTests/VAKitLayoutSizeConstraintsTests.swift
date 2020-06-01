@@ -248,6 +248,9 @@ class VAKitLayoutSizeConstraintsTests: XCTestCase {
         constraintPriorityCheck(constraint: widthConstraint, priority: 1000)
         constraintPriorityCheck(constraint: heightConstraint, priority: 1000)
     }
+    
+    func test_sizeWidthHeight_constraintPriority() {
+    }
     // MARK: - Support
     
     private func layoutViews() {
