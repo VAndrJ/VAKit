@@ -265,6 +265,9 @@ class VAKitLayoutSizeConstraintsTests: XCTestCase {
         XCTAssertEqual(NSLayoutConstraint.Relation.equal, widthConstraint.relation)
         XCTAssertEqual(NSLayoutConstraint.Relation.equal, heightConstraint.relation)
     }
+    
+    func test_sizeWidthHeight_constraintRelation() {
+    }
     // MARK: - Support
     
     private func layoutViews() {
