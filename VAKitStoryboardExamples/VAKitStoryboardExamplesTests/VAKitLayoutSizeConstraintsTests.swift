@@ -240,6 +240,9 @@ class VAKitLayoutSizeConstraintsTests: XCTestCase {
         XCTAssertEqual(width, view.frame.width)
         XCTAssertEqual(height, view.frame.height)
     }
+    
+    func test_sizeWidthHeight_constraintPriorityDefault() {
+    }
     // MARK: - Support
     
     private func layoutViews() {
