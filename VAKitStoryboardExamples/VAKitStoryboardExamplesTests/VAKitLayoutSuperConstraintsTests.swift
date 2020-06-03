@@ -169,6 +169,9 @@ class VAKitLayoutSuperConstraintsTests: XCTestCase {
         constraintPriorityCheck(constraint: constraintCenterY, priority: priority)
     }
     
+    func test_toSuperCenter_constraintRelationDefault() {
+    }
+    
     // MARK: - Constraints to super edges
     
     // MARK: - Constraints to super view's axis
