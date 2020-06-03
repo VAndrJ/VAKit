@@ -124,6 +124,9 @@ class VAKitLayoutSuperConstraintsTests: XCTestCase {
     
     // MARK: - Constraints to center
     
+    func test_toSuperCenter_returnViewType() {
+    }
+    
     // MARK: - Constraints to super edges
     
     // MARK: - Constraints to super view's axis
