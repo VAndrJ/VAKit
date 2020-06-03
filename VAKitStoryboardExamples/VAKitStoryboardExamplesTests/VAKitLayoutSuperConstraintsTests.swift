@@ -125,6 +125,10 @@ class VAKitLayoutSuperConstraintsTests: XCTestCase {
     // MARK: - Constraints to center
     
     func test_toSuperCenter_returnViewType() {
+        view = MockView()
+        parentView.addAutolayoutSubview(view)
+        let testView = view.toSuperCenter()
+        XCTAssertTrue(testView is MockView)
     }
     
     // MARK: - Constraints to super edges
