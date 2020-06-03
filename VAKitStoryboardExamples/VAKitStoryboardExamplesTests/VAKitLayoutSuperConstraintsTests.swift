@@ -160,6 +160,13 @@ class VAKitLayoutSuperConstraintsTests: XCTestCase {
     }
     
     func test_toSuperCenter_constraintPriority() {
+        let priority: Float = 999
+        var constraintCenterX: NSLayoutConstraint!
+        var constraintCenterY: NSLayoutConstraint!
+        parentView.addAutolayoutSubview(view)
+        view.toSuperCenter(priority: priority, configuring: { (constraintCenterX, constraintCenterY) = $0 })
+        constraintPriorityCheck(constraint: constraintCenterX, priority: priority)
+        constraintPriorityCheck(constraint: constraintCenterY, priority: priority)
     }
     
     // MARK: - Constraints to super edges
