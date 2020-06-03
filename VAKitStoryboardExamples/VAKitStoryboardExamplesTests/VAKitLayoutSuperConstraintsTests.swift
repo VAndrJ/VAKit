@@ -179,6 +179,13 @@ class VAKitLayoutSuperConstraintsTests: XCTestCase {
     }
     
     func test_toSuperCenter_constraintRelation() {
+        let relation: NSLayoutConstraint.Relation = .greaterThanOrEqual
+        var constraintCenterX: NSLayoutConstraint!
+        var constraintCenterY: NSLayoutConstraint!
+        parentView.addAutolayoutSubview(view)
+        view.toSuperCenter(relation: relation, configuring: { (constraintCenterX, constraintCenterY) = $0 })
+        XCTAssertEqual(relation, constraintCenterX.relation)
+        XCTAssertEqual(relation, constraintCenterY.relation)
     }
     
     // MARK: - Constraints to super edges
