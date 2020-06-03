@@ -102,4 +102,22 @@ extension UIView {
         configuring(constraint)
         return self
     }
+    
+    @discardableResult
+    func toSuperCenter(offset: CGPoint = .zero, multiplier: CGFloat = 1, relation: NSLayoutConstraint.Relation = .equal, priority: Float = 1000, isSafe: Bool = false, isActive: Bool = true, device: VADevice = .unspecified, configuring: ((centerX: NSLayoutConstraint, centerY: NSLayoutConstraint)) -> Void = { _ in }) -> Self {
+        assert(0...1000 ~= priority)
+        assert(superview != nil)
+        let centerXConstraint = NSLayoutConstraint(item: self, attribute: .centerX, relatedBy: relation, toItem: isSafe ? superview?.safeAreaLayoutGuide : superview, attribute: .centerX, multiplier: multiplier, constant: offset.x)
+        let centerYConstraint = NSLayoutConstraint(item: self, attribute: .centerY, relatedBy: relation, toItem: isSafe ? superview?.safeAreaLayoutGuide : superview, attribute: .centerY, multiplier: multiplier, constant: offset.y)
+        let constraints: [NSLayoutConstraint] = [centerXConstraint, centerYConstraint]
+        constraints.forEach { (constraint: NSLayoutConstraint) in
+            constraint.priority = UILayoutPriority(rawValue: priority)
+            constraint.identifier = device.rawValue
+        }
+        if isActive {
+            NSLayoutConstraint.activate(constraints)
+        }
+        configuring((centerXConstraint, centerYConstraint))
+        return self
+    }
 }
