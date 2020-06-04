@@ -80,5 +80,12 @@ class VAKitLayoutDeviceIdentifierTests: XCTestCase {
     }
     
     func test_toSuperCenter_identifierDefault() {
+        var constraintCenterX: NSLayoutConstraint!
+        var constraintCenterY: NSLayoutConstraint!
+        let parentView = UIView()
+        parentView.addAutolayoutSubview(view)
+        view.toSuperCenter(configuring: { (constraintCenterX, constraintCenterY) = $0 })
+        XCTAssertEqual(UIView.VADevice.unspecified.rawValue, constraintCenterX.identifier)
+        XCTAssertEqual(UIView.VADevice.unspecified.rawValue, constraintCenterY.identifier)
     }
 }
