@@ -78,4 +78,7 @@ class VAKitLayoutDeviceIdentifierTests: XCTestCase {
         view.toSuper(.top, device: device, configuring: { constraint = $0 })
         XCTAssertEqual(device.rawValue, constraint.identifier)
     }
+    
+    func test_toSuperCenter_identifierDefault() {
+    }
 }
