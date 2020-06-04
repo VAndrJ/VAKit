@@ -88,4 +88,7 @@ class VAKitLayoutDeviceIdentifierTests: XCTestCase {
         XCTAssertEqual(UIView.VADevice.unspecified.rawValue, constraintCenterX.identifier)
         XCTAssertEqual(UIView.VADevice.unspecified.rawValue, constraintCenterY.identifier)
     }
+    
+    func test_toSuperCenter_identifierCustom() {
+    }
 }
