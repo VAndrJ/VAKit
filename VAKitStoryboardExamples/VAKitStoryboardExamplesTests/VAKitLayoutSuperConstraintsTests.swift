@@ -225,6 +225,9 @@ class VAKitLayoutSuperConstraintsTests: XCTestCase {
         XCTAssertEqual(parentView, (constraintCenterY.secondItem as? UIView))
     }
     
+    func test_toSuperCenter_constraintSafeArea() {
+    }
+    
     // MARK: - Constraints to super edges
     
     // MARK: - Constraints to super view's axis
