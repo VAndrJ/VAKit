@@ -197,6 +197,9 @@ class VAKitLayoutSuperConstraintsTests: XCTestCase {
         XCTAssertFalse(constraintCenterY.isActive)
     }
     
+    func test_toSuperCenter_constraintMultiplierDefault() {
+    }
+    
     // MARK: - Constraints to super edges
     
     // MARK: - Constraints to super view's axis
