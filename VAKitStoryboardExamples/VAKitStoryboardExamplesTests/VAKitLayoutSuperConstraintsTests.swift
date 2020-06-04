@@ -206,6 +206,9 @@ class VAKitLayoutSuperConstraintsTests: XCTestCase {
         XCTAssertEqual(1, constraintCenterY.multiplier)
     }
     
+    func test_toSuperCenter_constraintMultiplier() {
+    }
+    
     // MARK: - Constraints to super edges
     
     // MARK: - Constraints to super view's axis
