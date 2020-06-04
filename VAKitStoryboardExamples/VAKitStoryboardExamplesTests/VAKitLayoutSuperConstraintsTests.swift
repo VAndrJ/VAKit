@@ -226,6 +226,12 @@ class VAKitLayoutSuperConstraintsTests: XCTestCase {
     }
     
     func test_toSuperCenter_constraintSafeArea() {
+        var constraintCenterX: NSLayoutConstraint!
+        var constraintCenterY: NSLayoutConstraint!
+        parentView.addAutolayoutSubview(view)
+        view.toSuperCenter(isSafe: true, configuring: { (constraintCenterX, constraintCenterY) = $0 })
+        XCTAssertEqual(parentView.safeAreaLayoutGuide, (constraintCenterX.secondItem as? UILayoutGuide))
+        XCTAssertEqual(parentView.safeAreaLayoutGuide, (constraintCenterY.secondItem as? UILayoutGuide))
     }
     
     // MARK: - Constraints to super edges
