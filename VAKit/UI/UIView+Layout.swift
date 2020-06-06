@@ -132,6 +132,21 @@ extension UIView {
     
     @discardableResult
     func toSuperEdges(insets: VADirectionalEdgeInsets = .zero, multiplier: CGFloat = 1, relation: NSLayoutConstraint.Relation = .equal, priority: Float = 1000, isSafe: Bool = false, isActive: Bool = true, device: VADevice = .unspecified, configuring: ((top: NSLayoutConstraint, leading: NSLayoutConstraint, bottom: NSLayoutConstraint, trailing: NSLayoutConstraint)) -> Void = { _ in }) -> Self {
+        assert(0...1000 ~= priority)
+        assert(superview != nil)
+        let topConstraint = NSLayoutConstraint(item: self, attribute: .top, relatedBy: relation, toItem: isSafe ? superview?.safeAreaLayoutGuide : superview, attribute: .top, multiplier: multiplier, constant: insets.top)
+        let leadingConstraint = NSLayoutConstraint(item: self, attribute: .leading, relatedBy: relation, toItem: isSafe ? superview?.safeAreaLayoutGuide : superview, attribute: .leading, multiplier: multiplier, constant: insets.leading)
+        let bottomConstraint = NSLayoutConstraint(item: self, attribute: .bottom, relatedBy: relation, toItem: isSafe ? superview?.safeAreaLayoutGuide : superview, attribute: .bottom, multiplier: multiplier, constant: -insets.bottom)
+        let trailingConstraint = NSLayoutConstraint(item: self, attribute: .leading, relatedBy: relation, toItem: isSafe ? superview?.safeAreaLayoutGuide : superview, attribute: .leading, multiplier: multiplier, constant: -insets.trailing)
+        let constraints: [NSLayoutConstraint] = [topConstraint, leadingConstraint, bottomConstraint, trailingConstraint]
+        constraints.forEach { (constraint: NSLayoutConstraint) in
+            constraint.priority = UILayoutPriority(rawValue: priority)
+            constraint.identifier = device.rawValue
+        }
+        if isActive {
+            NSLayoutConstraint.activate(constraints)
+        }
+        configuring((topConstraint, leadingConstraint, bottomConstraint, trailingConstraint))
         return self
     }
 }
