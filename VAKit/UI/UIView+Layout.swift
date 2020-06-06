@@ -208,4 +208,9 @@ extension UIView {
         configuring(constraint)
         return self
     }
+    
+    @discardableResult
+    func anchor(_ attribute: NSLayoutConstraint.Attribute, sameTo view: UIView, constant: CGFloat = 0, multiplier: CGFloat = 1, relation: NSLayoutConstraint.Relation = .equal, priority: Float = 1000, isSafe: Bool = false, isActive: Bool = true, device: VADevice = .unspecified, configuring: (NSLayoutConstraint) -> Void = { _ in }) -> Self {
+        return anchor(attribute, to: view, anchor: attribute, constant: constant, multiplier: multiplier, relation: relation, priority: priority, isSafe: isSafe, isActive: isActive, device: device, configuring: configuring)
+    }
 }
