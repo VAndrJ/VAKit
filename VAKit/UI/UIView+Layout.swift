@@ -177,4 +177,9 @@ extension UIView {
         configuring((leadingOrTopConstraint, trailingOrBottomConstraint))
         return self
     }
+    
+    @discardableResult
+    func toSuper(anchors: NSLayoutConstraint.Attribute..., constants: [CGFloat] = [], multiplier: CGFloat = 1, relation: NSLayoutConstraint.Relation = .equal, priority: Float = 1000, isSafe: Bool = false, isActive: Bool = true, device: VADevice = .unspecified, configuring: ([NSLayoutConstraint]) -> Void = { _ in }) -> Self {
+        return self
+    }
 }
