@@ -129,4 +129,9 @@ extension UIView {
         configuring((centerXConstraint, centerYConstraint))
         return self
     }
+    
+    @discardableResult
+    func toSuperEdges(insets: VADirectionalEdgeInsets = .zero, multiplier: CGFloat = 1, relation: NSLayoutConstraint.Relation = .equal, priority: Float = 1000, isSafe: Bool = false, isActive: Bool = true, device: VADevice = .unspecified, configuring: ((top: NSLayoutConstraint, leading: NSLayoutConstraint, bottom: NSLayoutConstraint, trailing: NSLayoutConstraint)) -> Void = { _ in }) -> Self {
+        return self
+    }
 }
