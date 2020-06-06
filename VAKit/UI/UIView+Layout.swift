@@ -149,4 +149,9 @@ extension UIView {
         configuring((topConstraint, leadingConstraint, bottomConstraint, trailingConstraint))
         return self
     }
+    
+    @discardableResult
+    func toSuperAxis(_ axis: NSLayoutConstraint.Axis, insets: (leadingOrTop: CGFloat, trailingOrBottom: CGFloat) = (0, 0), multiplier: CGFloat = 1, relation: NSLayoutConstraint.Relation = .equal, priority: Float = 1000, isSafe: Bool = false, isActive: Bool = true, device: VADevice = .unspecified, configuring: ((leadingOrTopConstraint: NSLayoutConstraint, trailingOrBottomConstraint: NSLayoutConstraint)) -> Void = { _ in }) -> Self {
+        return self
+    }
 }
