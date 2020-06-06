@@ -180,6 +180,20 @@ extension UIView {
     
     @discardableResult
     func toSuper(anchors: NSLayoutConstraint.Attribute..., constants: [CGFloat] = [], multiplier: CGFloat = 1, relation: NSLayoutConstraint.Relation = .equal, priority: Float = 1000, isSafe: Bool = false, isActive: Bool = true, device: VADevice = .unspecified, configuring: ([NSLayoutConstraint]) -> Void = { _ in }) -> Self {
+        assert(0...1000 ~= priority)
+        assert(superview != nil)
+        assert(constants.isEmpty || constants.count == anchors.count)
+        let constants: [CGFloat] = constants.isEmpty ? Array(repeating: 0, count: anchors.count) : constants
+        let constraints: [NSLayoutConstraint] = zip(anchors, constants).map { (attribute, constant) -> NSLayoutConstraint in
+            let constraint = NSLayoutConstraint(item: self, attribute: attribute, relatedBy: relation, toItem: isSafe ? superview?.safeAreaLayoutGuide : superview, attribute: attribute, multiplier: multiplier, constant: constant)
+            constraint.priority = UILayoutPriority(rawValue: priority)
+            constraint.identifier = device.rawValue
+            return constraint
+        }
+        if isActive {
+            NSLayoutConstraint.activate(constraints)
+        }
+        configuring(constraints)
         return self
     }
 }
