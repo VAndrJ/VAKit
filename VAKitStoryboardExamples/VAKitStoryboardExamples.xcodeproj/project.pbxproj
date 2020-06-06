@@ -12,7 +12,6 @@
 		A346312A2479332F00B8902F /* VAKitLayoutSuperConstraintsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34631292479332F00B8902F /* VAKitLayoutSuperConstraintsTests.swift */; };
 		A346312C247933E500B8902F /* VAKitLayoutTestsSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A346312B247933E500B8902F /* VAKitLayoutTestsSupport.swift */; };
 		A39E121F245DEFB2005AA87C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39E121E245DEFB2005AA87C /* AppDelegate.swift */; };
-		A39E1221245DEFB2005AA87C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39E1220245DEFB2005AA87C /* SceneDelegate.swift */; };
 		A39E1223245DEFB2005AA87C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39E1222245DEFB2005AA87C /* ViewController.swift */; };
 		A39E1226245DEFB2005AA87C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A39E1224245DEFB2005AA87C /* Main.storyboard */; };
 		A39E1228245DEFB6005AA87C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A39E1227245DEFB6005AA87C /* Assets.xcassets */; };
@@ -42,7 +41,6 @@
 		A346312B247933E500B8902F /* VAKitLayoutTestsSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAKitLayoutTestsSupport.swift; sourceTree = "<group>"; };
 		A39E121B245DEFB2005AA87C /* VAKitStoryboardExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VAKitStoryboardExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A39E121E245DEFB2005AA87C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A39E1220245DEFB2005AA87C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A39E1222245DEFB2005AA87C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A39E1225245DEFB2005AA87C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A39E1227245DEFB6005AA87C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -124,7 +122,6 @@
 			children = (
 				A332EA8C2460ACDF00C22AEE /* VAKit */,
 				A39E121E245DEFB2005AA87C /* AppDelegate.swift */,
-				A39E1220245DEFB2005AA87C /* SceneDelegate.swift */,
 				A39E1222245DEFB2005AA87C /* ViewController.swift */,
 				A39E1224245DEFB2005AA87C /* Main.storyboard */,
 				A39E1227245DEFB6005AA87C /* Assets.xcassets */,
@@ -253,7 +250,6 @@
 				A3F7666024730F6300F54775 /* UIView+Layout.swift in Sources */,
 				A39E1223245DEFB2005AA87C /* ViewController.swift in Sources */,
 				A39E121F245DEFB2005AA87C /* AppDelegate.swift in Sources */,
-				A39E1221245DEFB2005AA87C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
