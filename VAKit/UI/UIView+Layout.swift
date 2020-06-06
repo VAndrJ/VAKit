@@ -44,6 +44,12 @@ extension UIView {
     }
     
     struct VADirectionalEdgeInsets {
+        static let zero: VADirectionalEdgeInsets = .init(top: 0, leading: 0, bottom: 0, trailing: 0)
+        
+        let top: CGFloat // specify amount to inset (positive) for each of the edges. values can be negative to 'outset'
+        let leading: CGFloat
+        let bottom: CGFloat
+        let trailing: CGFloat
     }
     
     @discardableResult
