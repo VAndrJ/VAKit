@@ -213,4 +213,28 @@ extension UIView {
     func anchor(_ attribute: NSLayoutConstraint.Attribute, sameTo view: UIView, constant: CGFloat = 0, multiplier: CGFloat = 1, relation: NSLayoutConstraint.Relation = .equal, priority: Float = 1000, isSafe: Bool = false, isActive: Bool = true, device: VADevice = .unspecified, configuring: (NSLayoutConstraint) -> Void = { _ in }) -> Self {
         return anchor(attribute, to: view, anchor: attribute, constant: constant, multiplier: multiplier, relation: relation, priority: priority, isSafe: isSafe, isActive: isActive, device: device, configuring: configuring)
     }
+    
+    @discardableResult
+    func anchor(_ attribute: NSLayoutConstraint.Attribute, opposingTo view: UIView, constant: CGFloat = 0, multiplier: CGFloat = 1, relation: NSLayoutConstraint.Relation = .equal, priority: Float = 1000, isSafe: Bool = false, isActive: Bool = true, device: VADevice = .unspecified, configuring: (NSLayoutConstraint) -> Void = { _ in }) -> Self {
+        assert(![.centerX, .centerY, .centerXWithinMargins, .centerYWithinMargins, .height, .width, .notAnAttribute].contains(attribute))
+        let opposingAttribute: NSLayoutConstraint.Attribute
+        switch attribute {
+        case .top:              opposingAttribute = .bottom
+        case .bottom:           opposingAttribute = .top
+        case .left:             opposingAttribute = .right
+        case .right:            opposingAttribute = .left
+        case .leading:          opposingAttribute = .trailing
+        case .trailing:         opposingAttribute = .leading
+        case .topMargin:        opposingAttribute = .bottomMargin
+        case .bottomMargin:     opposingAttribute = .topMargin
+        case .leftMargin:       opposingAttribute = .rightMargin
+        case .rightMargin:      opposingAttribute = .leftMargin
+        case .firstBaseline:    opposingAttribute = .lastBaseline
+        case .lastBaseline:     opposingAttribute = .firstBaseline
+        case .leadingMargin:    opposingAttribute = .trailingMargin
+        case .trailingMargin:   opposingAttribute = .leadingMargin
+        default: fatalError()
+        }
+        return anchor(attribute, to: view, anchor: opposingAttribute, constant: constant, multiplier: multiplier, relation: relation, priority: priority, isSafe: isSafe, isActive: isActive, device: device, configuring: configuring)
+    }
 }
