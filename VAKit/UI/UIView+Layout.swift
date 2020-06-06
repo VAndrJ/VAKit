@@ -43,6 +43,9 @@ extension UIView {
         }
     }
     
+    struct VADirectionalEdgeInsets {
+    }
+    
     @discardableResult
     func size(height: CGFloat, relation: NSLayoutConstraint.Relation = .equal, priority: Float = 1000, isActive: Bool = true, device: VADevice = .unspecified, configuring: (NSLayoutConstraint) -> Void = { _ in }) -> Self {
         assert(0...1000 ~= priority)
