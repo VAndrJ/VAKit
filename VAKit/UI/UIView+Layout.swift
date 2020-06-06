@@ -43,15 +43,6 @@ extension UIView {
         }
     }
     
-    struct VADirectionalEdgeInsets {
-        static let zero: VADirectionalEdgeInsets = .init(top: 0, leading: 0, bottom: 0, trailing: 0)
-        
-        let top: CGFloat // specify amount to inset (positive) for each of the edges. values can be negative to 'outset'
-        let leading: CGFloat
-        let bottom: CGFloat
-        let trailing: CGFloat
-    }
-    
     @discardableResult
     func size(height: CGFloat, relation: NSLayoutConstraint.Relation = .equal, priority: Float = 1000, isActive: Bool = true, device: VADevice = .unspecified, configuring: (NSLayoutConstraint) -> Void = { _ in }) -> Self {
         assert(0...1000 ~= priority)
@@ -131,7 +122,7 @@ extension UIView {
     }
     
     @discardableResult
-    func toSuperEdges(insets: VADirectionalEdgeInsets = .zero, multiplier: CGFloat = 1, relation: NSLayoutConstraint.Relation = .equal, priority: Float = 1000, isSafe: Bool = false, isActive: Bool = true, device: VADevice = .unspecified, configuring: ((top: NSLayoutConstraint, leading: NSLayoutConstraint, bottom: NSLayoutConstraint, trailing: NSLayoutConstraint)) -> Void = { _ in }) -> Self {
+    func toSuperEdges(insets: NSDirectionalEdgeInsets = .zero, multiplier: CGFloat = 1, relation: NSLayoutConstraint.Relation = .equal, priority: Float = 1000, isSafe: Bool = false, isActive: Bool = true, device: VADevice = .unspecified, configuring: ((top: NSLayoutConstraint, leading: NSLayoutConstraint, bottom: NSLayoutConstraint, trailing: NSLayoutConstraint)) -> Void = { _ in }) -> Self {
         assert(0...1000 ~= priority)
         assert(superview != nil)
         let topConstraint = NSLayoutConstraint(item: self, attribute: .top, relatedBy: relation, toItem: isSafe ? superview?.safeAreaLayoutGuide : superview, attribute: .top, multiplier: multiplier, constant: insets.top)
