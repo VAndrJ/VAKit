@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+protocol VAIdentifiable {
+    static var identifier: String { get }
+    var identifier: String { get }
+}
