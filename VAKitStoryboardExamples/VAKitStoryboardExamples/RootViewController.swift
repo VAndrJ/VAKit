@@ -17,6 +17,10 @@ struct RootViewControllerConfigurator {
 }
 
 class RootView: UIView {
+    let tableView = UITableView()
+    let someForFunButton = UIButton(type: .system).configured {
+        $0.setTitle("Some Button title", for: .normal)
+    }
     
     convenience init() {
         self.init(frame: UIScreen.main.bounds)
