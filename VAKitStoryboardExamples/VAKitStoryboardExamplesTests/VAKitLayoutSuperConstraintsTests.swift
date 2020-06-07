@@ -237,6 +237,10 @@ class VAKitLayoutSuperConstraintsTests: XCTestCase {
     // MARK: - Constraints to super edges
     
     func test_toSuperEdges_returnViewType() {
+        view = MockView()
+        parentView.addAutolayoutSubview(view)
+        let testView = view.toSuperEdges()
+        XCTAssertTrue(testView is MockView)
     }
     
     // MARK: - Constraints to super view's axis
