@@ -13,6 +13,7 @@
 		A346312C247933E500B8902F /* VAKitLayoutTestsSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A346312B247933E500B8902F /* VAKitLayoutTestsSupport.swift */; };
 		A38A1429248D540000E0D6C2 /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38A1428248D540000E0D6C2 /* Configurable.swift */; };
 		A38A142C248D554500E0D6C2 /* VAIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38A142B248D554500E0D6C2 /* VAIdentifiable.swift */; };
+		A38A142E248D561200E0D6C2 /* TableCellConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38A142D248D561200E0D6C2 /* TableCellConfigurable.swift */; };
 		A39E121F245DEFB2005AA87C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39E121E245DEFB2005AA87C /* AppDelegate.swift */; };
 		A39E1223245DEFB2005AA87C /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39E1222245DEFB2005AA87C /* RootViewController.swift */; };
 		A39E1228245DEFB6005AA87C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A39E1227245DEFB6005AA87C /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 		A346312B247933E500B8902F /* VAKitLayoutTestsSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAKitLayoutTestsSupport.swift; sourceTree = "<group>"; };
 		A38A1428248D540000E0D6C2 /* Configurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Configurable.swift; path = ../../VAKit/Generic/Configurable.swift; sourceTree = "<group>"; };
 		A38A142B248D554500E0D6C2 /* VAIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VAIdentifiable.swift; path = ../../VAKit/Generic/VAIdentifiable.swift; sourceTree = "<group>"; };
+		A38A142D248D561200E0D6C2 /* TableCellConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCellConfigurable.swift; sourceTree = "<group>"; };
 		A39E121B245DEFB2005AA87C /* VAKitStoryboardExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VAKitStoryboardExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A39E121E245DEFB2005AA87C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A39E1222245DEFB2005AA87C /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			children = (
 				A38A1428248D540000E0D6C2 /* Configurable.swift */,
 				A38A142B248D554500E0D6C2 /* VAIdentifiable.swift */,
+				A38A142D248D561200E0D6C2 /* TableCellConfigurable.swift */,
 			);
 			name = Generic;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				A38A142C248D554500E0D6C2 /* VAIdentifiable.swift in Sources */,
 				A3F7666024730F6300F54775 /* UIView+Layout.swift in Sources */,
 				A39E1223245DEFB2005AA87C /* RootViewController.swift in Sources */,
+				A38A142E248D561200E0D6C2 /* TableCellConfigurable.swift in Sources */,
 				A39E121F245DEFB2005AA87C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
