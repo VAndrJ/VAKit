@@ -10,4 +10,12 @@ import Foundation
 
 protocol Configurable {}
 
+extension Configurable {
+    
+    func configured(_ configure: (Self) throws -> Void) rethrows -> Self {
+        try configure(self)
+        return self
+    }
+}
+
 extension NSObject: Configurable {}
