@@ -24,11 +24,22 @@ class RootView: UIView {
     
     convenience init() {
         self.init(frame: UIScreen.main.bounds)
+        addElements()
         configure()
     }
     
     private func configure() {
         backgroundColor = .white
+    }
+    
+    private func addElements() {
+        addAutolayoutSubviews(tableView, someForFunButton)
+        tableView
+            .toSuper(anchors: .top, .leading, .trailing, isSafe: true)
+            .anchor(.bottom, opposingTo: someForFunButton)
+        someForFunButton
+            .toSuper(anchors: .leading, .bottom, .trailing, isSafe: true)
+            .size(height: 52)
     }
 }
 
