@@ -27,3 +27,14 @@ class TableSourceDelegate: NSObject {
         tableView?.reloadData()
     }
 }
+
+extension TableSourceDelegate: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tableData.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return tableView.dequeueConfigured(withObject: tableData[indexPath.row])
+    }
+}
