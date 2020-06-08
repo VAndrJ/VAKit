@@ -78,13 +78,8 @@
 		A30C91D32461FD5C00CCDF5E /* VAKitStoryboardExamplesTests */ = {
 			isa = PBXGroup;
 			children = (
+				A37AC33D248EC4E80080E6B0 /* VAKitUI */,
 				A30C91D62461FD5C00CCDF5E /* Info.plist */,
-				A30C91DC2461FE0700CCDF5E /* VAKitLayoutSubviewsAddTests.swift */,
-				A321E2A624700BFD00173F6E /* VAKitLayoutDeviceIdentifierTests.swift */,
-				A3F5368024744DE1006258D0 /* VAKitLayoutVADeviceTests.swift */,
-				A3B201E4246489600083EFE1 /* VAKitLayoutSizeConstraintsTests.swift */,
-				A34631292479332F00B8902F /* VAKitLayoutSuperConstraintsTests.swift */,
-				A346312B247933E500B8902F /* VAKitLayoutTestsSupport.swift */,
 			);
 			path = VAKitStoryboardExamplesTests;
 			sourceTree = "<group>";
@@ -104,6 +99,19 @@
 				A3F7665F24730F6300F54775 /* UIView+Layout.swift */,
 			);
 			name = UI;
+			sourceTree = "<group>";
+		};
+		A37AC33D248EC4E80080E6B0 /* VAKitUI */ = {
+			isa = PBXGroup;
+			children = (
+				A30C91DC2461FE0700CCDF5E /* VAKitLayoutSubviewsAddTests.swift */,
+				A321E2A624700BFD00173F6E /* VAKitLayoutDeviceIdentifierTests.swift */,
+				A3F5368024744DE1006258D0 /* VAKitLayoutVADeviceTests.swift */,
+				A3B201E4246489600083EFE1 /* VAKitLayoutSizeConstraintsTests.swift */,
+				A34631292479332F00B8902F /* VAKitLayoutSuperConstraintsTests.swift */,
+				A346312B247933E500B8902F /* VAKitLayoutTestsSupport.swift */,
+			);
+			name = VAKitUI;
 			sourceTree = "<group>";
 		};
 		A38A142A248D540700E0D6C2 /* Generic */ = {
