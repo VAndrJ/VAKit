@@ -271,6 +271,16 @@ class VAKitLayoutSuperConstraintsTests: XCTestCase {
     }
     
     func test_toSuperEdges_constraintPriorityDefault() {
+        var constraintTop: NSLayoutConstraint!
+        var constraintLeading: NSLayoutConstraint!
+        var constraintBottom: NSLayoutConstraint!
+        var constraintTrailing: NSLayoutConstraint!
+        parentView.addAutolayoutSubview(view)
+        view.toSuperEdges(configuring: { (constraintTop, constraintLeading, constraintBottom, constraintTrailing) = $0 })
+        constraintPriorityCheck(constraint: constraintTop, priority: 1000)
+        constraintPriorityCheck(constraint: constraintLeading, priority: 1000)
+        constraintPriorityCheck(constraint: constraintBottom, priority: 1000)
+        constraintPriorityCheck(constraint: constraintTrailing, priority: 1000)
     }
     
     // MARK: - Constraints to super view's axis
