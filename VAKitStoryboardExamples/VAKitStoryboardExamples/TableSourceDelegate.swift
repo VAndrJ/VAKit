@@ -20,6 +20,10 @@ class TableSourceDelegate: NSObject {
         if let tableData = tableData {
             self.tableData = tableData
         }
+        super.init()
+        tableView.estimatedRowHeight = 52
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.dataSource = self
     }
     
     func update(data: [TableCellConfigurable & VAIdentifiable]) {
