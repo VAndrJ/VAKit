@@ -11,6 +11,10 @@
 		A321E2A724700BFD00173F6E /* VAKitLayoutDeviceIdentifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A321E2A624700BFD00173F6E /* VAKitLayoutDeviceIdentifierTests.swift */; };
 		A346312A2479332F00B8902F /* VAKitLayoutSuperConstraintsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34631292479332F00B8902F /* VAKitLayoutSuperConstraintsTests.swift */; };
 		A346312C247933E500B8902F /* VAKitLayoutTestsSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A346312B247933E500B8902F /* VAKitLayoutTestsSupport.swift */; };
+		A37AC340248EC5330080E6B0 /* VAKitConfigurableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37AC33F248EC5330080E6B0 /* VAKitConfigurableTests.swift */; };
+		A37AC341248EC54E0080E6B0 /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38A1428248D540000E0D6C2 /* Configurable.swift */; };
+		A37AC342248EC54E0080E6B0 /* VAIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38A142B248D554500E0D6C2 /* VAIdentifiable.swift */; };
+		A37AC343248EC54E0080E6B0 /* TableCellConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38A142D248D561200E0D6C2 /* TableCellConfigurable.swift */; };
 		A38A1429248D540000E0D6C2 /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38A1428248D540000E0D6C2 /* Configurable.swift */; };
 		A38A142C248D554500E0D6C2 /* VAIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38A142B248D554500E0D6C2 /* VAIdentifiable.swift */; };
 		A38A142E248D561200E0D6C2 /* TableCellConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38A142D248D561200E0D6C2 /* TableCellConfigurable.swift */; };
@@ -42,6 +46,7 @@
 		A321E2A624700BFD00173F6E /* VAKitLayoutDeviceIdentifierTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAKitLayoutDeviceIdentifierTests.swift; sourceTree = "<group>"; };
 		A34631292479332F00B8902F /* VAKitLayoutSuperConstraintsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAKitLayoutSuperConstraintsTests.swift; sourceTree = "<group>"; };
 		A346312B247933E500B8902F /* VAKitLayoutTestsSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAKitLayoutTestsSupport.swift; sourceTree = "<group>"; };
+		A37AC33F248EC5330080E6B0 /* VAKitConfigurableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAKitConfigurableTests.swift; sourceTree = "<group>"; };
 		A38A1428248D540000E0D6C2 /* Configurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Configurable.swift; path = ../../VAKit/Generic/Configurable.swift; sourceTree = "<group>"; };
 		A38A142B248D554500E0D6C2 /* VAIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VAIdentifiable.swift; path = ../../VAKit/Generic/VAIdentifiable.swift; sourceTree = "<group>"; };
 		A38A142D248D561200E0D6C2 /* TableCellConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCellConfigurable.swift; sourceTree = "<group>"; };
@@ -78,6 +83,7 @@
 		A30C91D32461FD5C00CCDF5E /* VAKitStoryboardExamplesTests */ = {
 			isa = PBXGroup;
 			children = (
+				A37AC33E248EC50F0080E6B0 /* VAKItGeneric */,
 				A37AC33D248EC4E80080E6B0 /* VAKitUI */,
 				A30C91D62461FD5C00CCDF5E /* Info.plist */,
 			);
@@ -112,6 +118,14 @@
 				A346312B247933E500B8902F /* VAKitLayoutTestsSupport.swift */,
 			);
 			name = VAKitUI;
+			sourceTree = "<group>";
+		};
+		A37AC33E248EC50F0080E6B0 /* VAKItGeneric */ = {
+			isa = PBXGroup;
+			children = (
+				A37AC33F248EC5330080E6B0 /* VAKitConfigurableTests.swift */,
+			);
+			name = VAKItGeneric;
 			sourceTree = "<group>";
 		};
 		A38A142A248D540700E0D6C2 /* Generic */ = {
@@ -265,8 +279,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A37AC341248EC54E0080E6B0 /* Configurable.swift in Sources */,
+				A37AC342248EC54E0080E6B0 /* VAIdentifiable.swift in Sources */,
+				A37AC343248EC54E0080E6B0 /* TableCellConfigurable.swift in Sources */,
 				A3F766622473100400F54775 /* UIView+Layout.swift in Sources */,
 				A3F5368124744DE1006258D0 /* VAKitLayoutVADeviceTests.swift in Sources */,
+				A37AC340248EC5330080E6B0 /* VAKitConfigurableTests.swift in Sources */,
 				A321E2A724700BFD00173F6E /* VAKitLayoutDeviceIdentifierTests.swift in Sources */,
 				A3B201E5246489600083EFE1 /* VAKitLayoutSizeConstraintsTests.swift in Sources */,
 				A346312A2479332F00B8902F /* VAKitLayoutSuperConstraintsTests.swift in Sources */,
