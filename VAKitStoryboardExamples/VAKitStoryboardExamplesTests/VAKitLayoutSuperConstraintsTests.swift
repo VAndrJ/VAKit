@@ -298,6 +298,16 @@ class VAKitLayoutSuperConstraintsTests: XCTestCase {
     }
     
     func test_toSuperEdges_constraintRelationDefault() {
+        var constraintTop: NSLayoutConstraint!
+        var constraintLeading: NSLayoutConstraint!
+        var constraintBottom: NSLayoutConstraint!
+        var constraintTrailing: NSLayoutConstraint!
+        parentView.addAutolayoutSubview(view)
+        view.toSuperEdges(configuring: { (constraintTop, constraintLeading, constraintBottom, constraintTrailing) = $0 })
+        XCTAssertEqual(NSLayoutConstraint.Relation.equal, constraintTop.relation)
+        XCTAssertEqual(NSLayoutConstraint.Relation.equal, constraintLeading.relation)
+        XCTAssertEqual(NSLayoutConstraint.Relation.equal, constraintBottom.relation)
+        XCTAssertEqual(NSLayoutConstraint.Relation.equal, constraintTrailing.relation)
     }
     
     // MARK: - Constraints to super view's axis
