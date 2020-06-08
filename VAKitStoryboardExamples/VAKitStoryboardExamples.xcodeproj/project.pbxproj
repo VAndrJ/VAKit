@@ -16,6 +16,7 @@
 		A37AC342248EC54E0080E6B0 /* VAIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38A142B248D554500E0D6C2 /* VAIdentifiable.swift */; };
 		A37AC343248EC54E0080E6B0 /* TableCellConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38A142D248D561200E0D6C2 /* TableCellConfigurable.swift */; };
 		A37AC345248EC57E0080E6B0 /* VAKitVAIdentifiableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37AC344248EC57E0080E6B0 /* VAKitVAIdentifiableTests.swift */; };
+		A37AC347248EC95F0080E6B0 /* TableSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37AC346248EC95F0080E6B0 /* TableSourceDelegate.swift */; };
 		A38A1429248D540000E0D6C2 /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38A1428248D540000E0D6C2 /* Configurable.swift */; };
 		A38A142C248D554500E0D6C2 /* VAIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38A142B248D554500E0D6C2 /* VAIdentifiable.swift */; };
 		A38A142E248D561200E0D6C2 /* TableCellConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38A142D248D561200E0D6C2 /* TableCellConfigurable.swift */; };
@@ -49,6 +50,7 @@
 		A346312B247933E500B8902F /* VAKitLayoutTestsSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAKitLayoutTestsSupport.swift; sourceTree = "<group>"; };
 		A37AC33F248EC5330080E6B0 /* VAKitConfigurableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAKitConfigurableTests.swift; sourceTree = "<group>"; };
 		A37AC344248EC57E0080E6B0 /* VAKitVAIdentifiableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAKitVAIdentifiableTests.swift; sourceTree = "<group>"; };
+		A37AC346248EC95F0080E6B0 /* TableSourceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSourceDelegate.swift; sourceTree = "<group>"; };
 		A38A1428248D540000E0D6C2 /* Configurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Configurable.swift; path = ../../VAKit/Generic/Configurable.swift; sourceTree = "<group>"; };
 		A38A142B248D554500E0D6C2 /* VAIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VAIdentifiable.swift; path = ../../VAKit/Generic/VAIdentifiable.swift; sourceTree = "<group>"; };
 		A38A142D248D561200E0D6C2 /* TableCellConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCellConfigurable.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				A38A1428248D540000E0D6C2 /* Configurable.swift */,
 				A38A142B248D554500E0D6C2 /* VAIdentifiable.swift */,
 				A38A142D248D561200E0D6C2 /* TableCellConfigurable.swift */,
+				A37AC346248EC95F0080E6B0 /* TableSourceDelegate.swift */,
 			);
 			name = Generic;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A37AC347248EC95F0080E6B0 /* TableSourceDelegate.swift in Sources */,
 				A38A1429248D540000E0D6C2 /* Configurable.swift in Sources */,
 				A3C73057248C0971003F7220 /* RootCoordinator.swift in Sources */,
 				A38A142C248D554500E0D6C2 /* VAIdentifiable.swift in Sources */,
