@@ -9,5 +9,7 @@
 import UIKit
 
 protocol TableCellConfigurable {
+    var cellClass: UITableViewCell.Type { get }
+    
     func configure(cell: UITableViewCell)
 }
