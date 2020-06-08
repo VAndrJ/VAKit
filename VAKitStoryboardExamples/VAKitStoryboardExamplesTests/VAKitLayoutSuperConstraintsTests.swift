@@ -270,6 +270,9 @@ class VAKitLayoutSuperConstraintsTests: XCTestCase {
         XCTAssertEqual(constant, -constraintTrailing.constant)
     }
     
+    func test_toSuperEdges_constraintPriorityDefault() {
+    }
+    
     // MARK: - Constraints to super view's axis
     
     // MARK: - Multiple constraints to super view
