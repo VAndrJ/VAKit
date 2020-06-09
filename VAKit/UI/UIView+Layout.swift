@@ -142,6 +142,11 @@ extension UIView {
     }
     
     @discardableResult
+    func toSuperAxis(_ axis: NSLayoutConstraint.Axis, symmetric: CGFloat, multiplier: CGFloat = 1, relation: NSLayoutConstraint.Relation = .equal, priority: Float = 1000, isSafe: Bool = false, isActive: Bool = true, device: VADevice = .unspecified, configuring: ((leadingOrTopConstraint: NSLayoutConstraint, trailingOrBottomConstraint: NSLayoutConstraint)) -> Void = { _ in }) -> Self {
+        return toSuperAxis(axis, insets: (symmetric, -symmetric), multiplier: multiplier, relation: relation, priority: priority, isSafe: isSafe, isActive: isActive, device: device, configuring: configuring)
+    }
+    
+    @discardableResult
     func toSuperAxis(_ axis: NSLayoutConstraint.Axis, insets: (leadingOrTop: CGFloat, trailingOrBottom: CGFloat) = (0, 0), multiplier: CGFloat = 1, relation: NSLayoutConstraint.Relation = .equal, priority: Float = 1000, isSafe: Bool = false, isActive: Bool = true, device: VADevice = .unspecified, configuring: ((leadingOrTopConstraint: NSLayoutConstraint, trailingOrBottomConstraint: NSLayoutConstraint)) -> Void = { _ in }) -> Self {
         assert(0...1000 ~= priority)
         assert(superview != nil)
