@@ -10,4 +10,15 @@ import UIKit
 
 extension UITableView {
     
+    func dequeueConfigured(withObject object: TableCellConfigurable & VAIdentifiable) -> UITableViewCell {
+        let tableCell: UITableViewCell
+        if let cell = dequeueReusableCell(withIdentifier: object.identifier) {
+            tableCell = cell
+        } else {
+            register(object.cellClass, forCellReuseIdentifier: object.identifier)
+            tableCell = dequeueReusableCell(withIdentifier: object.identifier)!
+        }
+        object.configure(cell: tableCell)
+        return tableCell
+    }
 }
