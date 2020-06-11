@@ -27,11 +27,15 @@ class VAViewController: UIViewController {
     private var cWcHConstraints: [NSLayoutConstraint] = []
     
     /*
-     Regular width, compact height
+     Regular width, compact height.
      Devices like large iPhone (XR / 11 Pro Max / etc.) in landscape mode.
      */
     private var rWcHConstraints: [NSLayoutConstraint] = []
-    /// Regular width, regular height
+    
+    /*
+     Regular width, regular height.
+     Devices like iPad.
+     */
     private var rWrHConstraints: [NSLayoutConstraint] = []
     
 }
