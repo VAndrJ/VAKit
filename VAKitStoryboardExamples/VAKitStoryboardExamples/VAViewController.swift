@@ -13,19 +13,25 @@ import UIKit
  */
 class VAViewController: UIViewController {
     
-    /* Compact width, regular height.
+    /*
+     Compact width, regular height.
      Devices like iPhone in portrait orientation
      or iPad split screen in portrait.
      */
     private var cWrHConstraints: [NSLayoutConstraint] = []
     
-    /* Compact width, compact height.
+    /*
+     Compact width, compact height.
      Devices like small iPhone (4 / 5 / 6 / etc.) in landscape mode.
      */
     private var cWcHConstraints: [NSLayoutConstraint] = []
-    /// Regular width, compact height
+    
+    /*
+     Regular width, compact height
+     Devices like large iPhone (XR / 11 Pro Max / etc.) in landscape mode.
+     */
     private var rWcHConstraints: [NSLayoutConstraint] = []
     /// Regular width, regular height
     private var rWrHConstraints: [NSLayoutConstraint] = []
-
+    
 }
