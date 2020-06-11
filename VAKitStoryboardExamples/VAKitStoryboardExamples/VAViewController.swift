@@ -9,7 +9,10 @@
 import UIKit
 
 class VAViewController: UIViewController {
-    /// Compact width, regular height
+    /* Compact width, regular height.
+     Devices like iPhone in portrait orientation
+     or iPad split screen in portrait.
+     */
     private var cWrHConstraints: [NSLayoutConstraint] = []
     /// Compact width, compact height
     private var cWcHConstraints: [NSLayoutConstraint] = []
