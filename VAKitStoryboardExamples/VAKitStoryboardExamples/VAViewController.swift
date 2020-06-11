@@ -8,6 +8,9 @@
 
 import UIKit
 
+/*
+ Controller for easy size class changes handle with VAKit constraints.
+ */
 class VAViewController: UIViewController {
     
     /* Compact width, regular height.
