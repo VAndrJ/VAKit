@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A30C91DD2461FE0700CCDF5E /* VAKitLayoutSubviewsAddTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30C91DC2461FE0700CCDF5E /* VAKitLayoutSubviewsAddTests.swift */; };
 		A321E2A724700BFD00173F6E /* VAKitLayoutDeviceIdentifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A321E2A624700BFD00173F6E /* VAKitLayoutDeviceIdentifierTests.swift */; };
+		A33E49EA2492C74E00E73CAB /* VAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33E49E92492C74E00E73CAB /* VAViewController.swift */; };
 		A346312A2479332F00B8902F /* VAKitLayoutSuperConstraintsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34631292479332F00B8902F /* VAKitLayoutSuperConstraintsTests.swift */; };
 		A346312C247933E500B8902F /* VAKitLayoutTestsSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A346312B247933E500B8902F /* VAKitLayoutTestsSupport.swift */; };
 		A34E00E4249028D900F64FAB /* RootTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34E00E3249028D900F64FAB /* RootTableCell.swift */; };
@@ -48,6 +49,7 @@
 		A30C91D62461FD5C00CCDF5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A30C91DC2461FE0700CCDF5E /* VAKitLayoutSubviewsAddTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAKitLayoutSubviewsAddTests.swift; sourceTree = "<group>"; };
 		A321E2A624700BFD00173F6E /* VAKitLayoutDeviceIdentifierTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAKitLayoutDeviceIdentifierTests.swift; sourceTree = "<group>"; };
+		A33E49E92492C74E00E73CAB /* VAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAViewController.swift; sourceTree = "<group>"; };
 		A34631292479332F00B8902F /* VAKitLayoutSuperConstraintsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAKitLayoutSuperConstraintsTests.swift; sourceTree = "<group>"; };
 		A346312B247933E500B8902F /* VAKitLayoutTestsSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAKitLayoutTestsSupport.swift; sourceTree = "<group>"; };
 		A34E00E3249028D900F64FAB /* RootTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTableCell.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 			children = (
 				A3F7665F24730F6300F54775 /* UIView+Layout.swift */,
 				A37AC348248ECC1C0080E6B0 /* UITableView+Dequeue.swift */,
+				A33E49E92492C74E00E73CAB /* VAViewController.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 				A37AC347248EC95F0080E6B0 /* TableSourceDelegate.swift in Sources */,
 				A38A1429248D540000E0D6C2 /* Configurable.swift in Sources */,
 				A3C73057248C0971003F7220 /* RootCoordinator.swift in Sources */,
+				A33E49EA2492C74E00E73CAB /* VAViewController.swift in Sources */,
 				A38A142C248D554500E0D6C2 /* VAIdentifiable.swift in Sources */,
 				A3F7666024730F6300F54775 /* UIView+Layout.swift in Sources */,
 				A34E00E4249028D900F64FAB /* RootTableCell.swift in Sources */,

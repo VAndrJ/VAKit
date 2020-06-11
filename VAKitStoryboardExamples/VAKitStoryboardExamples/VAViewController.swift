@@ -1,0 +1,9 @@
+//
+//  VAViewController.swift
+//  VAKitStoryboardExamples
+//
+//  Created by Vladimir Andrienko on 11.06.2020.
+//  Copyright © 2020 VAndrJ. All rights reserved.
+//
+
+import Foundation
