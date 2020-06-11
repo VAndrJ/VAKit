@@ -9,5 +9,9 @@
 import UIKit
 
 class VAViewController: UIViewController {
-    
+    private var cWrHConstraints: [NSLayoutConstraint] = []
+    private var cWcHConstraints: [NSLayoutConstraint] = []
+    private var rWcHConstraints: [NSLayoutConstraint] = []
+    private var rWrHConstraints: [NSLayoutConstraint] = []
+
 }
