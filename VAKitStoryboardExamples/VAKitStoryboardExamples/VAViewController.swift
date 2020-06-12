@@ -42,4 +42,7 @@ class VAViewController: UIViewController {
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
     }
+    
+    private func updateConstraints(for traitCollection: UITraitCollection) {
+    }
 }
