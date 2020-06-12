@@ -408,6 +408,9 @@ class VAKitLayoutSuperConstraintsTests: XCTestCase {
         XCTAssertTrue(constraintTrailing.constant.isZero)
     }
     
+    func test_toSuperAxis_vertical_constraintConstantDefault() {
+    }
+    
     // MARK: - Constraints to super view's axis wrapper
     
     // MARK: - Multiple constraints to super view
