@@ -50,5 +50,10 @@ class VAViewController: UIViewController {
         func activate(constraints: [NSLayoutConstraint]) {
             NSLayoutConstraint.activate(constraints)
         }
+        switch (traitCollection.horizontalSizeClass, traitCollection.verticalSizeClass) {
+        default:
+            deactivate(constraints: cWcHConstraints, rWcHConstraints, rWrHConstraints)
+            activate(constraints: cWrHConstraints)
+        }
     }
 }
