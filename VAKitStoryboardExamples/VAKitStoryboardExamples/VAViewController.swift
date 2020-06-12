@@ -47,5 +47,8 @@ class VAViewController: UIViewController {
         func deactivate(constraints: [NSLayoutConstraint]...) {
             constraints.forEach(NSLayoutConstraint.deactivate)
         }
+        func activate(constraints: [NSLayoutConstraint]) {
+            NSLayoutConstraint.activate(constraints)
+        }
     }
 }
