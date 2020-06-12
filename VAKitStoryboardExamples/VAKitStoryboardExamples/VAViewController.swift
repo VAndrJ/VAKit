@@ -44,5 +44,8 @@ class VAViewController: UIViewController {
     }
     
     private func updateConstraints(for traitCollection: UITraitCollection) {
+        func deactivate(constraints: [NSLayoutConstraint]...) {
+            constraints.forEach(NSLayoutConstraint.deactivate)
+        }
     }
 }
