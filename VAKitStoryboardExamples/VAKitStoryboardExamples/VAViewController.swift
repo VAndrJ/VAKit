@@ -54,6 +54,9 @@ class VAViewController: UIViewController {
             NSLayoutConstraint.activate(constraints)
         }
         switch (traitCollection.horizontalSizeClass, traitCollection.verticalSizeClass) {
+        case (.compact, .compact):
+            deactivate(constraints: cWrHConstraints, rWrHConstraints, rWcHUniqueConstraints)
+            activate(constraints: cWcHConstraints)
         case (.regular, .compact):
             deactivate(constraints: rWrHConstraints, cWrHConstraints, cWcHUniqueConstraints)
             activate(constraints: rWcHConstraints)
