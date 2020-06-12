@@ -38,4 +38,8 @@ class VAViewController: UIViewController {
      */
     private var rWrHConstraints: [NSLayoutConstraint] = []
     
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+    }
 }
