@@ -41,7 +41,12 @@ class VAViewController: UIViewController {
     private lazy var rWcHUniqueConstraints: [NSLayoutConstraint] = Array(Set(rWcHConstraints).subtracting(cWcHConstraints))
     private lazy var cWcHUniqueConstraints: [NSLayoutConstraint] = Array(Set(cWcHConstraints).subtracting(rWcHConstraints))
     
-    
+    override func viewDidLoad() {
+        saveSortedConstraints(from: view)
+        updateConstraints(for: traitCollection)
+        super.viewDidLoad()
+    }
+
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         guard previousTraitCollection?.horizontalSizeClass != traitCollection.horizontalSizeClass ||
