@@ -49,6 +49,9 @@ class VAViewController: UIViewController {
         updateConstraints(for: traitCollection)
     }
     
+    private func saveSortedConstraints(from view: UIView) {
+    }
+    
     private func updateConstraints(for traitCollection: UITraitCollection) {
         func deactivate(constraints: [NSLayoutConstraint]...) {
             constraints.forEach(NSLayoutConstraint.deactivate)
