@@ -67,6 +67,7 @@ class VAViewController: UIViewController {
                 break
             }
         })
+        view.subviews.forEach(saveSortedConstraints(from:))
     }
     
     private func updateConstraints(for traitCollection: UITraitCollection) {
