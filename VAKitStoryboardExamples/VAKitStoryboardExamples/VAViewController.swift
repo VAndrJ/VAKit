@@ -50,6 +50,23 @@ class VAViewController: UIViewController {
     }
     
     private func saveSortedConstraints(from view: UIView) {
+        view.constraints.forEach({ constraint in
+            switch constraint.identifier {
+            case UIView.VADevice.iPhonePortrait.rawValue, UIView.VADevice.iPadSplitPortrait.rawValue:
+                cWrHConstraints.append(constraint)
+            case UIView.VADevice.iPhoneLandscape.rawValue:
+                cWcHConstraints.append(constraint)
+                rWcHConstraints.append(constraint)
+            case UIView.VADevice.iPhoneLargeLandscape.rawValue:
+                rWcHConstraints.append(constraint)
+            case UIView.VADevice.iPhoneSmallLandscape.rawValue:
+                cWcHConstraints.append(constraint)
+            case UIView.VADevice.iPad.rawValue:
+                rWrHConstraints.append(constraint)
+            default:
+                break
+            }
+        })
     }
     
     private func updateConstraints(for traitCollection: UITraitCollection) {
