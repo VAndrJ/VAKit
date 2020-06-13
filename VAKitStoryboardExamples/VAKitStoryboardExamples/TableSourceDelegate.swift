@@ -8,7 +8,7 @@
 
 import UIKit
 
-/**
+/*
  Угу, нарушение ваших SRP, но удобный в использовании костыль для простейших случаев.
  */
 class TableSourceDelegate: NSObject {
@@ -24,6 +24,7 @@ class TableSourceDelegate: NSObject {
         tableView.estimatedRowHeight = 52
         tableView.rowHeight = UITableView.automaticDimension
         tableView.dataSource = self
+        tableView.delegate = self
     }
     
     func update(data: [TableCellConfigurable & VAIdentifiable]) {
@@ -40,5 +41,11 @@ extension TableSourceDelegate: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return tableView.dequeueConfigured(withObject: tableData[indexPath.row])
+    }
+}
+
+extension TableSourceDelegate: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     }
 }
