@@ -14,9 +14,11 @@ import UIKit
 class TableSourceDelegate: NSObject {
     private(set) var tableData: [TableCellConfigurable & VAIdentifiable] = []
     private weak var tableView: UITableView?
+    private let onSelectRow: ((IndexPath) -> Void)?
     
-    init(tableView: UITableView, tableData: [TableCellConfigurable & VAIdentifiable]? = nil) {
+    init(tableView: UITableView, tableData: [TableCellConfigurable & VAIdentifiable]? = nil, onSelectRow: ((IndexPath) -> Void)?) {
         self.tableView = tableView
+        self.onSelectRow = onSelectRow
         if let tableData = tableData {
             self.tableData = tableData
         }
@@ -47,5 +49,6 @@ extension TableSourceDelegate: UITableViewDataSource {
 extension TableSourceDelegate: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        onSelectRow?(indexPath)
     }
 }
