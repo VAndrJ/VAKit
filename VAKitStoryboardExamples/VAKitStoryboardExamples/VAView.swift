@@ -6,4 +6,7 @@
 //  Copyright © 2020 VAndrJ. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class VAView: UIView {
+}
