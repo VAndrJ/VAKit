@@ -466,6 +466,13 @@ class VAKitLayoutSuperConstraintsTests: XCTestCase {
     }
     
     func test_toSuperAxis_vartical_constraintPriority() {
+        let priority: Float = 999
+        var constraintTop: NSLayoutConstraint!
+        var constraintBottom: NSLayoutConstraint!
+        parentView.addAutolayoutSubview(view)
+        view.toSuperAxis(.vertical, priority: priority, configuring: { (constraintTop, constraintBottom) = $0 })
+        constraintPriorityCheck(constraint: constraintTop, priority: priority)
+        constraintPriorityCheck(constraint: constraintBottom, priority: priority)
     }
     
     // MARK: - Constraints to super view's axis wrapper
