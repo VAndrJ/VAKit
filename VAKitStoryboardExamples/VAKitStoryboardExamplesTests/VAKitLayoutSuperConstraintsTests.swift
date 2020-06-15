@@ -465,6 +465,9 @@ class VAKitLayoutSuperConstraintsTests: XCTestCase {
         constraintPriorityCheck(constraint: constraintTrailing, priority: priority)
     }
     
+    func test_toSuperAxis_vartical_constraintPriority() {
+    }
+    
     // MARK: - Constraints to super view's axis wrapper
     
     // MARK: - Multiple constraints to super view
