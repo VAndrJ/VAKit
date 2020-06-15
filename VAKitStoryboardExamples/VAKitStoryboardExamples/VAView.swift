@@ -22,6 +22,11 @@ open class VAView: UIView {
      Devices like small iPhone (4 / 5 / 6 / etc.) in landscape mode.
      */
     private var cWcHConstraints: [NSLayoutConstraint] = []
+    
+    /*
+     Regular width, compact height.
+     Devices like large iPhone (XR / 11 Pro Max / etc.) in landscape mode.
+     */
     private var rWcHConstraints: [NSLayoutConstraint] = []
     private var rWrHConstraints: [NSLayoutConstraint] = []
     
