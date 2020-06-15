@@ -9,4 +9,8 @@
 import UIKit
 
 class VAView: UIView {
+    private var cWrHConstraints: [NSLayoutConstraint] = []
+    private var cWcHConstraints: [NSLayoutConstraint] = []
+    private var rWcHConstraints: [NSLayoutConstraint] = []
+    private var rWrHConstraints: [NSLayoutConstraint] = []
 }
