@@ -13,4 +13,7 @@ class VAView: UIView {
     private var cWcHConstraints: [NSLayoutConstraint] = []
     private var rWcHConstraints: [NSLayoutConstraint] = []
     private var rWrHConstraints: [NSLayoutConstraint] = []
+    
+    private lazy var rWcHUniqueConstraints: [NSLayoutConstraint] = Array(Set(rWcHConstraints).subtracting(cWcHConstraints))
+    private lazy var cWcHUniqueConstraints: [NSLayoutConstraint] = Array(Set(cWcHConstraints).subtracting(rWcHConstraints))
 }
