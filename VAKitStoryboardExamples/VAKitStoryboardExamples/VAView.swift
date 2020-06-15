@@ -16,6 +16,11 @@ open class VAView: UIView {
      or iPad split screen in portrait.
      */
     private var cWrHConstraints: [NSLayoutConstraint] = []
+    
+    /*
+     Compact width, compact height.
+     Devices like small iPhone (4 / 5 / 6 / etc.) in landscape mode.
+     */
     private var cWcHConstraints: [NSLayoutConstraint] = []
     private var rWcHConstraints: [NSLayoutConstraint] = []
     private var rWrHConstraints: [NSLayoutConstraint] = []
