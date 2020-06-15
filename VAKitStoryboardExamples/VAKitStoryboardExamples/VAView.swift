@@ -39,8 +39,11 @@ open class VAView: UIView {
     private lazy var cWcHUniqueConstraints: [NSLayoutConstraint] = Array(Set(cWcHConstraints).subtracting(rWcHConstraints))
     
     open func addElements() {
+    }
     
     private func saveConstraintsOf(view: UIView) {
     }
+    
+    private func updateConstraints(for traitCollection: UITraitCollection) {
     }
 }
