@@ -39,4 +39,9 @@ protocol VAConstraintable {
      Unique constraints for large iPhones landscape mode.
      */
     var rWcHUniqueConstraints: [NSLayoutConstraint] { get set }
+    
+    /*
+     Unique constraints for small iPhones landscape mode.
+     */
+    var cWcHUniqueConstraints: [NSLayoutConstraint] { get set }
 }

@@ -17,8 +17,8 @@ open class VAView: UIView, VAConstraintable {
     var rWcHConstraints: [NSLayoutConstraint] = []
     var rWrHConstraints: [NSLayoutConstraint] = []
     
-    private lazy var cWcHUniqueConstraints: [NSLayoutConstraint] = Array(Set(cWcHConstraints).subtracting(rWcHConstraints))
     var rWcHUniqueConstraints: [NSLayoutConstraint] = []
+    var cWcHUniqueConstraints: [NSLayoutConstraint] = []
     
     open func addElements() {
     }

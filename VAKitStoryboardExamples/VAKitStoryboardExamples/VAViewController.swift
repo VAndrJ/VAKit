@@ -17,12 +17,13 @@ class VAViewController: UIViewController, VAConstraintable {
     var rWcHConstraints: [NSLayoutConstraint] = []
     var rWrHConstraints: [NSLayoutConstraint] = []
     
-    private lazy var cWcHUniqueConstraints: [NSLayoutConstraint] = Array(Set(cWcHConstraints).subtracting(rWcHConstraints))
     var rWcHUniqueConstraints: [NSLayoutConstraint] = []
+    var cWcHUniqueConstraints: [NSLayoutConstraint] = []
     
     override func viewDidLoad() {
         saveSortedConstraints(from: view)
         rWcHUniqueConstraints = Array(Set(rWcHConstraints).subtracting(cWcHConstraints))
+        cWcHUniqueConstraints = Array(Set(cWcHConstraints).subtracting(rWcHConstraints))
         updateConstraints(for: traitCollection)
         super.viewDidLoad()
     }
