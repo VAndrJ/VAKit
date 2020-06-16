@@ -28,4 +28,10 @@ protocol VAConstraintable {
      Devices like large iPhone (XR / 11 Pro Max / etc.) in landscape mode.
      */
     var rWcHConstraints: [NSLayoutConstraint] { get set }
+    
+    /*
+     Regular width, regular height.
+     Devices like iPad.
+     */
+    var rWrHConstraints: [NSLayoutConstraint] { get set }
 }
