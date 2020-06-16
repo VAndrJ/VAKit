@@ -8,6 +8,9 @@
 
 import UIKit
 
+/*
+ View for easy size class changes handle with VAKit constraints.
+ */
 open class VAView: UIView, VAConstraintable {
     var cWrHConstraints: [NSLayoutConstraint] = []
     
