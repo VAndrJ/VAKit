@@ -33,28 +33,4 @@ class VAViewController: UIViewController, VAConstraintable {
         guard previousTraitCollection?.horizontalSizeClass != traitCollection.horizontalSizeClass ||
             previousTraitCollection?.verticalSizeClass != traitCollection.verticalSizeClass else { return }
         updateConstraints(for: traitCollection)
-    }
-    
-    private func updateConstraints(for traitCollection: UITraitCollection) {
-        func deactivate(constraints: [NSLayoutConstraint]...) {
-            constraints.forEach(NSLayoutConstraint.deactivate)
-        }
-        func activate(constraints: [NSLayoutConstraint]) {
-            NSLayoutConstraint.activate(constraints)
-        }
-        switch (traitCollection.horizontalSizeClass, traitCollection.verticalSizeClass) {
-        case (.compact, .compact):
-            deactivate(constraints: cWrHConstraints, rWrHConstraints, rWcHUniqueConstraints)
-            activate(constraints: cWcHConstraints)
-        case (.regular, .compact):
-            deactivate(constraints: rWrHConstraints, cWrHConstraints, cWcHUniqueConstraints)
-            activate(constraints: rWcHConstraints)
-        case (.regular, .regular):
-            deactivate(constraints: rWcHConstraints, cWcHConstraints, cWrHConstraints)
-            activate(constraints: rWrHConstraints)
-        default:
-            deactivate(constraints: cWcHConstraints, rWcHConstraints, rWrHConstraints)
-            activate(constraints: cWrHConstraints)
-        }
-    }
 }

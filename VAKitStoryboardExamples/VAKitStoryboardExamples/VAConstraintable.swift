@@ -48,6 +48,10 @@ protocol VAConstraintable: AnyObject {
     /// Function to save constraints from views to prepared arrays
     /// - Parameter view: view to save constraints from
     func saveSortedConstraintsOf(view: UIView)
+    
+    /// Function to update constraints for new trait collection
+    /// - Parameter traitCollection: UITraitCollection
+    func updateConstraints(for traitCollection: UITraitCollection)
 }
 
 extension VAConstraintable {
@@ -71,5 +75,28 @@ extension VAConstraintable {
             }
         })
         view.subviews.forEach(saveSortedConstraintsOf(view:))
+    }
+    
+    func updateConstraints(for traitCollection: UITraitCollection) {
+        func deactivate(constraints: [NSLayoutConstraint]...) {
+            constraints.forEach(NSLayoutConstraint.deactivate)
+        }
+        func activate(constraints: [NSLayoutConstraint]) {
+            NSLayoutConstraint.activate(constraints)
+        }
+        switch (traitCollection.horizontalSizeClass, traitCollection.verticalSizeClass) {
+        case (.compact, .compact):
+            deactivate(constraints: cWrHConstraints, rWrHConstraints, rWcHUniqueConstraints)
+            activate(constraints: cWcHConstraints)
+        case (.regular, .compact):
+            deactivate(constraints: rWrHConstraints, cWrHConstraints, cWcHUniqueConstraints)
+            activate(constraints: rWcHConstraints)
+        case (.regular, .regular):
+            deactivate(constraints: rWcHConstraints, cWcHConstraints, cWrHConstraints)
+            activate(constraints: rWrHConstraints)
+        default:
+            deactivate(constraints: cWcHConstraints, rWcHConstraints, rWrHConstraints)
+            activate(constraints: cWrHConstraints)
+        }
     }
 }
