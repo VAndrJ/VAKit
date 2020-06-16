@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol VAConstraintable {
+protocol VAConstraintable: AnyObject {
     
     /*
      Compact width, regular height.
@@ -44,4 +44,32 @@ protocol VAConstraintable {
      Unique constraints for small iPhones landscape mode.
      */
     var cWcHUniqueConstraints: [NSLayoutConstraint] { get set }
+    
+    /// Function to save constraints from views to prepared arrays
+    /// - Parameter view: view to save constraints from
+    func saveSortedConstraintsOf(view: UIView)
+}
+
+extension VAConstraintable {
+    
+    func saveSortedConstraintsOf(view: UIView) {
+        view.constraints.forEach({ constraint in
+            switch constraint.identifier {
+            case UIView.VADevice.iPhonePortrait.rawValue, UIView.VADevice.iPadSplitPortrait.rawValue:
+                cWrHConstraints.append(constraint)
+            case UIView.VADevice.iPhoneLandscape.rawValue:
+                cWcHConstraints.append(constraint)
+                rWcHConstraints.append(constraint)
+            case UIView.VADevice.iPhoneLargeLandscape.rawValue:
+                rWcHConstraints.append(constraint)
+            case UIView.VADevice.iPhoneSmallLandscape.rawValue:
+                cWcHConstraints.append(constraint)
+            case UIView.VADevice.iPad.rawValue:
+                rWrHConstraints.append(constraint)
+            default:
+                break
+            }
+        })
+        view.subviews.forEach(saveSortedConstraintsOf(view:))
+    }
 }

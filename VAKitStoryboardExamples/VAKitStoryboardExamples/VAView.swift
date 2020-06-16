@@ -23,7 +23,6 @@ open class VAView: UIView, VAConstraintable {
     open func addElements() {
     }
     
-    private func saveConstraintsOf(view: UIView) {
     }
     
     private func updateConstraints(for traitCollection: UITraitCollection) {

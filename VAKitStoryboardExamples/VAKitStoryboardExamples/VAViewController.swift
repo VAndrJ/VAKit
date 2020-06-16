@@ -21,7 +21,7 @@ class VAViewController: UIViewController, VAConstraintable {
     var cWcHUniqueConstraints: [NSLayoutConstraint] = []
     
     override func viewDidLoad() {
-        saveSortedConstraints(from: view)
+        saveSortedConstraintsOf(view: view)
         rWcHUniqueConstraints = Array(Set(rWcHConstraints).subtracting(cWcHConstraints))
         cWcHUniqueConstraints = Array(Set(cWcHConstraints).subtracting(rWcHConstraints))
         updateConstraints(for: traitCollection)
@@ -33,27 +33,6 @@ class VAViewController: UIViewController, VAConstraintable {
         guard previousTraitCollection?.horizontalSizeClass != traitCollection.horizontalSizeClass ||
             previousTraitCollection?.verticalSizeClass != traitCollection.verticalSizeClass else { return }
         updateConstraints(for: traitCollection)
-    }
-    
-    private func saveSortedConstraints(from view: UIView) {
-        view.constraints.forEach({ constraint in
-            switch constraint.identifier {
-            case UIView.VADevice.iPhonePortrait.rawValue, UIView.VADevice.iPadSplitPortrait.rawValue:
-                cWrHConstraints.append(constraint)
-            case UIView.VADevice.iPhoneLandscape.rawValue:
-                cWcHConstraints.append(constraint)
-                rWcHConstraints.append(constraint)
-            case UIView.VADevice.iPhoneLargeLandscape.rawValue:
-                rWcHConstraints.append(constraint)
-            case UIView.VADevice.iPhoneSmallLandscape.rawValue:
-                cWcHConstraints.append(constraint)
-            case UIView.VADevice.iPad.rawValue:
-                rWrHConstraints.append(constraint)
-            default:
-                break
-            }
-        })
-        view.subviews.forEach(saveSortedConstraints(from:))
     }
     
     private func updateConstraints(for traitCollection: UITraitCollection) {
