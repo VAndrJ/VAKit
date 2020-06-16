@@ -476,6 +476,12 @@ class VAKitLayoutSuperConstraintsTests: XCTestCase {
     }
     
     func test_toSuperAxis_horizontal_constraintRelationDefault() {
+        var constraintLeading: NSLayoutConstraint!
+        var constraintTrailing: NSLayoutConstraint!
+        parentView.addAutolayoutSubview(view)
+        view.toSuperAxis(.horizontal, configuring: { (constraintLeading, constraintTrailing) = $0 })
+        XCTAssertEqual(NSLayoutConstraint.Relation.equal, constraintLeading.relation)
+        XCTAssertEqual(NSLayoutConstraint.Relation.equal, constraintTrailing.relation)
     }
     
     // MARK: - Constraints to super view's axis wrapper
