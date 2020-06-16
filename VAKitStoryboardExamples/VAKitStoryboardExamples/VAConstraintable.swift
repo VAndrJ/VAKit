@@ -34,4 +34,9 @@ protocol VAConstraintable {
      Devices like iPad.
      */
     var rWrHConstraints: [NSLayoutConstraint] { get set }
+    
+    /*
+     Unique constraints for large iPhones landscape mode.
+     */
+    var rWcHUniqueConstraints: [NSLayoutConstraint] { get set }
 }
