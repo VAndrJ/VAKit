@@ -17,4 +17,9 @@ protocol VAConstraintable {
      */
     var cWrHConstraints: [NSLayoutConstraint] { get set }
     
+    /*
+     Compact width, compact height.
+     Devices like small iPhone (4 / 5 / 6 / etc.) in landscape mode.
+     */
+    var cWcHConstraints: [NSLayoutConstraint] { get set }
 }
