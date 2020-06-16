@@ -11,14 +11,8 @@ import UIKit
 /*
  Controller for easy size class changes handle with VAKit constraints.
  */
-class VAViewController: UIViewController {
-    
-    /*
-     Compact width, regular height.
-     Devices like iPhone in portrait orientation
-     or iPad split screen in portrait.
-     */
-    private var cWrHConstraints: [NSLayoutConstraint] = []
+class VAViewController: UIViewController, VAConstraintable {
+    var cWrHConstraints: [NSLayoutConstraint] = []
     
     /*
      Compact width, compact height.

@@ -8,14 +8,8 @@
 
 import UIKit
 
-open class VAView: UIView {
-    
-    /*
-     Compact width, regular height.
-     Devices like iPhone in portrait orientation
-     or iPad split screen in portrait.
-     */
-    private var cWrHConstraints: [NSLayoutConstraint] = []
+open class VAView: UIView, VAConstraintable {
+    var cWrHConstraints: [NSLayoutConstraint] = []
     
     /*
      Compact width, compact height.
