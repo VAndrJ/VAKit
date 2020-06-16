@@ -14,12 +14,7 @@ import UIKit
 open class VAView: UIView, VAConstraintable {
     var cWrHConstraints: [NSLayoutConstraint] = []
     var cWcHConstraints: [NSLayoutConstraint] = []
-    
-    /*
-     Regular width, compact height.
-     Devices like large iPhone (XR / 11 Pro Max / etc.) in landscape mode.
-     */
-    private var rWcHConstraints: [NSLayoutConstraint] = []
+    var rWcHConstraints: [NSLayoutConstraint] = []
     
     /*
      Regular width, regular height.
