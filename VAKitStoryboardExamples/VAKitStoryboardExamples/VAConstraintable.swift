@@ -52,6 +52,9 @@ protocol VAConstraintable: AnyObject {
     /// Function to update constraints for new trait collection
     /// - Parameter traitCollection: UITraitCollection
     func updateConstraints(for traitCollection: UITraitCollection)
+    
+    /// Helper function to save constraints from views to arrays
+    func saveSortedConstraints()
 }
 
 extension VAConstraintable {
