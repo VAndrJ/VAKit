@@ -21,6 +21,7 @@ open class VAView: UIView, VAConstraintable {
     var cWcHUniqueConstraints: [NSLayoutConstraint] = []
     
     open func addElements() {
+        saveSortedConstraints()
     }
     
 }
