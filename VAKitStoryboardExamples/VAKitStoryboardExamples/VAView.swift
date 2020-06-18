@@ -27,5 +27,8 @@ open class VAView: UIView, VAConstraintable {
     
     open override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
+        guard previousTraitCollection?.horizontalSizeClass != traitCollection.horizontalSizeClass ||
+            previousTraitCollection?.verticalSizeClass != traitCollection.verticalSizeClass else { return }
+        updateConstraints(for: traitCollection)
     }
 }
