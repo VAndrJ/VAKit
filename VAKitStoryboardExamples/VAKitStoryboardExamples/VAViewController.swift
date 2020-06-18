@@ -20,11 +20,8 @@ public class VAViewController: UIViewController, VAConstraintable {
     var rWcHUniqueConstraints: [NSLayoutConstraint] = []
     var cWcHUniqueConstraints: [NSLayoutConstraint] = []
     
-    override func viewDidLoad() {
-        saveSortedConstraintsOf(view: view)
-        rWcHUniqueConstraints = Array(Set(rWcHConstraints).subtracting(cWcHConstraints))
-        cWcHUniqueConstraints = Array(Set(cWcHConstraints).subtracting(rWcHConstraints))
-        updateConstraints(for: traitCollection)
+    public override func viewDidLoad() {
+        saveSortedConstraints()
         super.viewDidLoad()
     }
 
