@@ -20,6 +20,7 @@ open class VAView: UIView, VAConstraintable {
     var rWcHUniqueConstraints: [NSLayoutConstraint] = []
     var cWcHUniqueConstraints: [NSLayoutConstraint] = []
     
+    /// Override this function to add elements and then call super.addElements()
     open func addElements() {
         saveSortedConstraints()
     }
