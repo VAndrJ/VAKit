@@ -113,3 +113,13 @@ extension VAConstraintable where Self: UIView {
         updateConstraints(for: traitCollection)
     }
 }
+
+extension VAConstraintable where Self: UIViewController {
+    
+    func saveSortedConstraints() {
+        saveSortedConstraintsOf(view: view)
+        rWcHUniqueConstraints = Array(Set(rWcHConstraints).subtracting(cWcHConstraints))
+        cWcHUniqueConstraints = Array(Set(cWcHConstraints).subtracting(rWcHConstraints))
+        updateConstraints(for: traitCollection)
+    }
+}
