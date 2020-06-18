@@ -11,7 +11,7 @@ import UIKit
 /*
  Controller for easy size class changes handle with VAKit constraints.
  */
-class VAViewController: UIViewController, VAConstraintable {
+public class VAViewController: UIViewController, VAConstraintable {
     var cWrHConstraints: [NSLayoutConstraint] = []
     var cWcHConstraints: [NSLayoutConstraint] = []
     var rWcHConstraints: [NSLayoutConstraint] = []
