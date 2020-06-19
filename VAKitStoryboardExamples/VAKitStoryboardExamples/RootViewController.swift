@@ -12,11 +12,12 @@ protocol MainCoordinatorDelegate {
     
 }
 
-struct RootViewControllerConfigurator {
+struct MainViewControllerConfigurator {
     let controller: UIViewController
     
-    init() {
-        self.controller = RootViewController(contentView: RootView())
+    init(coordinator: RootCoordinator) {
+        let viewModel = RootViewModel(coordinator: coordinator)
+        self.controller = RootViewController(contentsView: RootView(), viewModel: viewModel)
     }
 }
 
