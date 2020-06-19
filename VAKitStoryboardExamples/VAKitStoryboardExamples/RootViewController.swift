@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol MainCoordinatorDelegate {
+    
+}
+
 struct RootViewControllerConfigurator {
     let controller: UIViewController
     
