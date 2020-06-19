@@ -20,7 +20,10 @@ class RootCoordinator {
     }
     
     private func getRootControllers() -> [UIViewController] {
-        return [RootViewControllerConfigurator().controller]
+        return [MainViewControllerConfigurator(coordinator: self).controller]
     }
 }
 
+extension RootCoordinator: MainCoordinatorDelegate {
+    
+}

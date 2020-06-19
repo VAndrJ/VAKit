@@ -8,7 +8,11 @@
 
 import UIKit
 
-protocol MainCoordinatorDelegate {
+protocol MainCoordinatorDelegate: AnyObject {
+    
+}
+
+protocol MainViewModelProtocol {
     
 }
 
@@ -16,7 +20,7 @@ struct MainViewControllerConfigurator {
     let controller: UIViewController
     
     init(coordinator: RootCoordinator) {
-        let viewModel = RootViewModel(coordinator: coordinator)
+        let viewModel = MainViewModel(coordinator: coordinator)
         self.controller = RootViewController(contentsView: RootView(), viewModel: viewModel)
     }
 }
@@ -49,10 +53,12 @@ class RootView: UIView {
 }
 
 class RootViewController: UIViewController {
-    let contentView: RootView
+    let contentsView: RootView
+    let viewModel: MainViewModelProtocol
     
-    init(contentView: RootView) {
-        self.contentView = contentView
+    init(contentsView: RootView, viewModel: MainViewModelProtocol) {
+        self.contentsView = contentsView
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
     required init?(coder: NSCoder) {
@@ -60,6 +66,14 @@ class RootViewController: UIViewController {
     }
     
     override func loadView() {
-        view = contentView
+        view = contentsView
+    }
+}
+
+class MainViewModel: MainViewModelProtocol {
+    unowned let coordinator: MainCoordinatorDelegate
+    
+    init(coordinator: MainCoordinatorDelegate) {
+        self.coordinator = coordinator
     }
 }
