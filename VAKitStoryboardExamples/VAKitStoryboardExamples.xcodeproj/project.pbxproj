@@ -198,7 +198,6 @@
 			isa = PBXGroup;
 			children = (
 				A34E00E12490287000F64FAB /* TableCells */,
-				A39E121E245DEFB2005AA87C /* AppDelegate.swift */,
 				A39E1222245DEFB2005AA87C /* RootViewController.swift */,
 				A34DB93C24940C11009D342C /* IPhoneAnySizeDifferentPortraitLandscapeSize.swift */,
 				A3C73056248C0971003F7220 /* RootCoordinator.swift */,
@@ -211,6 +210,7 @@
 		A3C73055248C0809003F7220 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A39E121E245DEFB2005AA87C /* AppDelegate.swift */,
 				A39E1227245DEFB6005AA87C /* Assets.xcassets */,
 				A39E1229245DEFB6005AA87C /* LaunchScreen.storyboard */,
 				A39E122C245DEFB6005AA87C /* Info.plist */,
