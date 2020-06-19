@@ -140,6 +140,14 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		A373E9AF249D34D2002502EF /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				A3C73056248C0971003F7220 /* RootCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
 		A37AC33D248EC4E80080E6B0 /* VAKitUI */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,7 +202,7 @@
 		A39E121D245DEFB2005AA87C /* VAKitStoryboardExamples */ = {
 			isa = PBXGroup;
 			children = (
-				A3C73056248C0971003F7220 /* RootCoordinator.swift */,
+				A373E9AF249D34D2002502EF /* Coordinators */,
 				A373E9AE249D34A5002502EF /* Controllers */,
 				A34E00E12490287000F64FAB /* TableCells */,
 				A34DB93C24940C11009D342C /* IPhoneAnySizeDifferentPortraitLandscapeSize.swift */,
