@@ -1,5 +1,5 @@
 //
-//  RootViewController.swift
+//  MainViewController.swift
 //  VAKitStoryboardExamples
 //
 //  Created by VAndrJ on 02.05.2020.
@@ -19,13 +19,13 @@ protocol MainViewModelProtocol {
 struct MainViewControllerConfigurator {
     let controller: UIViewController
     
-    init(coordinator: RootCoordinator) {
+    init(coordinator: MainCoordinatorDelegate) {
         let viewModel = MainViewModel(coordinator: coordinator)
-        self.controller = RootViewController(contentsView: RootView(), viewModel: viewModel)
+        self.controller = MainViewController(contentsView: MainView(), viewModel: viewModel)
     }
 }
 
-class RootView: UIView {
+class MainView: UIView {
     let tableView = UITableView()
     let someForFunButton = UIButton(type: .system).configured {
         $0.setTitle("Some Button title", for: .normal)
@@ -52,11 +52,11 @@ class RootView: UIView {
     }
 }
 
-class RootViewController: UIViewController {
-    let contentsView: RootView
+class MainViewController: UIViewController {
+    let contentsView: MainView
     let viewModel: MainViewModelProtocol
     
-    init(contentsView: RootView, viewModel: MainViewModelProtocol) {
+    init(contentsView: MainView, viewModel: MainViewModelProtocol) {
         self.contentsView = contentsView
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
