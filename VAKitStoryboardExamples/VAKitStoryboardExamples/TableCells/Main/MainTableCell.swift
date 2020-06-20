@@ -9,5 +9,25 @@
 import UIKit
 
 class MainTableCell: UITableViewCell {
+    let titleLabel = UILabel().configured {
+        $0.numberOfLines = 0
+        $0.font = UIFont.boldSystemFont(ofSize: 18)
+    }
+    let descriptionLabel = UILabel().configured {
+        $0.numberOfLines = 0
+        $0.font = UIFont.systemFont(ofSize: 16, weight: .light)
+    }
     
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        addElements()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func addElements() {
+        
+    }
 }
