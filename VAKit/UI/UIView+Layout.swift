@@ -128,7 +128,7 @@ extension UIView {
         let topConstraint = NSLayoutConstraint(item: self, attribute: .top, relatedBy: relation, toItem: isSafe ? superview?.safeAreaLayoutGuide : superview, attribute: .top, multiplier: multiplier, constant: insets.top)
         let leadingConstraint = NSLayoutConstraint(item: self, attribute: .leading, relatedBy: relation, toItem: isSafe ? superview?.safeAreaLayoutGuide : superview, attribute: .leading, multiplier: multiplier, constant: insets.leading)
         let bottomConstraint = NSLayoutConstraint(item: self, attribute: .bottom, relatedBy: relation, toItem: isSafe ? superview?.safeAreaLayoutGuide : superview, attribute: .bottom, multiplier: multiplier, constant: -insets.bottom)
-        let trailingConstraint = NSLayoutConstraint(item: self, attribute: .leading, relatedBy: relation, toItem: isSafe ? superview?.safeAreaLayoutGuide : superview, attribute: .leading, multiplier: multiplier, constant: -insets.trailing)
+        let trailingConstraint = NSLayoutConstraint(item: self, attribute: .trailing, relatedBy: relation, toItem: isSafe ? superview?.safeAreaLayoutGuide : superview, attribute: .trailing, multiplier: multiplier, constant: -insets.trailing)
         let constraints: [NSLayoutConstraint] = [topConstraint, leadingConstraint, bottomConstraint, trailingConstraint]
         constraints.forEach { (constraint: NSLayoutConstraint) in
             constraint.priority = UILayoutPriority(rawValue: priority)
