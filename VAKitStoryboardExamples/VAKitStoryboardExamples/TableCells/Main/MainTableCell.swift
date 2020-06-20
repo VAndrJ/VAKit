@@ -28,6 +28,13 @@ class MainTableCell: UITableViewCell {
     }
     
     func addElements() {
-        
+        contentView.addAutolayoutSubviews(titleLabel, descriptionLabel)
+        titleLabel
+            .toSuperAxis(.horizontal, symmetric: 16)
+            .toSuper(.top, constant: 16)
+        descriptionLabel
+            .toSuperAxis(.horizontal, symmetric: 16)
+            .toSuper(.bottom, constant: -16)
+            .anchor(.top, opposingTo: titleLabel, constant: 8)
     }
 }
