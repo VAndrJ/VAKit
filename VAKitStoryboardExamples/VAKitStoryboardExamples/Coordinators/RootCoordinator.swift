@@ -8,8 +8,9 @@
 
 import UIKit
 
-class RootCoordinator {
+class RootCoordinator: Coordinator {
     let presentationController: UINavigationController
+    var childCoordinators: [Coordinator] = []
     
     init(presentationController: UINavigationController) {
         self.presentationController = presentationController
