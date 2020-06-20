@@ -12,4 +12,7 @@ extension String {
     var ns: NSString {
         return self as NSString
     }
+    var lastPathComponent: String {
+        return ns.lastPathComponent
+    }
 }
