@@ -13,7 +13,7 @@ class MainTableCell: UITableViewCell {
         $0.numberOfLines = 0
         $0.font = UIFont.boldSystemFont(ofSize: 18)
     }
-    let descriptionLabel = UILabel().configured {
+    let secondaryTitleLabel = UILabel().configured {
         $0.numberOfLines = 0
         $0.font = UIFont.systemFont(ofSize: 16, weight: .light)
     }
@@ -28,11 +28,11 @@ class MainTableCell: UITableViewCell {
     }
     
     func addElements() {
-        contentView.addAutolayoutSubviews(titleLabel, descriptionLabel)
+        contentView.addAutolayoutSubviews(titleLabel, secondaryTitleLabel)
         titleLabel
             .toSuperAxis(.horizontal, symmetric: 16)
             .toSuper(.top, constant: 16)
-        descriptionLabel
+        secondaryTitleLabel
             .toSuperAxis(.horizontal, symmetric: 16)
             .toSuper(.bottom, constant: -16)
             .anchor(.top, opposingTo: titleLabel, constant: 8)
