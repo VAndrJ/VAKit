@@ -6,4 +6,10 @@
 //  Copyright © 2020 VAndrJ. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+struct MainTableCellEntity: VAIdentifiable {
+    let title: String
+    let secondaryTitle: String
+}
+
