@@ -69,6 +69,11 @@ class MainViewController: UIViewController {
         view = contentsView
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        bind()
+    }
+    
     private func bind() {
         tableSourceDelegate = TableSourceDelegate(
             tableView: contentsView.tableView,
