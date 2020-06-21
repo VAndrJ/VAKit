@@ -591,6 +591,9 @@ class VAKitLayoutSuperConstraintsTests: XCTestCase {
         XCTAssertEqual(parentView, (constraintTrailing.secondItem as? UIView))
     }
     
+    func test_toSuperAxis_vertical_constraintSafeAreaDefault() {
+    }
+    
     // MARK: - Constraints to super view's axis wrapper
     
     // MARK: - Multiple constraints to super view
