@@ -51,10 +51,12 @@ class MainView: UIView, MainViewProtocol {
 }
 
 class MainViewController: UIViewController {
-    let contentsView: MainView
+    let contentsView: MainViewProtocol & UIView
     let viewModel: MainViewModelProtocol
     
-    init(contentsView: MainView, viewModel: MainViewModelProtocol) {
+    var tableSourceDelegate: TableSourceDelegate!
+    
+    init(contentsView: MainViewProtocol & UIView, viewModel: MainViewModelProtocol) {
         self.contentsView = contentsView
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
