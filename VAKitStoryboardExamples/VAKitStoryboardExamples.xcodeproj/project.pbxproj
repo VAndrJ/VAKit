@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A30732A7249FB65D00D5BAA5 /* MainContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30732A6249FB65D00D5BAA5 /* MainContract.swift */; };
 		A30C91DD2461FE0700CCDF5E /* VAKitLayoutSubviewsAddTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30C91DC2461FE0700CCDF5E /* VAKitLayoutSubviewsAddTests.swift */; };
 		A31BD37F24995A1E003A1743 /* VAConstraintable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31BD37E24995A1E003A1743 /* VAConstraintable.swift */; };
 		A321E2A724700BFD00173F6E /* VAKitLayoutDeviceIdentifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A321E2A624700BFD00173F6E /* VAKitLayoutDeviceIdentifierTests.swift */; };
@@ -51,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A30732A6249FB65D00D5BAA5 /* MainContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContract.swift; sourceTree = "<group>"; };
 		A30C91D22461FD5C00CCDF5E /* VAKitStoryboardExamplesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VAKitStoryboardExamplesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A30C91D62461FD5C00CCDF5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A30C91DC2461FE0700CCDF5E /* VAKitLayoutSubviewsAddTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAKitLayoutSubviewsAddTests.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 		A373E9B2249D3A1A002502EF /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				A30732A6249FB65D00D5BAA5 /* MainContract.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				A3BAA6AB249E31B30042403A /* MainViewController.swift in Sources */,
 				A33E49EA2492C74E00E73CAB /* VAViewController.swift in Sources */,
 				A3BAA6B2249E35930042403A /* MainTableCellEntity.swift in Sources */,
+				A30732A7249FB65D00D5BAA5 /* MainContract.swift in Sources */,
 				A31BD37F24995A1E003A1743 /* VAConstraintable.swift in Sources */,
 				A38A142C248D554500E0D6C2 /* VAIdentifiable.swift in Sources */,
 				A3BAA6B0249E33490042403A /* MainTableCell.swift in Sources */,

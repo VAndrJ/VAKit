@@ -8,28 +8,6 @@
 
 import UIKit
 
-protocol MainCoordinatorDelegate: AnyObject {
-}
-
-protocol MainViewProtocol {
-    var tableView: UITableView { get }
-}
-
-protocol MainViewModelProtocol {
-    var tableData: [MainTableCellEntity] { get }
-    
-    func onSelectRow(at indexPath: IndexPath)
-}
-
-struct MainViewControllerConfigurator {
-    let controller: UIViewController
-    
-    init(coordinator: MainCoordinatorDelegate) {
-        let viewModel = MainViewModel(coordinator: coordinator)
-        self.controller = MainViewController(contentsView: MainView(), viewModel: viewModel)
-    }
-}
-
 class MainView: UIView, MainViewProtocol {
     let tableView = UITableView()
     
