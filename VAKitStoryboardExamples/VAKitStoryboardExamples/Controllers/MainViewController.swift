@@ -30,11 +30,8 @@ struct MainViewControllerConfigurator {
     }
 }
 
-class MainView: UIView {
+class MainView: UIView, MainViewProtocol {
     let tableView = UITableView()
-    let someForFunButton = UIButton(type: .system).configured {
-        $0.setTitle("Some Button title", for: .normal)
-    }
     
     convenience init() {
         self.init(frame: UIScreen.main.bounds)
@@ -47,13 +44,9 @@ class MainView: UIView {
     }
     
     private func addElements() {
-        addAutolayoutSubviews(tableView, someForFunButton)
+        addAutolayoutSubview(tableView)
         tableView
-            .toSuper(anchors: .top, .leading, .trailing, isSafe: true)
-            .anchor(.bottom, opposingTo: someForFunButton)
-        someForFunButton
-            .toSuper(anchors: .leading, .bottom, .trailing, isSafe: true)
-            .size(height: 52)
+            .toSuperEdges(isSafe: true)
     }
 }
 
