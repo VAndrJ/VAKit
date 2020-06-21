@@ -74,6 +74,23 @@ class MainViewController: UIViewController {
         bind()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let selectedIndexPath = contentsView.tableView.indexPathForSelectedRow {
+            if let coordinator = transitionCoordinator {
+                coordinator.animate(alongsideTransition: { context in
+                    self.contentsView.tableView.deselectRow(at: selectedIndexPath, animated: true)
+                }) { context in
+                    if context.isCancelled {
+                        self.contentsView.tableView.selectRow(at: selectedIndexPath, animated: false, scrollPosition: .none)
+                    }
+                }
+            } else {
+                self.contentsView.tableView.deselectRow(at: selectedIndexPath, animated: animated)
+            }
+        }
+    }
+    
     private func bind() {
         tableSourceDelegate = TableSourceDelegate(
             tableView: contentsView.tableView,
