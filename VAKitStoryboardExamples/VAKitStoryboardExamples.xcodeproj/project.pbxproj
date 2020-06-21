@@ -148,7 +148,6 @@
 		A373E9AE249D34A5002502EF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A3BAA6AA249E31B30042403A /* MainViewController.swift */,
 				A373E9B2249D3A1A002502EF /* Main */,
 			);
 			path = Controllers;
@@ -168,6 +167,7 @@
 			children = (
 				A30732A6249FB65D00D5BAA5 /* MainContract.swift */,
 				A30732A8249FB69400D5BAA5 /* MainView.swift */,
+				A3BAA6AA249E31B30042403A /* MainViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
