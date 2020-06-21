@@ -13,3 +13,15 @@ struct MainTableCellEntity: VAIdentifiable {
     let secondaryTitle: String
 }
 
+extension MainTableCellEntity: TableCellConfigurable {
+    var cellClass: UITableViewCell.Type {
+        return MainTableCell.self
+    }
+    
+    func configure(cell: UITableViewCell) {
+        let cell = cell as! MainTableCell
+        cell.titleLabel.text = title
+        cell.secondaryTitleLabel.text = secondaryTitle
+        cell.accessoryType = .disclosureIndicator
+    }
+}
