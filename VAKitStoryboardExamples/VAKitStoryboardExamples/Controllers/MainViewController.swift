@@ -68,6 +68,14 @@ class MainViewController: UIViewController {
     override func loadView() {
         view = contentsView
     }
+    
+    private func bind() {
+        tableSourceDelegate = TableSourceDelegate(
+            tableView: contentsView.tableView,
+            tableData: viewModel.tableData,
+            onSelectRow: viewModel.onSelectRow(at:)
+        )
+    }
 }
 
 class MainViewModel: MainViewModelProtocol {
