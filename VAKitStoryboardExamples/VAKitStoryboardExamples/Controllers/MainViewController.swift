@@ -9,11 +9,16 @@
 import UIKit
 
 protocol MainCoordinatorDelegate: AnyObject {
-    
+}
+
+protocol MainViewProtocol {
+    var tableView: UITableView { get }
 }
 
 protocol MainViewModelProtocol {
+    var tableData: [MainTableCellEntity] { get }
     
+    func onSelectRow(at indexPath: IndexPath)
 }
 
 struct MainViewControllerConfigurator {
