@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A30732A7249FB65D00D5BAA5 /* MainContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30732A6249FB65D00D5BAA5 /* MainContract.swift */; };
 		A30732A9249FB69400D5BAA5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30732A8249FB69400D5BAA5 /* MainView.swift */; };
+		A30732AB249FB6E800D5BAA5 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30732AA249FB6E800D5BAA5 /* MainViewModel.swift */; };
 		A30C91DD2461FE0700CCDF5E /* VAKitLayoutSubviewsAddTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30C91DC2461FE0700CCDF5E /* VAKitLayoutSubviewsAddTests.swift */; };
 		A31BD37F24995A1E003A1743 /* VAConstraintable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31BD37E24995A1E003A1743 /* VAConstraintable.swift */; };
 		A321E2A724700BFD00173F6E /* VAKitLayoutDeviceIdentifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A321E2A624700BFD00173F6E /* VAKitLayoutDeviceIdentifierTests.swift */; };
@@ -55,6 +56,7 @@
 /* Begin PBXFileReference section */
 		A30732A6249FB65D00D5BAA5 /* MainContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContract.swift; sourceTree = "<group>"; };
 		A30732A8249FB69400D5BAA5 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		A30732AA249FB6E800D5BAA5 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		A30C91D22461FD5C00CCDF5E /* VAKitStoryboardExamplesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VAKitStoryboardExamplesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A30C91D62461FD5C00CCDF5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A30C91DC2461FE0700CCDF5E /* VAKitLayoutSubviewsAddTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAKitLayoutSubviewsAddTests.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 				A30732A6249FB65D00D5BAA5 /* MainContract.swift */,
 				A30732A8249FB69400D5BAA5 /* MainView.swift */,
 				A3BAA6AA249E31B30042403A /* MainViewController.swift */,
+				A30732AA249FB6E800D5BAA5 /* MainViewModel.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 				A31BD37F24995A1E003A1743 /* VAConstraintable.swift in Sources */,
 				A38A142C248D554500E0D6C2 /* VAIdentifiable.swift in Sources */,
 				A3BAA6B0249E33490042403A /* MainTableCell.swift in Sources */,
+				A30732AB249FB6E800D5BAA5 /* MainViewModel.swift in Sources */,
 				A3F7666024730F6300F54775 /* UIView+Layout.swift in Sources */,
 				A3BAA6AD249E32BB0042403A /* String.swift in Sources */,
 				A38A142E248D561200E0D6C2 /* TableCellConfigurable.swift in Sources */,
