@@ -620,6 +620,9 @@ class VAKitLayoutSuperConstraintsTests: XCTestCase {
     
     // MARK: - Constraints to super view's axis wrapper
     
+    func test_toSuperAxisSymmetric_returnViewType() {
+    }
+    
     // MARK: - Multiple constraints to super view
     
 }
