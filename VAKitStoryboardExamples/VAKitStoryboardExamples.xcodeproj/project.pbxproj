@@ -245,8 +245,8 @@
 		A3A3D27224A1169B00F153FD /* IPhoneAnySizeDifferentPortraitLandscapeSize */ = {
 			isa = PBXGroup;
 			children = (
-				A34DB93C24940C11009D342C /* IPhoneAnySizeDifferentPortraitLandscapeSize.swift */,
 				A3A3D27324A116E500F153FD /* IPhoneAnySizeDifferentPortraitLandscapeSizeView.swift */,
+				A34DB93C24940C11009D342C /* IPhoneAnySizeDifferentPortraitLandscapeSize.swift */,
 			);
 			path = IPhoneAnySizeDifferentPortraitLandscapeSize;
 			sourceTree = "<group>";
