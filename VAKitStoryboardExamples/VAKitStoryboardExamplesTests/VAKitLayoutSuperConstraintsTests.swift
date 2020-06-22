@@ -621,6 +621,10 @@ class VAKitLayoutSuperConstraintsTests: XCTestCase {
     // MARK: - Constraints to super view's axis wrapper
     
     func test_toSuperAxisSymmetric_returnViewType() {
+        view = MockView()
+        parentView.addAutolayoutSubview(view)
+        let testView = view.toSuperAxis(.horizontal, symmetric: 1)
+        XCTAssertTrue(testView is MockView)
     }
     
     // MARK: - Multiple constraints to super view
