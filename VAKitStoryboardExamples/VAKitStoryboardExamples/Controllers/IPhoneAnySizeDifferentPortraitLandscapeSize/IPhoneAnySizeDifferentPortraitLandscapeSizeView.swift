@@ -9,5 +9,18 @@
 import UIKit
 
 class IPhoneAnySizeDifferentPortraitLandscapeSizeView: VAView {
+    let exampleView = UIView().configured {
+        $0.backgroundColor = .purple
+    }
+    
+    override func addElements() {
+        addAutolayoutSubview(exampleView)
+        exampleView
+            .toSuperCenter()
+            .size(width: 50, height: 300, device: .iPhonePortrait)
+            .size(width: 200, height: 200, device: .iPhoneSmallLandscape)
+            .size(width: 400, height: 200, device: .iPhoneLargeLandscape)
+        super.addElements()
+    }
 }
 
