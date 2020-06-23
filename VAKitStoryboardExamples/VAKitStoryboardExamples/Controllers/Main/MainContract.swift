@@ -9,6 +9,7 @@
 import UIKit
 
 protocol MainCoordinatorDelegate: AnyObject {
+    func showDifferentSizeViewAnyPhonePortraitLandscapeExample()
 }
 
 protocol MainViewProtocol {
