@@ -38,5 +38,17 @@ class IPhoneAnySizeDifferentPortraitLandscapeSizeView: VAView {
 #if canImport(SwiftUI)
 import SwiftUI
 
+@available (iOS 13.0, *)
+struct IPhoneAnySizeDifferentPortraitLandscapeSizeViewRepresentation: UIViewRepresentable {
+    typealias UIViewType = IPhoneAnySizeDifferentPortraitLandscapeSizeView
+    
+    func makeUIView(context: Context) -> IPhoneAnySizeDifferentPortraitLandscapeSizeView {
+        return IPhoneAnySizeDifferentPortraitLandscapeSizeView()
+    }
+    
+    func updateUIView(_ uiView: IPhoneAnySizeDifferentPortraitLandscapeSizeView, context: Context) {
+    }
+}
+
 #endif
 #endif
