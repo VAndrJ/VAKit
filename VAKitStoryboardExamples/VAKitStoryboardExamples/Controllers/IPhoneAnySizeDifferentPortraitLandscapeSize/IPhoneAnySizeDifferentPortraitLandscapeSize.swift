@@ -8,6 +8,13 @@
 
 import UIKit
 
+struct IPhoneAnySizeDifferentPortraitLandscapeSizeViewControllerConfigurator {
+    let controller: UIViewController
+    
+    init() {
+        self.controller = IPhoneAnySizeDifferentPortraitLandscapeSizeViewController(contentsView: IPhoneAnySizeDifferentPortraitLandscapeSizeView())
+    }
+}
 
 class IPhoneAnySizeDifferentPortraitLandscapeSizeViewController: UIViewController {
     let contentsView: IPhoneAnySizeDifferentPortraitLandscapeSizeView
