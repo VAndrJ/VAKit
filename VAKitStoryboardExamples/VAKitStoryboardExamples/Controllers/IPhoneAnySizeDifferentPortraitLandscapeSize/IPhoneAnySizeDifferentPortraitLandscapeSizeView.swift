@@ -34,3 +34,9 @@ class IPhoneAnySizeDifferentPortraitLandscapeSizeView: VAView {
     }
 }
 
+#if DEBUG
+#if canImport(SwiftUI)
+import SwiftUI
+
+#endif
+#endif
