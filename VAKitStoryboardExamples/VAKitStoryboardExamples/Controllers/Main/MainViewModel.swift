@@ -12,7 +12,11 @@ class MainViewModel: MainViewModelProtocol {
     unowned let coordinator: MainCoordinatorDelegate
     
     let tableData: [MainTableCellEntity] = [
-        MainTableCellEntity(title: "iPhone of any size with different element size in portrait and landscape", secondaryTitle: "One centered view with different sizes. VAView used."),
+        MainTableCellEntity(
+            title: "iPhone of any size with different element size in portrait and landscape",
+            secondaryTitle: "One centered view with different sizes. VAView used.",
+            destination: .iPhoneAnySizeDifferentPortraitLandscapeSize
+        ),
     ]
     
     init(coordinator: MainCoordinatorDelegate) {
