@@ -63,6 +63,13 @@ struct IPhoneAnySizeDifferentPortraitLandscapeSizeViewRepresentation_Preview: Pr
                 .environment(\.verticalSizeClass, .compact)
                 .previewLayout(.fixed(width: 568, height: 320))
                 .previewDisplayName("iPhone 5S Landscape")
+            
+            IPhoneAnySizeDifferentPortraitLandscapeSizeViewRepresentation()
+                .environment(\.horizontalSizeClass, .regular)
+                .environment(\.verticalSizeClass, .compact)
+                .previewLayout(.fixed(width: 736, height: 414))
+                .previewDisplayName("iPhone 8 Plus Landscape")
+        }
     }
 }
 #endif
