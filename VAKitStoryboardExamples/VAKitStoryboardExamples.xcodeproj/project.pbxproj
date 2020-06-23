@@ -11,31 +11,30 @@
 		A30732A9249FB69400D5BAA5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30732A8249FB69400D5BAA5 /* MainView.swift */; };
 		A30732AB249FB6E800D5BAA5 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30732AA249FB6E800D5BAA5 /* MainViewModel.swift */; };
 		A30C91DD2461FE0700CCDF5E /* VAKitLayoutSubviewsAddTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30C91DC2461FE0700CCDF5E /* VAKitLayoutSubviewsAddTests.swift */; };
-		A31BD37F24995A1E003A1743 /* VAConstraintable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31BD37E24995A1E003A1743 /* VAConstraintable.swift */; };
 		A321E2A724700BFD00173F6E /* VAKitLayoutDeviceIdentifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A321E2A624700BFD00173F6E /* VAKitLayoutDeviceIdentifierTests.swift */; };
-		A33E49EA2492C74E00E73CAB /* VAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33E49E92492C74E00E73CAB /* VAViewController.swift */; };
 		A346312A2479332F00B8902F /* VAKitLayoutSuperConstraintsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34631292479332F00B8902F /* VAKitLayoutSuperConstraintsTests.swift */; };
 		A346312C247933E500B8902F /* VAKitLayoutTestsSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A346312B247933E500B8902F /* VAKitLayoutTestsSupport.swift */; };
 		A34DB93D24940C11009D342C /* IPhoneAnySizeDifferentPortraitLandscapeSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34DB93C24940C11009D342C /* IPhoneAnySizeDifferentPortraitLandscapeSize.swift */; };
-		A34DB93F2494D530009D342C /* VAView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34DB93E2494D530009D342C /* VAView.swift */; };
 		A373E9B1249D34F9002502EF /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A373E9B0249D34F9002502EF /* Coordinator.swift */; };
 		A37AC340248EC5330080E6B0 /* VAKitConfigurableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37AC33F248EC5330080E6B0 /* VAKitConfigurableTests.swift */; };
 		A37AC341248EC54E0080E6B0 /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38A1428248D540000E0D6C2 /* Configurable.swift */; };
 		A37AC342248EC54E0080E6B0 /* VAIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38A142B248D554500E0D6C2 /* VAIdentifiable.swift */; };
-		A37AC343248EC54E0080E6B0 /* TableCellConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38A142D248D561200E0D6C2 /* TableCellConfigurable.swift */; };
 		A37AC345248EC57E0080E6B0 /* VAKitVAIdentifiableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37AC344248EC57E0080E6B0 /* VAKitVAIdentifiableTests.swift */; };
-		A37AC347248EC95F0080E6B0 /* TableSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37AC346248EC95F0080E6B0 /* TableSourceDelegate.swift */; };
-		A37AC349248ECC1C0080E6B0 /* UITableView+Dequeue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37AC348248ECC1C0080E6B0 /* UITableView+Dequeue.swift */; };
+		A380EB9B24A2A0E7009746C0 /* TableSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A380EB9824A2A0E7009746C0 /* TableSourceDelegate.swift */; };
+		A380EB9C24A2A0E7009746C0 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A380EB9924A2A0E7009746C0 /* String.swift */; };
+		A380EB9D24A2A0E7009746C0 /* TableCellConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A380EB9A24A2A0E7009746C0 /* TableCellConfigurable.swift */; };
+		A380EBA224A2A0F8009746C0 /* UITableView+Dequeue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A380EB9E24A2A0F7009746C0 /* UITableView+Dequeue.swift */; };
+		A380EBA324A2A0F8009746C0 /* VAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A380EB9F24A2A0F7009746C0 /* VAViewController.swift */; };
+		A380EBA424A2A0F8009746C0 /* VAConstraintable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A380EBA024A2A0F7009746C0 /* VAConstraintable.swift */; };
+		A380EBA524A2A0F8009746C0 /* VAView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A380EBA124A2A0F8009746C0 /* VAView.swift */; };
 		A38A1429248D540000E0D6C2 /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38A1428248D540000E0D6C2 /* Configurable.swift */; };
 		A38A142C248D554500E0D6C2 /* VAIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38A142B248D554500E0D6C2 /* VAIdentifiable.swift */; };
-		A38A142E248D561200E0D6C2 /* TableCellConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38A142D248D561200E0D6C2 /* TableCellConfigurable.swift */; };
 		A39E121F245DEFB2005AA87C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39E121E245DEFB2005AA87C /* AppDelegate.swift */; };
 		A39E1228245DEFB6005AA87C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A39E1227245DEFB6005AA87C /* Assets.xcassets */; };
 		A39E122B245DEFB6005AA87C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A39E1229245DEFB6005AA87C /* LaunchScreen.storyboard */; };
 		A3A3D27424A116E500F153FD /* IPhoneAnySizeDifferentPortraitLandscapeSizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A3D27324A116E500F153FD /* IPhoneAnySizeDifferentPortraitLandscapeSizeView.swift */; };
 		A3B201E5246489600083EFE1 /* VAKitLayoutSizeConstraintsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B201E4246489600083EFE1 /* VAKitLayoutSizeConstraintsTests.swift */; };
 		A3BAA6AB249E31B30042403A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BAA6AA249E31B30042403A /* MainViewController.swift */; };
-		A3BAA6AD249E32BB0042403A /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BAA6AC249E32BB0042403A /* String.swift */; };
 		A3BAA6B0249E33490042403A /* MainTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BAA6AF249E33490042403A /* MainTableCell.swift */; };
 		A3BAA6B2249E35930042403A /* MainTableCellEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BAA6B1249E35930042403A /* MainTableCellEntity.swift */; };
 		A3C73057248C0971003F7220 /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C73056248C0971003F7220 /* RootCoordinator.swift */; };
@@ -61,21 +60,22 @@
 		A30C91D22461FD5C00CCDF5E /* VAKitStoryboardExamplesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VAKitStoryboardExamplesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A30C91D62461FD5C00CCDF5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A30C91DC2461FE0700CCDF5E /* VAKitLayoutSubviewsAddTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAKitLayoutSubviewsAddTests.swift; sourceTree = "<group>"; };
-		A31BD37E24995A1E003A1743 /* VAConstraintable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAConstraintable.swift; sourceTree = "<group>"; };
 		A321E2A624700BFD00173F6E /* VAKitLayoutDeviceIdentifierTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAKitLayoutDeviceIdentifierTests.swift; sourceTree = "<group>"; };
-		A33E49E92492C74E00E73CAB /* VAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAViewController.swift; sourceTree = "<group>"; };
 		A34631292479332F00B8902F /* VAKitLayoutSuperConstraintsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAKitLayoutSuperConstraintsTests.swift; sourceTree = "<group>"; };
 		A346312B247933E500B8902F /* VAKitLayoutTestsSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAKitLayoutTestsSupport.swift; sourceTree = "<group>"; };
 		A34DB93C24940C11009D342C /* IPhoneAnySizeDifferentPortraitLandscapeSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPhoneAnySizeDifferentPortraitLandscapeSize.swift; sourceTree = "<group>"; };
-		A34DB93E2494D530009D342C /* VAView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAView.swift; sourceTree = "<group>"; };
 		A373E9B0249D34F9002502EF /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		A37AC33F248EC5330080E6B0 /* VAKitConfigurableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAKitConfigurableTests.swift; sourceTree = "<group>"; };
 		A37AC344248EC57E0080E6B0 /* VAKitVAIdentifiableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAKitVAIdentifiableTests.swift; sourceTree = "<group>"; };
-		A37AC346248EC95F0080E6B0 /* TableSourceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSourceDelegate.swift; sourceTree = "<group>"; };
-		A37AC348248ECC1C0080E6B0 /* UITableView+Dequeue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Dequeue.swift"; sourceTree = "<group>"; };
+		A380EB9824A2A0E7009746C0 /* TableSourceDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableSourceDelegate.swift; path = ../../VAKit/Generic/TableSourceDelegate.swift; sourceTree = "<group>"; };
+		A380EB9924A2A0E7009746C0 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = String.swift; path = ../../VAKit/Generic/String.swift; sourceTree = "<group>"; };
+		A380EB9A24A2A0E7009746C0 /* TableCellConfigurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableCellConfigurable.swift; path = ../../VAKit/Generic/TableCellConfigurable.swift; sourceTree = "<group>"; };
+		A380EB9E24A2A0F7009746C0 /* UITableView+Dequeue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UITableView+Dequeue.swift"; path = "../../VAKit/UI/UITableView+Dequeue.swift"; sourceTree = "<group>"; };
+		A380EB9F24A2A0F7009746C0 /* VAViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VAViewController.swift; path = ../../VAKit/UI/VAViewController.swift; sourceTree = "<group>"; };
+		A380EBA024A2A0F7009746C0 /* VAConstraintable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VAConstraintable.swift; path = ../../VAKit/UI/VAConstraintable.swift; sourceTree = "<group>"; };
+		A380EBA124A2A0F8009746C0 /* VAView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VAView.swift; path = ../../VAKit/UI/VAView.swift; sourceTree = "<group>"; };
 		A38A1428248D540000E0D6C2 /* Configurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Configurable.swift; path = ../../VAKit/Generic/Configurable.swift; sourceTree = "<group>"; };
 		A38A142B248D554500E0D6C2 /* VAIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VAIdentifiable.swift; path = ../../VAKit/Generic/VAIdentifiable.swift; sourceTree = "<group>"; };
-		A38A142D248D561200E0D6C2 /* TableCellConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCellConfigurable.swift; sourceTree = "<group>"; };
 		A39E121B245DEFB2005AA87C /* VAKitStoryboardExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VAKitStoryboardExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A39E121E245DEFB2005AA87C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A39E1227245DEFB6005AA87C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -84,7 +84,6 @@
 		A3A3D27324A116E500F153FD /* IPhoneAnySizeDifferentPortraitLandscapeSizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPhoneAnySizeDifferentPortraitLandscapeSizeView.swift; sourceTree = "<group>"; };
 		A3B201E4246489600083EFE1 /* VAKitLayoutSizeConstraintsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAKitLayoutSizeConstraintsTests.swift; sourceTree = "<group>"; };
 		A3BAA6AA249E31B30042403A /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		A3BAA6AC249E32BB0042403A /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		A3BAA6AF249E33490042403A /* MainTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableCell.swift; sourceTree = "<group>"; };
 		A3BAA6B1249E35930042403A /* MainTableCellEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableCellEntity.swift; sourceTree = "<group>"; };
 		A3C73056248C0971003F7220 /* RootCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
@@ -132,11 +131,11 @@
 		A332EA8F2460AD0A00C22AEE /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				A380EB9E24A2A0F7009746C0 /* UITableView+Dequeue.swift */,
+				A380EBA024A2A0F7009746C0 /* VAConstraintable.swift */,
+				A380EBA124A2A0F8009746C0 /* VAView.swift */,
+				A380EB9F24A2A0F7009746C0 /* VAViewController.swift */,
 				A3F7665F24730F6300F54775 /* UIView+Layout.swift */,
-				A37AC348248ECC1C0080E6B0 /* UITableView+Dequeue.swift */,
-				A33E49E92492C74E00E73CAB /* VAViewController.swift */,
-				A34DB93E2494D530009D342C /* VAView.swift */,
-				A31BD37E24995A1E003A1743 /* VAConstraintable.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -203,11 +202,11 @@
 		A38A142A248D540700E0D6C2 /* Generic */ = {
 			isa = PBXGroup;
 			children = (
+				A380EB9924A2A0E7009746C0 /* String.swift */,
+				A380EB9A24A2A0E7009746C0 /* TableCellConfigurable.swift */,
+				A380EB9824A2A0E7009746C0 /* TableSourceDelegate.swift */,
 				A38A1428248D540000E0D6C2 /* Configurable.swift */,
 				A38A142B248D554500E0D6C2 /* VAIdentifiable.swift */,
-				A38A142D248D561200E0D6C2 /* TableCellConfigurable.swift */,
-				A37AC346248EC95F0080E6B0 /* TableSourceDelegate.swift */,
-				A3BAA6AC249E32BB0042403A /* String.swift */,
 			);
 			name = Generic;
 			sourceTree = "<group>";
@@ -375,7 +374,6 @@
 				A37AC341248EC54E0080E6B0 /* Configurable.swift in Sources */,
 				A37AC342248EC54E0080E6B0 /* VAIdentifiable.swift in Sources */,
 				A37AC345248EC57E0080E6B0 /* VAKitVAIdentifiableTests.swift in Sources */,
-				A37AC343248EC54E0080E6B0 /* TableCellConfigurable.swift in Sources */,
 				A3F766622473100400F54775 /* UIView+Layout.swift in Sources */,
 				A3F5368124744DE1006258D0 /* VAKitLayoutVADeviceTests.swift in Sources */,
 				A37AC340248EC5330080E6B0 /* VAKitConfigurableTests.swift in Sources */,
@@ -392,25 +390,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				A34DB93D24940C11009D342C /* IPhoneAnySizeDifferentPortraitLandscapeSize.swift in Sources */,
-				A34DB93F2494D530009D342C /* VAView.swift in Sources */,
-				A37AC349248ECC1C0080E6B0 /* UITableView+Dequeue.swift in Sources */,
-				A37AC347248EC95F0080E6B0 /* TableSourceDelegate.swift in Sources */,
+				A380EBA324A2A0F8009746C0 /* VAViewController.swift in Sources */,
+				A380EB9C24A2A0E7009746C0 /* String.swift in Sources */,
 				A38A1429248D540000E0D6C2 /* Configurable.swift in Sources */,
 				A30732A9249FB69400D5BAA5 /* MainView.swift in Sources */,
 				A3C73057248C0971003F7220 /* RootCoordinator.swift in Sources */,
 				A373E9B1249D34F9002502EF /* Coordinator.swift in Sources */,
 				A3BAA6AB249E31B30042403A /* MainViewController.swift in Sources */,
-				A33E49EA2492C74E00E73CAB /* VAViewController.swift in Sources */,
 				A3BAA6B2249E35930042403A /* MainTableCellEntity.swift in Sources */,
+				A380EBA524A2A0F8009746C0 /* VAView.swift in Sources */,
 				A30732A7249FB65D00D5BAA5 /* MainContract.swift in Sources */,
-				A31BD37F24995A1E003A1743 /* VAConstraintable.swift in Sources */,
 				A38A142C248D554500E0D6C2 /* VAIdentifiable.swift in Sources */,
+				A380EBA224A2A0F8009746C0 /* UITableView+Dequeue.swift in Sources */,
 				A3BAA6B0249E33490042403A /* MainTableCell.swift in Sources */,
+				A380EBA424A2A0F8009746C0 /* VAConstraintable.swift in Sources */,
 				A30732AB249FB6E800D5BAA5 /* MainViewModel.swift in Sources */,
+				A380EB9B24A2A0E7009746C0 /* TableSourceDelegate.swift in Sources */,
 				A3F7666024730F6300F54775 /* UIView+Layout.swift in Sources */,
-				A3BAA6AD249E32BB0042403A /* String.swift in Sources */,
-				A38A142E248D561200E0D6C2 /* TableCellConfigurable.swift in Sources */,
 				A39E121F245DEFB2005AA87C /* AppDelegate.swift in Sources */,
+				A380EB9D24A2A0E7009746C0 /* TableCellConfigurable.swift in Sources */,
 				A3A3D27424A116E500F153FD /* IPhoneAnySizeDifferentPortraitLandscapeSizeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
