@@ -50,5 +50,14 @@ struct IPhoneAnySizeDifferentPortraitLandscapeSizeViewRepresentation: UIViewRepr
     }
 }
 
+@available (iOS 13.0, *)
+struct IPhoneAnySizeDifferentPortraitLandscapeSizeViewRepresentation_Preview: PreviewProvider {
+    static var previews: some View {
+        Group {
+            IPhoneAnySizeDifferentPortraitLandscapeSizeViewRepresentation()
+                .previewLayout(.fixed(width: 320, height: 568))
+                .previewDisplayName("iPhone 5 Portrait")
+    }
+}
 #endif
 #endif
