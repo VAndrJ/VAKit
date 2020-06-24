@@ -41,6 +41,10 @@ class IPhoneAnySizeDifferentPortraitLandscapeSizeView: VAView {
     }
 }
 
+/*
+ To preview in canvas.
+ Before iOS 13 I used @IBDesignable, but Previews much better :)
+ */
 #if DEBUG
 #if canImport(SwiftUI)
 import SwiftUI
