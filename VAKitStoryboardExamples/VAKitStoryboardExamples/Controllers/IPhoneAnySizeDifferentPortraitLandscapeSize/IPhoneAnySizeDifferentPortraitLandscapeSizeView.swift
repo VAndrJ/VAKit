@@ -8,6 +8,10 @@
 
 import UIKit
 
+/*
+ Example view how to use VAView to create layout for different iPhones orientation.
+ No constraints for iPad.
+ */
 class IPhoneAnySizeDifferentPortraitLandscapeSizeView: VAView {
     let exampleView = UIView().configured {
         $0.backgroundColor = .purple
