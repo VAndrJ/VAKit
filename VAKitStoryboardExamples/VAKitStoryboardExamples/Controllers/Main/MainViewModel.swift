@@ -9,23 +9,32 @@
 import Foundation
 
 class MainViewModel: MainViewModelProtocol {
+    enum Destination {
+        case iPhoneAnySizeDifferentPortraitLandscapeSize
+    }
+    
     unowned let coordinator: MainCoordinatorDelegate
     
-    let tableData: [MainTableCellEntity] = [
-        MainTableCellEntity(
-            title: "iPhone of any size with different element size in portrait and landscape",
-            secondaryTitle: "One centered view with different sizes. VAView used.",
-            destination: .iPhoneAnySizeDifferentPortraitLandscapeSize
+    let _tableData: [(data: MainTableCellEntity, destination: Destination)] = [
+        (
+            MainTableCellEntity(
+                title: "iPhone of any size with different element size in portrait and landscape",
+                secondaryTitle: "One centered view with different sizes. VAView used."
+            ),
+            .iPhoneAnySizeDifferentPortraitLandscapeSize
         ),
     ]
+    var tableData: [MainTableCellEntity] {
+        return _tableData.map({ $0.data })
+    }
     
     init(coordinator: MainCoordinatorDelegate) {
         self.coordinator = coordinator
     }
     
     func onSelectRow(at indexPath: IndexPath) {
-        let cellData = tableData[indexPath.row]
-        switch cellData.destination {
+        let destination = _tableData[indexPath.row].destination
+        switch destination {
         case .iPhoneAnySizeDifferentPortraitLandscapeSize:
             coordinator.showDifferentSizeViewAnyPhonePortraitLandscapeExample()
         }

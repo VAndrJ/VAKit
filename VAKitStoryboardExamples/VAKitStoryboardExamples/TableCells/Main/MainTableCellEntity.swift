@@ -8,14 +8,9 @@
 
 import UIKit
 
-enum Destination {
-    case iPhoneAnySizeDifferentPortraitLandscapeSize
-}
-
 struct MainTableCellEntity: VAIdentifiable {
     let title: String
     let secondaryTitle: String
-    let destination: Destination
 }
 
 extension MainTableCellEntity: TableCellConfigurable {
