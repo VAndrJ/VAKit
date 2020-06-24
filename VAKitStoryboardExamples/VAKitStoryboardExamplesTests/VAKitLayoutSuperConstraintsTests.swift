@@ -685,6 +685,9 @@ class VAKitLayoutSuperConstraintsTests: XCTestCase {
         constraintPriorityCheck(constraint: constraintBottom, priority: priority)
     }
     
+    func test_toSuperAxisSymmetric_horizontal_constraintRelationDefault() {
+    }
+    
     // MARK: - Multiple constraints to super view
     
 }
