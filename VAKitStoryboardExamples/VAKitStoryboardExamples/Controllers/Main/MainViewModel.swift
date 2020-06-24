@@ -10,7 +10,7 @@ import Foundation
 
 class MainViewModel: MainViewModelProtocol {
     enum Destination {
-        case iPhoneAnySizeDifferentPortraitLandscapeSize
+        case differentPortraitLandscapeAnyPhoneSize
     }
     
     unowned let coordinator: MainCoordinatorDelegate
@@ -21,7 +21,7 @@ class MainViewModel: MainViewModelProtocol {
                 title: "iPhone of any size with different element size in portrait and landscape",
                 secondaryTitle: "One centered view with different sizes. VAView used."
             ),
-            .iPhoneAnySizeDifferentPortraitLandscapeSize
+            .differentPortraitLandscapeAnyPhoneSize
         ),
     ]
     var tableData: [MainTableCellEntity] {
@@ -35,7 +35,7 @@ class MainViewModel: MainViewModelProtocol {
     func onSelectRow(at indexPath: IndexPath) {
         let destination = _tableData[indexPath.row].destination
         switch destination {
-        case .iPhoneAnySizeDifferentPortraitLandscapeSize:
+        case .differentPortraitLandscapeAnyPhoneSize:
             coordinator.showDifferentSizeViewAnyPhonePortraitLandscapeExample()
         }
     }

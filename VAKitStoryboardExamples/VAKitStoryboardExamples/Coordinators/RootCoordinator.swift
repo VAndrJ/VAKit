@@ -28,6 +28,6 @@ class RootCoordinator: Coordinator {
 extension RootCoordinator: MainCoordinatorDelegate {
     
     func showDifferentSizeViewAnyPhonePortraitLandscapeExample() {
-        presentationController.pushViewController(IPhoneAnySizeDifferentPortraitLandscapeSizeViewControllerConfigurator().controller, animated: true)
+        presentationController.pushViewController(DifferentPortraitLandscapeAnyPhoneSizeConfigurator().controller, animated: true)
     }
 }

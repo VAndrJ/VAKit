@@ -1,5 +1,5 @@
 //
-//  IPhoneAnySizeDifferentPortraitLandscapeSizeContract.swift
+//  DifferentPortraitLandscapeAnyPhoneSizeContract.swift
 //  VAKitStoryboardExamples
 //
 //  Created by Vladimir Andrienko on 24.06.2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct IPhoneAnySizeDifferentPortraitLandscapeSizeViewControllerConfigurator {
+struct DifferentPortraitLandscapeAnyPhoneSizeConfigurator {
     let controller: UIViewController
     
     init() {
