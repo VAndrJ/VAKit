@@ -27,6 +27,9 @@ class IPhoneAnySizeDifferentPortraitLandscapeSizeView: VAView {
         backgroundColor = .white
     }
     
+    /*
+     To add UI elements override this function and call super at the end.
+     */
     override func addElements() {
         addAutolayoutSubview(exampleView)
         exampleView
