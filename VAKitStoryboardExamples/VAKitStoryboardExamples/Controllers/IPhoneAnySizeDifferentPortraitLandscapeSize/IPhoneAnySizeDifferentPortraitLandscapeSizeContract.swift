@@ -12,6 +12,6 @@ struct IPhoneAnySizeDifferentPortraitLandscapeSizeViewControllerConfigurator {
     let controller: UIViewController
     
     init() {
-        self.controller = IPhoneAnySizeDifferentPortraitLandscapeSizeViewController(contentsView: DifferentPortraitLandscapeAnyPhoneSizeView())
+        self.controller = DifferentPortraitLandscapeAnyPhoneSizeViewController(contentsView: DifferentPortraitLandscapeAnyPhoneSizeView())
     }
 }

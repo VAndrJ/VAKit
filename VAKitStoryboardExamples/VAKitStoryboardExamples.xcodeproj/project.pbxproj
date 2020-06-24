@@ -15,7 +15,7 @@
 		A321E2A724700BFD00173F6E /* VAKitLayoutDeviceIdentifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A321E2A624700BFD00173F6E /* VAKitLayoutDeviceIdentifierTests.swift */; };
 		A346312A2479332F00B8902F /* VAKitLayoutSuperConstraintsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34631292479332F00B8902F /* VAKitLayoutSuperConstraintsTests.swift */; };
 		A346312C247933E500B8902F /* VAKitLayoutTestsSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A346312B247933E500B8902F /* VAKitLayoutTestsSupport.swift */; };
-		A34DB93D24940C11009D342C /* IPhoneAnySizeDifferentPortraitLandscapeSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34DB93C24940C11009D342C /* IPhoneAnySizeDifferentPortraitLandscapeSize.swift */; };
+		A34DB93D24940C11009D342C /* DifferentPortraitLandscapeAnyPhoneSizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34DB93C24940C11009D342C /* DifferentPortraitLandscapeAnyPhoneSizeViewController.swift */; };
 		A373E9B1249D34F9002502EF /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A373E9B0249D34F9002502EF /* Coordinator.swift */; };
 		A37AC340248EC5330080E6B0 /* VAKitConfigurableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37AC33F248EC5330080E6B0 /* VAKitConfigurableTests.swift */; };
 		A37AC341248EC54E0080E6B0 /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38A1428248D540000E0D6C2 /* Configurable.swift */; };
@@ -65,7 +65,7 @@
 		A321E2A624700BFD00173F6E /* VAKitLayoutDeviceIdentifierTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAKitLayoutDeviceIdentifierTests.swift; sourceTree = "<group>"; };
 		A34631292479332F00B8902F /* VAKitLayoutSuperConstraintsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAKitLayoutSuperConstraintsTests.swift; sourceTree = "<group>"; };
 		A346312B247933E500B8902F /* VAKitLayoutTestsSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAKitLayoutTestsSupport.swift; sourceTree = "<group>"; };
-		A34DB93C24940C11009D342C /* IPhoneAnySizeDifferentPortraitLandscapeSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPhoneAnySizeDifferentPortraitLandscapeSize.swift; sourceTree = "<group>"; };
+		A34DB93C24940C11009D342C /* DifferentPortraitLandscapeAnyPhoneSizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifferentPortraitLandscapeAnyPhoneSizeViewController.swift; sourceTree = "<group>"; };
 		A373E9B0249D34F9002502EF /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		A37AC33F248EC5330080E6B0 /* VAKitConfigurableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAKitConfigurableTests.swift; sourceTree = "<group>"; };
 		A37AC344248EC57E0080E6B0 /* VAKitVAIdentifiableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAKitVAIdentifiableTests.swift; sourceTree = "<group>"; };
@@ -248,7 +248,7 @@
 			children = (
 				A30DFCE324A31CE50050E342 /* IPhoneAnySizeDifferentPortraitLandscapeSizeContract.swift */,
 				A3A3D27324A116E500F153FD /* DifferentPortraitLandscapeAnyPhoneSizeView.swift */,
-				A34DB93C24940C11009D342C /* IPhoneAnySizeDifferentPortraitLandscapeSize.swift */,
+				A34DB93C24940C11009D342C /* DifferentPortraitLandscapeAnyPhoneSizeViewController.swift */,
 			);
 			path = IPhoneAnySizeDifferentPortraitLandscapeSize;
 			sourceTree = "<group>";
@@ -392,7 +392,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A34DB93D24940C11009D342C /* IPhoneAnySizeDifferentPortraitLandscapeSize.swift in Sources */,
+				A34DB93D24940C11009D342C /* DifferentPortraitLandscapeAnyPhoneSizeViewController.swift in Sources */,
 				A380EBA324A2A0F8009746C0 /* VAViewController.swift in Sources */,
 				A380EB9C24A2A0E7009746C0 /* String.swift in Sources */,
 				A38A1429248D540000E0D6C2 /* Configurable.swift in Sources */,

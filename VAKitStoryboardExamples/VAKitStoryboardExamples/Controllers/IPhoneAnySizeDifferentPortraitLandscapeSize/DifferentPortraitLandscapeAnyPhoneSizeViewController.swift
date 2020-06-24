@@ -1,5 +1,5 @@
 //
-//  IPhoneAnySizeDifferentPortraitLandscapeSize.swift
+//  DifferentPortraitLandscapeAnyPhoneSizeViewController.swift
 //  VAKitStoryboardExamples
 //
 //  Created by Vladimir Andrienko on 12.06.2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class IPhoneAnySizeDifferentPortraitLandscapeSizeViewController: UIViewController {
+class DifferentPortraitLandscapeAnyPhoneSizeViewController: UIViewController {
     let contentsView: DifferentPortraitLandscapeAnyPhoneSizeView
     
     init(contentsView: DifferentPortraitLandscapeAnyPhoneSizeView) {
