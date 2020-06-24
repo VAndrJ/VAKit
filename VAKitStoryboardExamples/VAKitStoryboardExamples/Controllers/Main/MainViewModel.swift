@@ -25,5 +25,9 @@ class MainViewModel: MainViewModelProtocol {
     
     func onSelectRow(at indexPath: IndexPath) {
         let cellData = tableData[indexPath.row]
+        switch cellData.destination {
+        case .iPhoneAnySizeDifferentPortraitLandscapeSize:
+            coordinator.showDifferentSizeViewAnyPhonePortraitLandscapeExample()
+        }
     }
 }
