@@ -703,6 +703,11 @@ class VAKitLayoutSuperConstraintsTests: XCTestCase {
         XCTAssertEqual(NSLayoutConstraint.Relation.equal, constraintBottom.relation)
     }
     
+    func test_toSuperAxisSymmetric_horizontal_constraintRelation() {
+    }
+    
+    }
+    
     // MARK: - Multiple constraints to super view
     
 }
