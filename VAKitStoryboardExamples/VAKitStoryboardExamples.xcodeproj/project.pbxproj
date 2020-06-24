@@ -33,7 +33,7 @@
 		A39E121F245DEFB2005AA87C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39E121E245DEFB2005AA87C /* AppDelegate.swift */; };
 		A39E1228245DEFB6005AA87C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A39E1227245DEFB6005AA87C /* Assets.xcassets */; };
 		A39E122B245DEFB6005AA87C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A39E1229245DEFB6005AA87C /* LaunchScreen.storyboard */; };
-		A3A3D27424A116E500F153FD /* IPhoneAnySizeDifferentPortraitLandscapeSizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A3D27324A116E500F153FD /* IPhoneAnySizeDifferentPortraitLandscapeSizeView.swift */; };
+		A3A3D27424A116E500F153FD /* DifferentPortraitLandscapeAnyPhoneSizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A3D27324A116E500F153FD /* DifferentPortraitLandscapeAnyPhoneSizeView.swift */; };
 		A3B201E5246489600083EFE1 /* VAKitLayoutSizeConstraintsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B201E4246489600083EFE1 /* VAKitLayoutSizeConstraintsTests.swift */; };
 		A3BAA6AB249E31B30042403A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BAA6AA249E31B30042403A /* MainViewController.swift */; };
 		A3BAA6B0249E33490042403A /* MainTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BAA6AF249E33490042403A /* MainTableCell.swift */; };
@@ -83,7 +83,7 @@
 		A39E1227245DEFB6005AA87C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A39E122A245DEFB6005AA87C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A39E122C245DEFB6005AA87C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A3A3D27324A116E500F153FD /* IPhoneAnySizeDifferentPortraitLandscapeSizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPhoneAnySizeDifferentPortraitLandscapeSizeView.swift; sourceTree = "<group>"; };
+		A3A3D27324A116E500F153FD /* DifferentPortraitLandscapeAnyPhoneSizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifferentPortraitLandscapeAnyPhoneSizeView.swift; sourceTree = "<group>"; };
 		A3B201E4246489600083EFE1 /* VAKitLayoutSizeConstraintsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAKitLayoutSizeConstraintsTests.swift; sourceTree = "<group>"; };
 		A3BAA6AA249E31B30042403A /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A3BAA6AF249E33490042403A /* MainTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableCell.swift; sourceTree = "<group>"; };
@@ -247,7 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				A30DFCE324A31CE50050E342 /* IPhoneAnySizeDifferentPortraitLandscapeSizeContract.swift */,
-				A3A3D27324A116E500F153FD /* IPhoneAnySizeDifferentPortraitLandscapeSizeView.swift */,
+				A3A3D27324A116E500F153FD /* DifferentPortraitLandscapeAnyPhoneSizeView.swift */,
 				A34DB93C24940C11009D342C /* IPhoneAnySizeDifferentPortraitLandscapeSize.swift */,
 			);
 			path = IPhoneAnySizeDifferentPortraitLandscapeSize;
@@ -413,7 +413,7 @@
 				A30DFCE424A31CE50050E342 /* IPhoneAnySizeDifferentPortraitLandscapeSizeContract.swift in Sources */,
 				A39E121F245DEFB2005AA87C /* AppDelegate.swift in Sources */,
 				A380EB9D24A2A0E7009746C0 /* TableCellConfigurable.swift in Sources */,
-				A3A3D27424A116E500F153FD /* IPhoneAnySizeDifferentPortraitLandscapeSizeView.swift in Sources */,
+				A3A3D27424A116E500F153FD /* DifferentPortraitLandscapeAnyPhoneSizeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

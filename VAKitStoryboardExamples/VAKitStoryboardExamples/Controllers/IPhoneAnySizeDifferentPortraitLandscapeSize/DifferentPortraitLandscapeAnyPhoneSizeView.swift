@@ -1,5 +1,5 @@
 //
-//  IPhoneAnySizeDifferentPortraitLandscapeSizeView.swift
+//  DifferentPortraitLandscapeAnyPhoneSizeView.swift
 //  VAKitStoryboardExamples
 //
 //  Created by Vladimir Andrienko on 22.06.2020.
@@ -12,7 +12,7 @@ import UIKit
  Example view how to use VAView to create layout for different iPhones orientation.
  No constraints for iPad.
  */
-class IPhoneAnySizeDifferentPortraitLandscapeSizeView: VAView {
+class DifferentPortraitLandscapeAnyPhoneSizeView: VAView {
     let exampleView = UIView().configured {
         $0.backgroundColor = .purple
     }
@@ -51,13 +51,13 @@ import SwiftUI
 
 @available (iOS 13.0, *)
 struct IPhoneAnySizeDifferentPortraitLandscapeSizeViewRepresentation: UIViewRepresentable {
-    typealias UIViewType = IPhoneAnySizeDifferentPortraitLandscapeSizeView
+    typealias UIViewType = DifferentPortraitLandscapeAnyPhoneSizeView
     
-    func makeUIView(context: Context) -> IPhoneAnySizeDifferentPortraitLandscapeSizeView {
-        return IPhoneAnySizeDifferentPortraitLandscapeSizeView()
+    func makeUIView(context: Context) -> DifferentPortraitLandscapeAnyPhoneSizeView {
+        return DifferentPortraitLandscapeAnyPhoneSizeView()
     }
     
-    func updateUIView(_ uiView: IPhoneAnySizeDifferentPortraitLandscapeSizeView, context: Context) {
+    func updateUIView(_ uiView: DifferentPortraitLandscapeAnyPhoneSizeView, context: Context) {
     }
 }
 

@@ -9,9 +9,9 @@
 import UIKit
 
 class IPhoneAnySizeDifferentPortraitLandscapeSizeViewController: UIViewController {
-    let contentsView: IPhoneAnySizeDifferentPortraitLandscapeSizeView
+    let contentsView: DifferentPortraitLandscapeAnyPhoneSizeView
     
-    init(contentsView: IPhoneAnySizeDifferentPortraitLandscapeSizeView) {
+    init(contentsView: DifferentPortraitLandscapeAnyPhoneSizeView) {
         self.contentsView = contentsView
         super.init(nibName: nil, bundle: nil)
     }
