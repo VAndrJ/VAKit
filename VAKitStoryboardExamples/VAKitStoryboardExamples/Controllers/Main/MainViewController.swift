@@ -32,6 +32,9 @@ class MainViewController: UIViewController {
         bind()
     }
     
+    /*
+     Deselect table row on back.
+     */
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if let selectedIndexPath = contentsView.tableView.indexPathForSelectedRow {
