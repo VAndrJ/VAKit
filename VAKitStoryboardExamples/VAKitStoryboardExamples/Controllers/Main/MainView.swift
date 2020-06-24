@@ -21,7 +21,11 @@ class MainView: UIView, MainViewProtocol {
         backgroundColor = .white
     }
     
-    private func addElements() {
+    /*
+     Just constraints for all size classes.
+     Maybe add something more in the future.
+     */
+    func addElements() {
         addAutolayoutSubview(tableView)
         tableView
             .toSuperEdges(isSafe: true)
