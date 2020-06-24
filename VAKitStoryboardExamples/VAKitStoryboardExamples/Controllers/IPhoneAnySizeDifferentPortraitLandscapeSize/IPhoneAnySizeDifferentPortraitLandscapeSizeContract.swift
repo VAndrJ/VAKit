@@ -6,4 +6,12 @@
 //  Copyright © 2020 VAndrJ. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+struct IPhoneAnySizeDifferentPortraitLandscapeSizeViewControllerConfigurator {
+    let controller: UIViewController
+    
+    init() {
+        self.controller = IPhoneAnySizeDifferentPortraitLandscapeSizeViewController(contentsView: IPhoneAnySizeDifferentPortraitLandscapeSizeView())
+    }
+}
