@@ -8,6 +8,9 @@
 
 import UIKit
 
+/*
+ Not important for example
+ */
 protocol MainCoordinatorDelegate: AnyObject {
     func showDifferentSizeViewAnyPhonePortraitLandscapeExample()
 }
