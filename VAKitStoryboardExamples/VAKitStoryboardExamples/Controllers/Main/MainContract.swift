@@ -20,7 +20,7 @@ protocol MainViewProtocol {
 }
 
 protocol MainViewModelProtocol {
-    var tableData: [MainTableCellEntity] { get }
+    var tableData: [MainCellEntity] { get }
     
     func onSelectRow(at indexPath: IndexPath)
 }

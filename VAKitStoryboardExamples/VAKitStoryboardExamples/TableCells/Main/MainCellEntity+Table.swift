@@ -1,5 +1,5 @@
 //
-//  MainTableCellEntity.swift
+//  MainCellEntity+Table.swift
 //  VAKitStoryboardExamples
 //
 //  Created by Vladimir Andrienko on 20.06.2020.
@@ -8,12 +8,7 @@
 
 import UIKit
 
-struct MainTableCellEntity: VAIdentifiable {
-    let title: String
-    let secondaryTitle: String
-}
-
-extension MainTableCellEntity: TableCellConfigurable {
+extension MainCellEntity: TableCellConfigurable {
     var cellClass: UITableViewCell.Type {
         return MainTableCell.self
     }

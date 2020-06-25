@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+struct MainCellEntity: VAIdentifiable {
+    let title: String
+    let secondaryTitle: String
+}

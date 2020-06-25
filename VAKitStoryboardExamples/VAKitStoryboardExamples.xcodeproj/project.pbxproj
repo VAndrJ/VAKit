@@ -37,7 +37,7 @@
 		A3B201E5246489600083EFE1 /* VAKitLayoutSizeConstraintsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B201E4246489600083EFE1 /* VAKitLayoutSizeConstraintsTests.swift */; };
 		A3BAA6AB249E31B30042403A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BAA6AA249E31B30042403A /* MainViewController.swift */; };
 		A3BAA6B0249E33490042403A /* MainTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BAA6AF249E33490042403A /* MainTableCell.swift */; };
-		A3BAA6B2249E35930042403A /* MainTableCellEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BAA6B1249E35930042403A /* MainTableCellEntity.swift */; };
+		A3BAA6B2249E35930042403A /* MainCellEntity+Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BAA6B1249E35930042403A /* MainCellEntity+Table.swift */; };
 		A3C73057248C0971003F7220 /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C73056248C0971003F7220 /* RootCoordinator.swift */; };
 		A3DE0E2124A535110042819A /* MainCellEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DE0E2024A535110042819A /* MainCellEntity.swift */; };
 		A3F5368124744DE1006258D0 /* VAKitLayoutVADeviceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F5368024744DE1006258D0 /* VAKitLayoutVADeviceTests.swift */; };
@@ -88,7 +88,7 @@
 		A3B201E4246489600083EFE1 /* VAKitLayoutSizeConstraintsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAKitLayoutSizeConstraintsTests.swift; sourceTree = "<group>"; };
 		A3BAA6AA249E31B30042403A /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A3BAA6AF249E33490042403A /* MainTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableCell.swift; sourceTree = "<group>"; };
-		A3BAA6B1249E35930042403A /* MainTableCellEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableCellEntity.swift; sourceTree = "<group>"; };
+		A3BAA6B1249E35930042403A /* MainCellEntity+Table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainCellEntity+Table.swift"; sourceTree = "<group>"; };
 		A3C73056248C0971003F7220 /* RootCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
 		A3DE0E2024A535110042819A /* MainCellEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCellEntity.swift; sourceTree = "<group>"; };
 		A3F5368024744DE1006258D0 /* VAKitLayoutVADeviceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAKitLayoutVADeviceTests.swift; sourceTree = "<group>"; };
@@ -260,7 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				A3BAA6AF249E33490042403A /* MainTableCell.swift */,
-				A3BAA6B1249E35930042403A /* MainTableCellEntity.swift */,
+				A3BAA6B1249E35930042403A /* MainCellEntity+Table.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -420,7 +420,7 @@
 				A3C73057248C0971003F7220 /* RootCoordinator.swift in Sources */,
 				A373E9B1249D34F9002502EF /* Coordinator.swift in Sources */,
 				A3BAA6AB249E31B30042403A /* MainViewController.swift in Sources */,
-				A3BAA6B2249E35930042403A /* MainTableCellEntity.swift in Sources */,
+				A3BAA6B2249E35930042403A /* MainCellEntity+Table.swift in Sources */,
 				A380EBA524A2A0F8009746C0 /* VAView.swift in Sources */,
 				A30732A7249FB65D00D5BAA5 /* MainContract.swift in Sources */,
 				A38A142C248D554500E0D6C2 /* VAIdentifiable.swift in Sources */,

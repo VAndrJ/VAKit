@@ -18,16 +18,16 @@ class MainViewModel: MainViewModelProtocol {
     
     unowned let coordinator: MainCoordinatorDelegate
     
-    let _tableData: [(data: MainTableCellEntity, destination: Destination)] = [
+    let _tableData: [(data: MainCellEntity, destination: Destination)] = [
         (
-            MainTableCellEntity(
+            MainCellEntity(
                 title: "iPhone of any size with different element size in portrait and landscape",
                 secondaryTitle: "One centered view with different sizes. VAView used."
             ),
             .differentPortraitLandscapeAnyPhoneSize
         ),
     ]
-    var tableData: [MainTableCellEntity] {
+    var tableData: [MainCellEntity] {
         return _tableData.map({ $0.data })
     }
     
