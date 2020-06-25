@@ -8,6 +8,9 @@
 
 import Foundation
 
+/*
+ Not important for example
+ */
 class MainViewModel: MainViewModelProtocol {
     enum Destination {
         case differentPortraitLandscapeAnyPhoneSize
