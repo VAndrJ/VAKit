@@ -733,6 +733,12 @@ class VAKitLayoutSuperConstraintsTests: XCTestCase {
     }
     
     func test_toSuperAxisSymmetric_vertical_constraintActivation() {
+        var constraintTop: NSLayoutConstraint!
+        var constraintBottom: NSLayoutConstraint!
+        parentView.addAutolayoutSubview(view)
+        view.toSuperAxis(.vertical, symmetric: 1, isActive: false, configuring: { (constraintTop, constraintBottom) = $0 })
+        XCTAssertFalse(constraintTop.isActive)
+        XCTAssertFalse(constraintBottom.isActive)
     }
     
     }
