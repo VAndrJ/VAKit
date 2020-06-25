@@ -39,6 +39,7 @@
 		A3BAA6B0249E33490042403A /* MainTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BAA6AF249E33490042403A /* MainTableCell.swift */; };
 		A3BAA6B2249E35930042403A /* MainTableCellEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BAA6B1249E35930042403A /* MainTableCellEntity.swift */; };
 		A3C73057248C0971003F7220 /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C73056248C0971003F7220 /* RootCoordinator.swift */; };
+		A3DE0E2124A535110042819A /* MainCellEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DE0E2024A535110042819A /* MainCellEntity.swift */; };
 		A3F5368124744DE1006258D0 /* VAKitLayoutVADeviceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F5368024744DE1006258D0 /* VAKitLayoutVADeviceTests.swift */; };
 		A3F7666024730F6300F54775 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F7665F24730F6300F54775 /* UIView+Layout.swift */; };
 		A3F766622473100400F54775 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F7665F24730F6300F54775 /* UIView+Layout.swift */; };
@@ -89,6 +90,7 @@
 		A3BAA6AF249E33490042403A /* MainTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableCell.swift; sourceTree = "<group>"; };
 		A3BAA6B1249E35930042403A /* MainTableCellEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableCellEntity.swift; sourceTree = "<group>"; };
 		A3C73056248C0971003F7220 /* RootCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
+		A3DE0E2024A535110042819A /* MainCellEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCellEntity.swift; sourceTree = "<group>"; };
 		A3F5368024744DE1006258D0 /* VAKitLayoutVADeviceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAKitLayoutVADeviceTests.swift; sourceTree = "<group>"; };
 		A3F7665F24730F6300F54775 /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Layout.swift"; path = "../../VAKit/UI/UIView+Layout.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -237,6 +239,7 @@
 				A373E9AF249D34D2002502EF /* Coordinators */,
 				A373E9AE249D34A5002502EF /* Controllers */,
 				A34E00E12490287000F64FAB /* TableCells */,
+				A3DE0E1E24A534EF0042819A /* Entities */,
 				A332EA8C2460ACDF00C22AEE /* VAKit */,
 				A3C73055248C0809003F7220 /* Supporting Files */,
 			);
@@ -271,6 +274,22 @@
 				A39E122C245DEFB6005AA87C /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A3DE0E1E24A534EF0042819A /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				A3DE0E1F24A535000042819A /* Internal */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		A3DE0E1F24A535000042819A /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				A3DE0E2024A535110042819A /* MainCellEntity.swift */,
+			);
+			path = Internal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -394,6 +413,7 @@
 			files = (
 				A34DB93D24940C11009D342C /* DifferentPortraitLandscapeAnyPhoneSizeViewController.swift in Sources */,
 				A380EBA324A2A0F8009746C0 /* VAViewController.swift in Sources */,
+				A3DE0E2124A535110042819A /* MainCellEntity.swift in Sources */,
 				A380EB9C24A2A0E7009746C0 /* String.swift in Sources */,
 				A38A1429248D540000E0D6C2 /* Configurable.swift in Sources */,
 				A30732A9249FB69400D5BAA5 /* MainView.swift in Sources */,
