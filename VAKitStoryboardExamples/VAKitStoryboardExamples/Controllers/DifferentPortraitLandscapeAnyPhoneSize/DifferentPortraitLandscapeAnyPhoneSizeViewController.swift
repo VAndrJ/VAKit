@@ -8,6 +8,9 @@
 
 import UIKit
 
+/*
+ Not important for example
+ */
 class DifferentPortraitLandscapeAnyPhoneSizeViewController: UIViewController {
     let contentsView: DifferentPortraitLandscapeAnyPhoneSizeView
     
