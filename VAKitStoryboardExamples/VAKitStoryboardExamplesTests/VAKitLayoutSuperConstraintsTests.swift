@@ -714,6 +714,13 @@ class VAKitLayoutSuperConstraintsTests: XCTestCase {
     }
     
     func test_toSuperAxisSymmetric_vertical_constraintRelation() {
+        let relation: NSLayoutConstraint.Relation = .greaterThanOrEqual
+        var constraintTop: NSLayoutConstraint!
+        var constraintBottom: NSLayoutConstraint!
+        parentView.addAutolayoutSubview(view)
+        view.toSuperAxis(.vertical, symmetric: 1, relation: relation, configuring: { (constraintTop, constraintBottom) = $0 })
+        XCTAssertEqual(relation, constraintTop.relation)
+        XCTAssertEqual(relation, constraintBottom.relation)
     }
     
     }
