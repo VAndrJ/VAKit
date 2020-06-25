@@ -8,6 +8,9 @@
 
 import UIKit
 
+/*
+ Not important for example
+ */
 struct DifferentPortraitLandscapeAnyPhoneSizeConfigurator {
     let controller: UIViewController
     
