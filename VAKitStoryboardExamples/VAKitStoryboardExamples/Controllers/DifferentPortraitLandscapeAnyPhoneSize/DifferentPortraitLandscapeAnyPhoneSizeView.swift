@@ -9,8 +9,8 @@
 import UIKit
 
 /*
- Example view how to use VAView to create layout for different iPhones orientation.
- No constraints for iPad.
+ Example view how to use VAView to create a layout for different iPhones orientation.
+ No constraints for the iPad.
  */
 class DifferentPortraitLandscapeAnyPhoneSizeView: VAView {
     let exampleView = UIView().configured {
@@ -42,7 +42,7 @@ class DifferentPortraitLandscapeAnyPhoneSizeView: VAView {
 }
 
 /*
- To preview in canvas.
+ To preview on canvas.
  Before iOS 13 I used @IBDesignable, but Previews much better :)
  */
 #if DEBUG
