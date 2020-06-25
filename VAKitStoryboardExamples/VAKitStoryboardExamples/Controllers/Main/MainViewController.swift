@@ -8,6 +8,9 @@
 
 import UIKit
 
+/*
+ Not important for example
+ */
 class MainViewController: UIViewController {
     let contentsView: MainViewProtocol & UIView
     let viewModel: MainViewModelProtocol
