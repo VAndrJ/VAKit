@@ -154,7 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				A373E9B2249D3A1A002502EF /* Main */,
-				A3A3D27224A1169B00F153FD /* IPhoneAnySizeDifferentPortraitLandscapeSize */,
+				A3A3D27224A1169B00F153FD /* DifferentPortraitLandscapeAnyPhoneSize */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -243,14 +243,14 @@
 			path = VAKitStoryboardExamples;
 			sourceTree = "<group>";
 		};
-		A3A3D27224A1169B00F153FD /* IPhoneAnySizeDifferentPortraitLandscapeSize */ = {
+		A3A3D27224A1169B00F153FD /* DifferentPortraitLandscapeAnyPhoneSize */ = {
 			isa = PBXGroup;
 			children = (
 				A30DFCE324A31CE50050E342 /* DifferentPortraitLandscapeAnyPhoneSizeContract.swift */,
 				A3A3D27324A116E500F153FD /* DifferentPortraitLandscapeAnyPhoneSizeView.swift */,
 				A34DB93C24940C11009D342C /* DifferentPortraitLandscapeAnyPhoneSizeViewController.swift */,
 			);
-			path = IPhoneAnySizeDifferentPortraitLandscapeSize;
+			path = DifferentPortraitLandscapeAnyPhoneSize;
 			sourceTree = "<group>";
 		};
 		A3BAA6AE249E33200042403A /* Main */ = {
