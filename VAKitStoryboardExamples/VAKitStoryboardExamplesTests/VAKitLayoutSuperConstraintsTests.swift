@@ -760,6 +760,13 @@ class VAKitLayoutSuperConstraintsTests: XCTestCase {
     }
     
     func test_toSuperAxisSymmetric_horizontal_constraintMultiplier() {
+        let multiplier: CGFloat = 42
+        var constraintLeading: NSLayoutConstraint!
+        var constraintTrailing: NSLayoutConstraint!
+        parentView.addAutolayoutSubview(view)
+        view.toSuperAxis(.horizontal, symmetric: 1, multiplier: multiplier, configuring: { (constraintLeading, constraintTrailing) = $0 })
+        XCTAssertEqual(multiplier, constraintLeading.multiplier)
+        XCTAssertEqual(multiplier, constraintTrailing.multiplier)
     }
     
     }
