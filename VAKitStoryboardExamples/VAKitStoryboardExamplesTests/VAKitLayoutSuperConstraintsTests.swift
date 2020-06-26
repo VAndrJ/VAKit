@@ -759,6 +759,9 @@ class VAKitLayoutSuperConstraintsTests: XCTestCase {
         XCTAssertEqual(1, constraintBottom.multiplier)
     }
     
+    func test_toSuperAxisSymmetric_horizontal_constraintMultiplier() {
+    }
+    
     }
     
     // MARK: - Multiple constraints to super view
