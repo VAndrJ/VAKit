@@ -9,9 +9,17 @@
 import UIKit
 
 class VAIconView: UIView {
-    enum Size {
-        case small
-        case medium
-        case large
+    
+    init(size: CGFloat) {
+        super.init(frame: .init(x: 0, y: 0, width: size, height: size))
+        addElements(size: size)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func addElements(size: CGFloat) {
+        
     }
 }
