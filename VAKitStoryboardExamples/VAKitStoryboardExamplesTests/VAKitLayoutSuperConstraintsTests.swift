@@ -798,6 +798,12 @@ class VAKitLayoutSuperConstraintsTests: XCTestCase {
     }
     
     func test_toSuperAxisSymmetric_horizontal_constraintSafeArea() {
+        var constraintLeading: NSLayoutConstraint!
+        var constraintTrailing: NSLayoutConstraint!
+        parentView.addAutolayoutSubview(view)
+        view.toSuperAxis(.horizontal, symmetric: 1, isSafe: true, configuring: { (constraintLeading, constraintTrailing) = $0 })
+        XCTAssertEqual(parentView.safeAreaLayoutGuide, (constraintLeading.secondItem as? UILayoutGuide))
+        XCTAssertEqual(parentView.safeAreaLayoutGuide, (constraintTrailing.secondItem as? UILayoutGuide))
     }
     
     }
