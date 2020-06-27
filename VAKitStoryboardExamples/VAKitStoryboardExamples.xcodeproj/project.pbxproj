@@ -14,6 +14,7 @@
 		A30DFCE424A31CE50050E342 /* DifferentPortraitLandscapeAnyPhoneSizeContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30DFCE324A31CE50050E342 /* DifferentPortraitLandscapeAnyPhoneSizeContract.swift */; };
 		A312BA7924A7BD0500745516 /* DifferentPortraitLandscapeAnyPhoneSizePadSameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A312BA7824A7BD0500745516 /* DifferentPortraitLandscapeAnyPhoneSizePadSameView.swift */; };
 		A312BA7C24A7BE9300745516 /* VAIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A312BA7B24A7BE9300745516 /* VAIconView.swift */; };
+		A312BA7E24A7C1D600745516 /* VAGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A312BA7D24A7C1D600745516 /* VAGradientView.swift */; };
 		A321E2A724700BFD00173F6E /* VAKitLayoutDeviceIdentifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A321E2A624700BFD00173F6E /* VAKitLayoutDeviceIdentifierTests.swift */; };
 		A346312A2479332F00B8902F /* VAKitLayoutSuperConstraintsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34631292479332F00B8902F /* VAKitLayoutSuperConstraintsTests.swift */; };
 		A346312C247933E500B8902F /* VAKitLayoutTestsSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A346312B247933E500B8902F /* VAKitLayoutTestsSupport.swift */; };
@@ -67,6 +68,7 @@
 		A30DFCE324A31CE50050E342 /* DifferentPortraitLandscapeAnyPhoneSizeContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifferentPortraitLandscapeAnyPhoneSizeContract.swift; sourceTree = "<group>"; };
 		A312BA7824A7BD0500745516 /* DifferentPortraitLandscapeAnyPhoneSizePadSameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifferentPortraitLandscapeAnyPhoneSizePadSameView.swift; sourceTree = "<group>"; };
 		A312BA7B24A7BE9300745516 /* VAIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAIconView.swift; sourceTree = "<group>"; };
+		A312BA7D24A7C1D600745516 /* VAGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAGradientView.swift; sourceTree = "<group>"; };
 		A321E2A624700BFD00173F6E /* VAKitLayoutDeviceIdentifierTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAKitLayoutDeviceIdentifierTests.swift; sourceTree = "<group>"; };
 		A34631292479332F00B8902F /* VAKitLayoutSuperConstraintsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAKitLayoutSuperConstraintsTests.swift; sourceTree = "<group>"; };
 		A346312B247933E500B8902F /* VAKitLayoutTestsSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAKitLayoutTestsSupport.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				A312BA7B24A7BE9300745516 /* VAIconView.swift */,
+				A312BA7D24A7C1D600745516 /* VAGradientView.swift */,
 			);
 			path = CustomUI;
 			sourceTree = "<group>";
@@ -450,6 +453,7 @@
 				A380EBA224A2A0F8009746C0 /* UITableView+Dequeue.swift in Sources */,
 				A3BAA6B0249E33490042403A /* MainTableCell.swift in Sources */,
 				A380EBA424A2A0F8009746C0 /* VAConstraintable.swift in Sources */,
+				A312BA7E24A7C1D600745516 /* VAGradientView.swift in Sources */,
 				A30732AB249FB6E800D5BAA5 /* MainViewModel.swift in Sources */,
 				A380EB9B24A2A0E7009746C0 /* TableSourceDelegate.swift in Sources */,
 				A312BA7C24A7BE9300745516 /* VAIconView.swift in Sources */,
