@@ -8,6 +8,10 @@
 
 import UIKit
 
-class DifferentPortraitLandscapeAnyPhoneSizePadSameView: UIView {
+class DifferentPortraitLandscapeAnyPhoneSizePadSameView: VAView {
     
+    convenience init() {
+        self.init(frame: UIScreen.main.bounds)
+        addElements()
+    }
 }
