@@ -797,6 +797,9 @@ class VAKitLayoutSuperConstraintsTests: XCTestCase {
         XCTAssertEqual(parentView, (constraintBottom.secondItem as? UIView))
     }
     
+    func test_toSuperAxisSymmetric_horizontal_constraintSafeArea() {
+    }
+    
     }
     
     // MARK: - Multiple constraints to super view
