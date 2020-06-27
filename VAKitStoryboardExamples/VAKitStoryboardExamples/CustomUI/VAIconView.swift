@@ -9,4 +9,9 @@
 import UIKit
 
 class VAIconView: UIView {
+    enum Size {
+        case small
+        case medium
+        case large
+    }
 }
