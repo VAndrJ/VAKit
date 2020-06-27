@@ -12,6 +12,7 @@
 		A30732AB249FB6E800D5BAA5 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30732AA249FB6E800D5BAA5 /* MainViewModel.swift */; };
 		A30C91DD2461FE0700CCDF5E /* VAKitLayoutSubviewsAddTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30C91DC2461FE0700CCDF5E /* VAKitLayoutSubviewsAddTests.swift */; };
 		A30DFCE424A31CE50050E342 /* DifferentPortraitLandscapeAnyPhoneSizeContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30DFCE324A31CE50050E342 /* DifferentPortraitLandscapeAnyPhoneSizeContract.swift */; };
+		A312BA7924A7BD0500745516 /* DifferentPortraitLandscapeAnyPhoneSizePadSameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A312BA7824A7BD0500745516 /* DifferentPortraitLandscapeAnyPhoneSizePadSameView.swift */; };
 		A321E2A724700BFD00173F6E /* VAKitLayoutDeviceIdentifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A321E2A624700BFD00173F6E /* VAKitLayoutDeviceIdentifierTests.swift */; };
 		A346312A2479332F00B8902F /* VAKitLayoutSuperConstraintsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34631292479332F00B8902F /* VAKitLayoutSuperConstraintsTests.swift */; };
 		A346312C247933E500B8902F /* VAKitLayoutTestsSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A346312B247933E500B8902F /* VAKitLayoutTestsSupport.swift */; };
@@ -63,6 +64,7 @@
 		A30C91D62461FD5C00CCDF5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A30C91DC2461FE0700CCDF5E /* VAKitLayoutSubviewsAddTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAKitLayoutSubviewsAddTests.swift; sourceTree = "<group>"; };
 		A30DFCE324A31CE50050E342 /* DifferentPortraitLandscapeAnyPhoneSizeContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifferentPortraitLandscapeAnyPhoneSizeContract.swift; sourceTree = "<group>"; };
+		A312BA7824A7BD0500745516 /* DifferentPortraitLandscapeAnyPhoneSizePadSameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifferentPortraitLandscapeAnyPhoneSizePadSameView.swift; sourceTree = "<group>"; };
 		A321E2A624700BFD00173F6E /* VAKitLayoutDeviceIdentifierTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAKitLayoutDeviceIdentifierTests.swift; sourceTree = "<group>"; };
 		A34631292479332F00B8902F /* VAKitLayoutSuperConstraintsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAKitLayoutSuperConstraintsTests.swift; sourceTree = "<group>"; };
 		A346312B247933E500B8902F /* VAKitLayoutTestsSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAKitLayoutTestsSupport.swift; sourceTree = "<group>"; };
@@ -123,6 +125,14 @@
 			path = VAKitStoryboardExamplesTests;
 			sourceTree = "<group>";
 		};
+		A312BA7724A7BCB500745516 /* DifferentPortraitLandscapeAnyPhoneSizePadSame */ = {
+			isa = PBXGroup;
+			children = (
+				A312BA7824A7BD0500745516 /* DifferentPortraitLandscapeAnyPhoneSizePadSameView.swift */,
+			);
+			path = DifferentPortraitLandscapeAnyPhoneSizePadSame;
+			sourceTree = "<group>";
+		};
 		A332EA8C2460ACDF00C22AEE /* VAKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +167,7 @@
 			children = (
 				A373E9B2249D3A1A002502EF /* Main */,
 				A3A3D27224A1169B00F153FD /* DifferentPortraitLandscapeAnyPhoneSize */,
+				A312BA7724A7BCB500745516 /* DifferentPortraitLandscapeAnyPhoneSizePadSame */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -423,6 +434,7 @@
 				A3BAA6B2249E35930042403A /* MainCellEntity+Table.swift in Sources */,
 				A380EBA524A2A0F8009746C0 /* VAView.swift in Sources */,
 				A30732A7249FB65D00D5BAA5 /* MainContract.swift in Sources */,
+				A312BA7924A7BD0500745516 /* DifferentPortraitLandscapeAnyPhoneSizePadSameView.swift in Sources */,
 				A38A142C248D554500E0D6C2 /* VAIdentifiable.swift in Sources */,
 				A380EBA224A2A0F8009746C0 /* UITableView+Dequeue.swift in Sources */,
 				A3BAA6B0249E33490042403A /* MainTableCell.swift in Sources */,
