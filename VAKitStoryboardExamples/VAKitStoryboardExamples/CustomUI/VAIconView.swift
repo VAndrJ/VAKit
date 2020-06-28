@@ -21,10 +21,18 @@ class VAIconView: UIView {
     init(size: CGFloat) {
         super.init(frame: .init(x: 0, y: 0, width: size, height: size))
         addElements(size: size)
+        configure(size: size)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func configure(size: CGFloat) {
+        backgroundColor = .white
+        layer.cornerRadius = size / 8
+        foregroundView.layer.cornerRadius = size * 3 / 32
+        iconLabel.font = UIFont.boldSystemFont(ofSize: size / 2)
     }
     
     func addElements(size: CGFloat) {
