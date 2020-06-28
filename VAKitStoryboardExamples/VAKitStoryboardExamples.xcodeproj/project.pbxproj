@@ -16,7 +16,7 @@
 		A312BA7C24A7BE9300745516 /* VAIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A312BA7B24A7BE9300745516 /* VAIconView.swift */; };
 		A312BA7E24A7C1D600745516 /* VAGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A312BA7D24A7C1D600745516 /* VAGradientView.swift */; };
 		A312BA8024A7C3B800745516 /* NSDirectionalEdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A312BA7F24A7C3B800745516 /* NSDirectionalEdgeInsets.swift */; };
-		A312BA8224A872DE00745516 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A312BA8124A872DE00745516 /* UIView.swift */; };
+		A312BA8224A872DE00745516 /* UIView+Support.swift in Sources */ = {isa = PBXBuildFile; fileRef = A312BA8124A872DE00745516 /* UIView+Support.swift */; };
 		A321E2A724700BFD00173F6E /* VAKitLayoutDeviceIdentifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A321E2A624700BFD00173F6E /* VAKitLayoutDeviceIdentifierTests.swift */; };
 		A346312A2479332F00B8902F /* VAKitLayoutSuperConstraintsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34631292479332F00B8902F /* VAKitLayoutSuperConstraintsTests.swift */; };
 		A346312C247933E500B8902F /* VAKitLayoutTestsSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A346312B247933E500B8902F /* VAKitLayoutTestsSupport.swift */; };
@@ -72,7 +72,7 @@
 		A312BA7B24A7BE9300745516 /* VAIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAIconView.swift; sourceTree = "<group>"; };
 		A312BA7D24A7C1D600745516 /* VAGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAGradientView.swift; sourceTree = "<group>"; };
 		A312BA7F24A7C3B800745516 /* NSDirectionalEdgeInsets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NSDirectionalEdgeInsets.swift; path = ../../VAKit/Generic/NSDirectionalEdgeInsets.swift; sourceTree = "<group>"; };
-		A312BA8124A872DE00745516 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIView.swift; path = ../../VAKit/UI/UIView.swift; sourceTree = "<group>"; };
+		A312BA8124A872DE00745516 /* UIView+Support.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Support.swift"; sourceTree = "<group>"; };
 		A321E2A624700BFD00173F6E /* VAKitLayoutDeviceIdentifierTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAKitLayoutDeviceIdentifierTests.swift; sourceTree = "<group>"; };
 		A34631292479332F00B8902F /* VAKitLayoutSuperConstraintsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAKitLayoutSuperConstraintsTests.swift; sourceTree = "<group>"; };
 		A346312B247933E500B8902F /* VAKitLayoutTestsSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAKitLayoutTestsSupport.swift; sourceTree = "<group>"; };
@@ -144,10 +144,19 @@
 		A312BA7A24A7BDEF00745516 /* CustomUI */ = {
 			isa = PBXGroup;
 			children = (
+				A312BA8324A8784A00745516 /* Extensions */,
 				A312BA7B24A7BE9300745516 /* VAIconView.swift */,
 				A312BA7D24A7C1D600745516 /* VAGradientView.swift */,
 			);
 			path = CustomUI;
+			sourceTree = "<group>";
+		};
+		A312BA8324A8784A00745516 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A312BA8124A872DE00745516 /* UIView+Support.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		A332EA8C2460ACDF00C22AEE /* VAKit */ = {
@@ -167,7 +176,6 @@
 				A380EBA124A2A0F8009746C0 /* VAView.swift */,
 				A380EB9F24A2A0F7009746C0 /* VAViewController.swift */,
 				A3F7665F24730F6300F54775 /* UIView+Layout.swift */,
-				A312BA8124A872DE00745516 /* UIView.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -451,7 +459,7 @@
 				A312BA8024A7C3B800745516 /* NSDirectionalEdgeInsets.swift in Sources */,
 				A3C73057248C0971003F7220 /* RootCoordinator.swift in Sources */,
 				A373E9B1249D34F9002502EF /* Coordinator.swift in Sources */,
-				A312BA8224A872DE00745516 /* UIView.swift in Sources */,
+				A312BA8224A872DE00745516 /* UIView+Support.swift in Sources */,
 				A3BAA6AB249E31B30042403A /* MainViewController.swift in Sources */,
 				A3BAA6B2249E35930042403A /* MainCellEntity+Table.swift in Sources */,
 				A380EBA524A2A0F8009746C0 /* VAView.swift in Sources */,
