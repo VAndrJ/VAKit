@@ -817,4 +817,7 @@ class VAKitLayoutSuperConstraintsTests: XCTestCase {
     
     // MARK: - Multiple constraints to super view
     
+    func test_toSuperAnchors_returnViewType() {
+    }
+    
 }
