@@ -12,6 +12,11 @@ import UIKit
  Not important for example
  */
 class VAIconView: UIView {
+    let foregroundView = VAGradientView().withShadow()
+    let iconLabel = UILabel().withShadow().configured {
+        $0.text = "VA"
+        $0.textColor = .white
+    }
     
     init(size: CGFloat) {
         super.init(frame: .init(x: 0, y: 0, width: size, height: size))
