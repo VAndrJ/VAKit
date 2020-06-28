@@ -28,6 +28,11 @@ class VAIconView: UIView {
     }
     
     func addElements(size: CGFloat) {
-        
+        self.size(size)
+        addAutolayoutSubviews(foregroundView, iconLabel)
+        foregroundView
+            .toSuperEdges(insets: .init(all: size / 16))
+        iconLabel
+            .toSuperCenter()
     }
 }
