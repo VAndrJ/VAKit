@@ -818,6 +818,10 @@ class VAKitLayoutSuperConstraintsTests: XCTestCase {
     // MARK: - Multiple constraints to super view
     
     func test_toSuperAnchors_returnViewType() {
+        view = MockView()
+        parentView.addAutolayoutSubview(view)
+        let testView = view.toSuper(anchors: .top, .leading)
+        XCTAssertTrue(testView is MockView)
     }
     
 }
