@@ -8,5 +8,8 @@
 
 import UIKit
 
+/*
+ Not important for example
+ */
 class VAGradientView: UIView {
 }
