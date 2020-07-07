@@ -32,3 +32,6 @@ class VAGradientView: UIView {
         layer.colors = [UIColor.systemPurple.cgColor, UIColor.systemTeal.cgColor]
     }
 }
+
+class VARoundedEdgeView: UIView {
+}
