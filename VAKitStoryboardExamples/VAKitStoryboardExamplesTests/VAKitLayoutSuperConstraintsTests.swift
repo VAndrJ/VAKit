@@ -831,4 +831,7 @@ class VAKitLayoutSuperConstraintsTests: XCTestCase {
         constraints.forEach({ XCTAssertTrue($0.constant.isZero) })
     }
     
+    func test_toSuperAnchors_constraintConstant() {
+    }
+
 }
