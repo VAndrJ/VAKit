@@ -870,6 +870,10 @@ class VAKitLayoutSuperConstraintsTests: XCTestCase {
     }
 
     func test_toSuperAnchors_constraintActivation() {
+        var constraints: [NSLayoutConstraint]!
+        parentView.addAutolayoutSubview(view)
+        view.toSuper(anchors: .top, .leading, .bottom, isActive: false, configuring: { constraints = $0 })
+        constraints.forEach({ XCTAssertFalse($0.isActive) })
     }
 
 }
