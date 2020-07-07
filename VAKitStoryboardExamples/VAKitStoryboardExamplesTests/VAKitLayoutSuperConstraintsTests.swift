@@ -846,4 +846,7 @@ class VAKitLayoutSuperConstraintsTests: XCTestCase {
         constraints.forEach({ constraintPriorityCheck(constraint: $0, priority: 1000) })
     }
 
+    func test_toSuperAnchors_constraintPriority() {
+    }
+
 }
