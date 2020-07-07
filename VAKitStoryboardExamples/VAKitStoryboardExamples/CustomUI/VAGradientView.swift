@@ -34,4 +34,20 @@ class VAGradientView: UIView {
 }
 
 class VARoundedEdgeView: UIView {
+    let gradientView = VAGradientView()
+    
+    init() {
+        super.init(frame: .init(x: 0, y: 0, width: 100, height: 100))
+        addElement()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func addElement() {
+        addAutolayoutSubview(gradientView)
+        gradientView
+            .toSuperEdges()
+    }
 }
