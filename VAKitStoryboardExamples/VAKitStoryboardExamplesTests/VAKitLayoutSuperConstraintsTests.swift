@@ -861,4 +861,7 @@ class VAKitLayoutSuperConstraintsTests: XCTestCase {
         constraints.forEach({ XCTAssertEqual(NSLayoutConstraint.Relation.equal, $0.relation) })
     }
 
+    func test_toSuperAnchors_constraintRelation() {
+    }
+
 }
