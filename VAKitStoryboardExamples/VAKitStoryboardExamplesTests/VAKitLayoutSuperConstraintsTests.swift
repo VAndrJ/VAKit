@@ -840,6 +840,10 @@ class VAKitLayoutSuperConstraintsTests: XCTestCase {
     }
 
     func test_toSuperAnchors_constraintPriorityDefault() {
+        var constraints: [NSLayoutConstraint]!
+        parentView.addAutolayoutSubview(view)
+        view.toSuper(anchors: .top, .leading, .bottom, configuring: { constraints = $0 })
+        constraints.forEach({ constraintPriorityCheck(constraint: $0, priority: 1000) })
     }
 
 }
