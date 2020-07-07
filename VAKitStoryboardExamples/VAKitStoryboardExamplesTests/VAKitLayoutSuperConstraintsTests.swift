@@ -824,4 +824,7 @@ class VAKitLayoutSuperConstraintsTests: XCTestCase {
         XCTAssertTrue(testView is MockView)
     }
     
+    func test_toSuperAnchors_constraintConstantDefault() {
+    }
+    
 }
