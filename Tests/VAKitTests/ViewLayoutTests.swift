@@ -8,7 +8,7 @@
 #if canImport(AppKit) || canImport(UIKit)
 #if canImport(AppKit)
 import AppKit
-#elseif canImport(UIKit)
+#else
 import UIKit
 #endif
 import Testing
@@ -18,7 +18,7 @@ import Testing
 @MainActor
 struct ViewLayoutTests {
 
-    @Test("Platform View add subview AutoLayout")
+    @Test("Platform View added as AutoLayout subview")
     func subviewAdd() {
         let container = PlatformView()
         let sut = PlatformView()
@@ -26,6 +26,18 @@ struct ViewLayoutTests {
 
         #expect(!sut.translatesAutoresizingMaskIntoConstraints)
         #expect(container.subviews == [sut])
+    }
+
+    @Test("Multiple Platform Views added as AutoLayout subviews")
+    func subviewsAdd() {
+        let container = PlatformView()
+        let sut = PlatformView()
+        let sut1 = PlatformView()
+        container.addAutolayoutSubviews(sut, sut1)
+
+        #expect(!sut.translatesAutoresizingMaskIntoConstraints)
+        #expect(!sut1.translatesAutoresizingMaskIntoConstraints)
+        #expect(container.subviews == [sut, sut1])
     }
 }
 #endif

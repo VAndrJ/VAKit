@@ -8,7 +8,7 @@
 #if canImport(AppKit) || canImport(UIKit)
 #if canImport(AppKit)
 import AppKit
-#elseif canImport(UIKit)
+#else
 import UIKit
 #endif
 

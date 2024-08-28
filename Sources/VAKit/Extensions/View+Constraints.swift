@@ -27,6 +27,10 @@ extension PlatformView: ConstrainedItem {
         subview.translatesAutoresizingMaskIntoConstraints = false
         addSubview(subview)
     }
+    
+    @inline(__always) public func addAutolayoutSubviews(_ subviews: PlatformView...) {
+        subviews.forEach { addAutolayoutSubview($0) }
+    }
 }
 
 extension PlatformLayoutGuide: ConstrainedItem {}
