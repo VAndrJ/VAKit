@@ -30,10 +30,29 @@ struct ViewConstraintsTests {
     func containerInitial() {
         let view = PlatformView()
         let constraints = [view.widthAnchor.constraint(equalToConstant: 100)]
-        let sut = ConstraintsContainer(view: view, initialConstraints: constraints)
+        let sut = ConstraintsContainer(item: view, initialConstraints: constraints)
 
-        #expect(view == sut.constraintsView)
+        #expect(view == sut.constrainedItem)
         #expect(constraints == sut.constraints)
+    }
+
+    @Suite("NSLayoutConstraint container constraints")
+    @MainActor
+    struct ViewContainerConstraintsTests {
+        
+        @Test("Anchor to item constraint")
+        func anchor() async throws {
+            let view = PlatformView()
+            let container = view.anchor(.width, to: view, anchor: .height)
+            let sut = container.constraints.first!
+
+            #expect(sut.isActive == false)
+            #expect(sut.priority == .required)
+            #expect(sut.multiplier == 1)
+            #expect(sut.constant == 0)
+            #expect(sut.firstAttribute == .width)
+            #expect(sut.secondAttribute == .height)
+        }
     }
 }
 #endif
