@@ -22,7 +22,6 @@ struct UIKitViewTests {
 
         sut = VASimpleView()
 
-        print(sut.frame)
         #expect(.zero == sut.frame)
     }
 

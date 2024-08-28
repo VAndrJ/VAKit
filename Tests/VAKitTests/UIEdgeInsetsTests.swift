@@ -13,7 +13,7 @@ import UIKit
 @Suite("UIEdgeInsets extensions")
 struct UIEdgeInsetsTests {
 
-    @Suite("UIEdgeInsets initializer")
+    @Suite("UIEdgeInsets initializers")
     struct UIEdgeInsetsInitTests {
 
         @Test(
