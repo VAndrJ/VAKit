@@ -56,6 +56,28 @@ extension ConstrainedItem {
 
     func anchor(
         _ selfAnchor: NSLayoutConstraint.Attribute,
+        sameTo toItem: ConstrainedItem,
+        relation: NSLayoutConstraint.Relation = .equal,
+        multiplier: CGFloat = 1,
+        constant: CGFloat = 0,
+        priority: Float? = nil,
+        isSafe: Bool = false,
+        configure: (NSLayoutConstraint) -> Void = { _ in }
+    ) -> ConstraintsContainer<Self> {
+        .init(item: self).anchor(
+            selfAnchor,
+            sameTo: toItem,
+            relation: relation,
+            multiplier: multiplier,
+            constant: constant,
+            priority: priority,
+            isSafe: isSafe,
+            configure: configure
+        )
+    }
+
+    func anchor(
+        _ selfAnchor: NSLayoutConstraint.Attribute,
         to toItem: ConstrainedItem,
         anchor: NSLayoutConstraint.Attribute,
         relation: NSLayoutConstraint.Relation = .equal,
@@ -65,7 +87,7 @@ extension ConstrainedItem {
         isSafe: Bool = false,
         configure: (NSLayoutConstraint) -> Void = { _ in }
     ) -> ConstraintsContainer<Self> {
-        ConstraintsContainer(item: self).anchor(
+        .init(item: self).anchor(
             selfAnchor,
             to: toItem,
             anchor: anchor,
@@ -87,6 +109,29 @@ public final class ConstraintsContainer<Item: ConstrainedItem>: Constraints {
     public init(item: Item, initialConstraints: [NSLayoutConstraint] = []) {
         self.constraints = initialConstraints
         self.constrainedItem = item
+    }
+
+    func anchor(
+        _ selfAnchor: NSLayoutConstraint.Attribute,
+        sameTo toItem: ConstrainedItem,
+        relation: NSLayoutConstraint.Relation = .equal,
+        multiplier: CGFloat = 1,
+        constant: CGFloat = 0,
+        priority: Float? = nil,
+        isSafe: Bool = false,
+        configure: (NSLayoutConstraint) -> Void = { _ in }
+    ) -> ConstraintsContainer {
+        self.anchor(
+            selfAnchor,
+            to: toItem,
+            anchor: selfAnchor,
+            relation: relation,
+            multiplier: multiplier,
+            constant: constant,
+            priority: priority,
+            isSafe: isSafe,
+            configure: configure
+        )
     }
 
     func anchor(

@@ -62,12 +62,27 @@ struct ViewConstraintsTests {
             let container = view.anchor(.width, to: view, anchor: .height)
             let sut = container.constraints.first!
 
-            #expect(sut.isActive == false)
-            #expect(sut.priority == .required)
-            #expect(sut.multiplier == 1)
-            #expect(sut.constant == 0)
-            #expect(sut.firstAttribute == .width)
-            #expect(sut.secondAttribute == .height)
+            #expect(!sut.isActive)
+            #expect(.required == sut.priority)
+            #expect(1 == sut.multiplier)
+            #expect(0 == sut.constant)
+            #expect(.width == sut.firstAttribute)
+            #expect(.height == sut.secondAttribute)
+        }
+
+        @Test("Anchor same to item's anchor constraint")
+        func anchorSame() async throws {
+            let view = PlatformView()
+            var sut: NSLayoutConstraint!
+            let container = view.anchor(.width, sameTo: view, priority: 999, isSafe: true, configure: { sut = $0 })
+
+            #expect(!sut.isActive)
+            #expect(999 == sut.priority.rawValue)
+            #expect(1 == sut.multiplier)
+            #expect(0 == sut.constant)
+            #expect(.width == sut.firstAttribute)
+            #expect(.width == sut.secondAttribute)
+            #expect(container.constraints == [sut])
         }
     }
 }
