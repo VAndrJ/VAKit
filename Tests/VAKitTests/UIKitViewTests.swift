@@ -25,5 +25,31 @@ struct UIKitViewTests {
         print(sut.frame)
         #expect(.zero == sut.frame)
     }
+
+    @Test func testVAView() async throws {
+        let sut = TestVaView()
+
+        #expect(sut.isElementsAdded)
+        #expect(sut.isConfigured)
+        #expect(sut.isBinded)
+    }
+}
+
+private class TestVaView: VAView {
+    var isElementsAdded = false
+    var isConfigured = false
+    var isBinded = false
+
+    override func addElements() {
+        isElementsAdded = true
+    }
+
+    override func configure() {
+        isConfigured = true
+    }
+
+    override func bind() {
+        isBinded = true
+    }
 }
 #endif
