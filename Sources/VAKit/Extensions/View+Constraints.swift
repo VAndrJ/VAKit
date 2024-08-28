@@ -23,6 +23,10 @@ public typealias PlatformLayoutGuide = UILayoutGuide
 
 extension PlatformView: ConstrainedItem {
 
+    @inline(__always) func activate(@ArrayBuilder<any Constraints> anyConstraints: () -> [any Constraints]) {
+        NSLayoutConstraint.activate(anyConstraints().flatMap { $0.constraints })
+    }
+
     public func addAutolayoutSubview(_ subview: PlatformView) {
         subview.translatesAutoresizingMaskIntoConstraints = false
         addSubview(subview)

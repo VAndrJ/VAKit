@@ -36,6 +36,22 @@ struct ViewConstraintsTests {
         #expect(constraints == sut.constraints)
     }
 
+    @Test("Constraints activation builder")
+    func constraintsActivation() {
+        let view = PlatformView()
+        let constraint = view.heightAnchor.constraint(equalToConstant: 100)
+        let coontainer = view.anchor(.width, to: view, anchor: .height)
+        view.activate {
+            constraint
+            coontainer
+        }
+
+        #expect(constraint.isActive)
+        coontainer.constraints.forEach {
+            #expect($0.isActive)
+        }
+    }
+
     @Suite("NSLayoutConstraint container constraints")
     @MainActor
     struct ViewContainerConstraintsTests {
