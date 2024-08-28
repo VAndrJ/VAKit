@@ -54,7 +54,29 @@ extension NSLayoutConstraint: Constraints {
 
 extension ConstrainedItem {
 
-    func anchor(
+    @inline(__always) public func anchor(
+        _ selfAnchor: NSLayoutConstraint.Attribute,
+        opposedTo toItem: ConstrainedItem,
+        relation: NSLayoutConstraint.Relation = .equal,
+        multiplier: CGFloat = 1,
+        constant: CGFloat = 0,
+        priority: Float? = nil,
+        isSafe: Bool = false,
+        configure: (NSLayoutConstraint) -> Void = { _ in }
+    ) -> ConstraintsContainer<Self> {
+        .init(item: self).anchor(
+            selfAnchor,
+            opposedTo: toItem,
+            relation: relation,
+            multiplier: multiplier,
+            constant: constant,
+            priority: priority,
+            isSafe: isSafe,
+            configure: configure
+        )
+    }
+
+    @inline(__always) public func anchor(
         _ selfAnchor: NSLayoutConstraint.Attribute,
         sameTo toItem: ConstrainedItem,
         relation: NSLayoutConstraint.Relation = .equal,
@@ -76,7 +98,7 @@ extension ConstrainedItem {
         )
     }
 
-    func anchor(
+    @inline(__always) public func anchor(
         _ selfAnchor: NSLayoutConstraint.Attribute,
         to toItem: ConstrainedItem,
         anchor: NSLayoutConstraint.Attribute,
@@ -111,7 +133,30 @@ public final class ConstraintsContainer<Item: ConstrainedItem>: Constraints {
         self.constrainedItem = item
     }
 
-    func anchor(
+    public func anchor(
+        _ selfAnchor: NSLayoutConstraint.Attribute,
+        opposedTo toItem: ConstrainedItem,
+        relation: NSLayoutConstraint.Relation = .equal,
+        multiplier: CGFloat = 1,
+        constant: CGFloat = 0,
+        priority: Float? = nil,
+        isSafe: Bool = false,
+        configure: (NSLayoutConstraint) -> Void = { _ in }
+    ) -> ConstraintsContainer {
+        return anchor(
+            selfAnchor,
+            to: toItem,
+            anchor: selfAnchor.opposed,
+            relation: relation,
+            multiplier: multiplier,
+            constant: constant,
+            priority: priority,
+            isSafe: isSafe,
+            configure: configure
+        )
+    }
+
+    public func anchor(
         _ selfAnchor: NSLayoutConstraint.Attribute,
         sameTo toItem: ConstrainedItem,
         relation: NSLayoutConstraint.Relation = .equal,
@@ -134,7 +179,7 @@ public final class ConstraintsContainer<Item: ConstrainedItem>: Constraints {
         )
     }
 
-    func anchor(
+    public func anchor(
         _ selfAnchor: NSLayoutConstraint.Attribute,
         to toItem: ConstrainedItem,
         anchor: NSLayoutConstraint.Attribute,
@@ -161,6 +206,22 @@ public final class ConstraintsContainer<Item: ConstrainedItem>: Constraints {
         constraints.append(constraint)
 
         return self
+    }
+}
+
+extension NSLayoutConstraint.Attribute {
+    public var opposed: NSLayoutConstraint.Attribute {
+        switch self {
+        case .bottom: .top
+        case .top: .bottom
+        case .leading: .trailing
+        case .trailing: .leading
+        case .left: .right
+        case .right: .left
+        case .firstBaseline: .lastBaseline
+        case .lastBaseline: .firstBaseline
+        default: fatalError("Not implemented")
+        }
     }
 }
 #endif

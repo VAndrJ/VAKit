@@ -57,7 +57,7 @@ struct ViewConstraintsTests {
     struct ViewContainerConstraintsTests {
         
         @Test("Anchor to item constraint")
-        func anchor() async throws {
+        func anchor() {
             let view = PlatformView()
             let container = view.anchor(.width, to: view, anchor: .height)
             let sut = container.constraints.first!
@@ -71,7 +71,7 @@ struct ViewConstraintsTests {
         }
 
         @Test("Anchor same to item's anchor constraint")
-        func anchorSame() async throws {
+        func anchorSame() {
             let view = PlatformView()
             var sut: NSLayoutConstraint!
             let container = view.anchor(.width, sameTo: view, priority: 999, isSafe: true, configure: { sut = $0 })
@@ -82,6 +82,24 @@ struct ViewConstraintsTests {
             #expect(0 == sut.constant)
             #expect(.width == sut.firstAttribute)
             #expect(.width == sut.secondAttribute)
+            #expect(container.constraints == [sut])
+        }
+
+        @Test(
+            "Anchor oposed to item's anchor constraint",
+            arguments: [NSLayoutConstraint.Attribute.top, .bottom, .left, .right, .leading, .trailing]
+        )
+        func anchorOpposed(value: NSLayoutConstraint.Attribute) {
+            let view = PlatformView()
+            var sut: NSLayoutConstraint!
+            let container = view.anchor(value, opposedTo: view, configure: { sut = $0 })
+
+            #expect(!sut.isActive)
+            #expect(.required == sut.priority)
+            #expect(1 == sut.multiplier)
+            #expect(0 == sut.constant)
+            #expect(value == sut.firstAttribute)
+            #expect(value.opposed == sut.secondAttribute)
             #expect(container.constraints == [sut])
         }
     }
