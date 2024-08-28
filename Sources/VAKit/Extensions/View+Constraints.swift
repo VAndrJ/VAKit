@@ -54,6 +54,46 @@ extension NSLayoutConstraint: Constraints {
 
 extension ConstrainedItem {
 
+    @inline(__always) public func toSuper(
+        _ anchor: NSLayoutConstraint.Attribute,
+        relation: NSLayoutConstraint.Relation = .equal,
+        multiplier: CGFloat = 1,
+        constant: CGFloat = 0,
+        priority: Float? = nil,
+        isSafe: Bool = false,
+        configure: (NSLayoutConstraint) -> Void = { _ in }
+    ) -> ConstraintsContainer<Self> where Self: PlatformView {
+        .init(item: self).toSuper(
+            anchor,
+            relation: relation,
+            multiplier: multiplier,
+            constant: constant,
+            priority: priority,
+            isSafe: isSafe,
+            configure: configure
+        )
+    }
+
+    @inline(__always) public func toSuper(
+        _ anchor: NSLayoutConstraint.Attribute,
+        relation: NSLayoutConstraint.Relation = .equal,
+        multiplier: CGFloat = 1,
+        constant: CGFloat = 0,
+        priority: Float? = nil,
+        isSafe: Bool = false,
+        configure: (NSLayoutConstraint) -> Void = { _ in }
+    ) -> ConstraintsContainer<Self> where Self: PlatformLayoutGuide {
+        .init(item: self).toSuper(
+            anchor,
+            relation: relation,
+            multiplier: multiplier,
+            constant: constant,
+            priority: priority,
+            isSafe: isSafe,
+            configure: configure
+        )
+    }
+
     @inline(__always) public func anchor(
         _ selfAnchor: NSLayoutConstraint.Attribute,
         opposedTo toItem: ConstrainedItem,
@@ -206,6 +246,54 @@ public final class ConstraintsContainer<Item: ConstrainedItem>: Constraints {
         constraints.append(constraint)
 
         return self
+    }
+}
+
+extension ConstraintsContainer where Item: PlatformView {
+
+    public func toSuper(
+        _ anchor: NSLayoutConstraint.Attribute,
+        relation: NSLayoutConstraint.Relation = .equal,
+        multiplier: CGFloat = 1,
+        constant: CGFloat = 0,
+        priority: Float? = nil,
+        isSafe: Bool = false,
+        configure: (NSLayoutConstraint) -> Void = { _ in }
+    ) -> ConstraintsContainer {
+        self.anchor(
+            anchor,
+            sameTo: constrainedItem.superview!,
+            relation: relation,
+            multiplier: multiplier,
+            constant: constant,
+            priority: priority,
+            isSafe: isSafe,
+            configure: configure
+        )
+    }
+}
+
+extension ConstraintsContainer where Item: PlatformLayoutGuide {
+
+    public func toSuper(
+        _ anchor: NSLayoutConstraint.Attribute,
+        relation: NSLayoutConstraint.Relation = .equal,
+        multiplier: CGFloat = 1,
+        constant: CGFloat = 0,
+        priority: Float? = nil,
+        isSafe: Bool = false,
+        configure: (NSLayoutConstraint) -> Void = { _ in }
+    ) -> ConstraintsContainer {
+        self.anchor(
+            anchor,
+            sameTo: constrainedItem.owningView!,
+            relation: relation,
+            multiplier: multiplier,
+            constant: constant,
+            priority: priority,
+            isSafe: isSafe,
+            configure: configure
+        )
     }
 }
 

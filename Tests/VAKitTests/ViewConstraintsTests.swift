@@ -87,7 +87,7 @@ struct ViewConstraintsTests {
 
         @Test(
             "Anchor oposed to item's anchor constraint",
-            arguments: [NSLayoutConstraint.Attribute.top, .bottom, .left, .right, .leading, .trailing]
+            arguments: [NSLayoutConstraint.Attribute.top, .bottom, .left, .right, .leading, .trailing, .firstBaseline, .lastBaseline]
         )
         func anchorOpposed(value: NSLayoutConstraint.Attribute) {
             let view = PlatformView()
@@ -100,6 +100,46 @@ struct ViewConstraintsTests {
             #expect(0 == sut.constant)
             #expect(value == sut.firstAttribute)
             #expect(value.opposed == sut.secondAttribute)
+            #expect(container.constraints == [sut])
+        }
+
+        @Test(
+            "View to superview constraint",
+            arguments: [NSLayoutConstraint.Attribute.top, .bottom, .left, .right, .leading, .trailing, .firstBaseline, .lastBaseline]
+        )
+        func toSuperAnchor(value: NSLayoutConstraint.Attribute) {
+            let containerView = PlatformView()
+            let view = PlatformView()
+            containerView.addAutolayoutSubview(view)
+            var sut: NSLayoutConstraint!
+            let expectedConstant: CGFloat = 10
+            let container = view.toSuper(value, constant: expectedConstant, configure: { sut = $0 })
+
+            #expect(!sut.isActive)
+            #expect(.required == sut.priority)
+            #expect(1 == sut.multiplier)
+            #expect(expectedConstant == sut.constant)
+            #expect(value == sut.firstAttribute)
+            #expect(container.constraints == [sut])
+        }
+
+        @Test(
+            "Layout guide to superview constraint",
+            arguments: [NSLayoutConstraint.Attribute.top, .bottom, .left, .right, .leading, .trailing, .firstBaseline, .lastBaseline]
+        )
+        func toSuperAnchorПгшву(value: NSLayoutConstraint.Attribute) {
+            let containerView = PlatformView()
+            let guide = PlatformLayoutGuide()
+            containerView.addLayoutGuide(guide)
+            var sut: NSLayoutConstraint!
+            let expectedConstant: CGFloat = 10
+            let container = guide.toSuper(value, constant: expectedConstant, configure: { sut = $0 })
+
+            #expect(!sut.isActive)
+            #expect(.required == sut.priority)
+            #expect(1 == sut.multiplier)
+            #expect(expectedConstant == sut.constant)
+            #expect(value == sut.firstAttribute)
             #expect(container.constraints == [sut])
         }
     }
