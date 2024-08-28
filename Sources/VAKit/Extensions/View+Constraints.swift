@@ -14,14 +14,20 @@ import AppKit
 
 public typealias PlatformView = NSView
 public typealias PlatformLayoutGuide = NSLayoutGuide
-#elseif canImport(UIKit)
+#else
 import UIKit
 
 public typealias PlatformView = UIView
 public typealias PlatformLayoutGuide = UILayoutGuide
 #endif
 
-extension PlatformView: ConstrainedItem {}
+extension PlatformView: ConstrainedItem {
+
+    public func addAutolayoutSubview(_ subview: PlatformView) {
+        subview.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(subview)
+    }
+}
 
 extension PlatformLayoutGuide: ConstrainedItem {}
 
