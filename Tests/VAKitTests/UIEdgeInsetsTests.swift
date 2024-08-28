@@ -20,7 +20,7 @@ struct UIEdgeInsetsTests {
             "Initializer to create UIEdgeInsets with all identical edges",
             arguments: [0, 1, 9, 100]
         )
-        func all(value: CGFloat) async throws {
+        func all(value: CGFloat) {
             let sut = UIEdgeInsets(all: value)
 
             #expect(value == sut.top)

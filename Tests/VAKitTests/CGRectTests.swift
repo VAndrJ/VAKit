@@ -19,7 +19,7 @@ struct CGRectTests {
             "Initializer to create CGRect with specified width and height",
             arguments: [(1, 1), (9, 9), (100, 1000)]
         )
-        func all(value: (width: CGFloat, height: CGFloat)) async throws {
+        func widthHeight(value: (width: CGFloat, height: CGFloat)) {
             let sut = CGRect(width: value.width, height: value.height)
 
             #expect(value.width == sut.size.width)

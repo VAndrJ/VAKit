@@ -14,7 +14,7 @@ import UIKit
 @MainActor
 struct UIKitViewTests {
 
-    @Test func testVASimpleView() async throws {
+    @Test func testVASimpleView() {
         let frame = CGRect(x: 100, y: 100, width: 100, height: 100)
         var sut = VASimpleView(frame: frame)
         
@@ -25,8 +25,8 @@ struct UIKitViewTests {
         #expect(.zero == sut.frame)
     }
 
-    @Test func testVAView() async throws {
-        let sut = TestVaView()
+    @Test func testVAView() {
+        let sut = TestVAView()
 
         #expect(sut.isElementsAdded)
         #expect(sut.isConfigured)
@@ -34,7 +34,7 @@ struct UIKitViewTests {
     }
 }
 
-private class TestVaView: VAView {
+private class TestVAView: VAView {
     var isElementsAdded = false
     var isConfigured = false
     var isBinded = false
