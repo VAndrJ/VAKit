@@ -27,5 +27,16 @@ struct CGRectTests {
             #expect(0 == sut.origin.x)
             #expect(0 == sut.origin.y)
         }
+
+        @Test(
+            "Initializer to create CGRect with specified size",
+            arguments: [CGSize(width: 1, height: 1), .init(width: 9, height: 99)]
+        )
+        func size(value: CGSize) {
+            let sut = CGRect(size: value)
+
+            #expect(value == sut.size)
+            #expect(.zero == sut.origin)
+        }
     }
 }
