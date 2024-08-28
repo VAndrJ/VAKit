@@ -35,6 +35,10 @@ extension PlatformView: ConstrainedItem {
     @inline(__always) public func addAutolayoutSubviews(_ subviews: PlatformView...) {
         subviews.forEach { addAutolayoutSubview($0) }
     }
+
+    @inline(__always) public func addLayoutGuides(_ guides: PlatformLayoutGuide...) {
+        guides.forEach { addLayoutGuide($0) }
+    }
 }
 
 extension PlatformLayoutGuide: ConstrainedItem {}

@@ -39,5 +39,16 @@ struct ViewLayoutTests {
         #expect(!sut1.translatesAutoresizingMaskIntoConstraints)
         #expect(container.subviews == [sut, sut1])
     }
+
+    @Test("Multiple Layout Guides added")
+    func guidesAdd() {
+        let container = PlatformView()
+        let sut = PlatformLayoutGuide()
+        let sut1 = PlatformLayoutGuide()
+        container.addLayoutGuides(sut, sut1)
+
+        #expect(sut.owningView == container)
+        #expect(sut1.owningView == container)
+    }
 }
 #endif
