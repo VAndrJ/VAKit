@@ -161,6 +161,23 @@ extension ConstrainedItem {
             configure: configure
         )
     }
+
+
+    @inline(__always) public func size(
+        height: CGFloat,
+        relation: NSLayoutConstraint.Relation = .equal,
+        multiplier: CGFloat = 1,
+        priority: Float? = nil,
+        configure: (NSLayoutConstraint) -> Void = { _ in }
+    ) -> ConstraintsContainer<Self> {
+        .init(item: self).size(
+            height: height,
+            relation: relation,
+            multiplier: multiplier,
+            priority: priority,
+            configure: configure
+        )
+    }
 }
 
 @MainActor
@@ -238,6 +255,31 @@ public final class ConstraintsContainer<Item: ConstrainedItem>: Constraints {
             attribute: anchor,
             multiplier: multiplier,
             constant: constant
+        )
+        if let priority {
+            constraint.priority = .init(rawValue: priority)
+        }
+        configure(constraint)
+        constraints.append(constraint)
+
+        return self
+    }
+
+    public func size(
+        height: CGFloat,
+        relation: NSLayoutConstraint.Relation = .equal,
+        multiplier: CGFloat = 1,
+        priority: Float? = nil,
+        configure: (NSLayoutConstraint) -> Void = { _ in }
+    ) -> ConstraintsContainer {
+        let constraint = NSLayoutConstraint(
+            item: constrainedItem,
+            attribute: .height,
+            relatedBy: relation,
+            toItem: nil,
+            attribute: .notAnAttribute,
+            multiplier: multiplier,
+            constant: height
         )
         if let priority {
             constraint.priority = .init(rawValue: priority)
