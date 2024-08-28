@@ -16,12 +16,7 @@ import Testing
 
 @Suite("NSLayoutConstraint extensions")
 struct NSLayoutConstraintTests {
-#if canImport(AppKit)
-    typealias PlatformView = NSView
-#elseif canImport(UIKit)
-    typealias PlatformView = UIView
-#endif
-
+    
     @Suite("NSLayoutConstraint builder")
     @MainActor
     struct NSLayoutConstraintBuilderTests {
