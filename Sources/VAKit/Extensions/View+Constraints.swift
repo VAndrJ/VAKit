@@ -316,6 +316,20 @@ extension ConstrainedItem {
             configure: configure
         )
     }
+
+    @inline(__always) public func aspectWidth(
+        heightMultiplier: CGFloat = 1,
+        constant: CGFloat = 0,
+        priority: Float? = nil,
+        configure: (NSLayoutConstraint) -> Void = { _ in }
+    ) -> ConstraintsContainer<Self> {
+        .init(item: self).aspectWidth(
+            heightMultiplier: heightMultiplier,
+            constant: constant,
+            priority: priority,
+            configure: configure
+        )
+    }
 }
 
 @MainActor
@@ -490,6 +504,30 @@ public final class ConstraintsContainer<Item: ConstrainedItem>: Constraints {
             priority: priority,
             configure: configure
         )
+    }
+
+    public func aspectWidth(
+        heightMultiplier: CGFloat = 1,
+        constant: CGFloat = 0,
+        priority: Float? = nil,
+        configure: (NSLayoutConstraint) -> Void = { _ in }
+    ) -> ConstraintsContainer {
+        let constraint = NSLayoutConstraint(
+            item: constrainedItem,
+            attribute: .width,
+            relatedBy: .equal,
+            toItem: constrainedItem,
+            attribute: .height,
+            multiplier: heightMultiplier,
+            constant: constant
+        )
+        if let priority {
+            constraint.priority = .init(rawValue: priority)
+        }
+        configure(constraint)
+        constraints.append(constraint)
+
+        return self
     }
 }
 

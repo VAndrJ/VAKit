@@ -161,6 +161,25 @@ struct ViewConstraintsTests {
             #expect(container.constraints == [cWidth, cHeight])
         }
 
+        @Test("Item's aspect ratio width to height constraints")
+        func aspectWidth() {
+            let view = PlatformView()
+            var sut: NSLayoutConstraint!
+            let expectedValue: CGFloat = 100
+            let expectedMultiplier: CGFloat = 2
+            let container = view.aspectWidth(
+                heightMultiplier: expectedMultiplier,
+                constant: expectedValue,
+                configure: { sut = $0 }
+            )
+
+            #expect(expectedValue == sut.constant)
+            #expect(expectedMultiplier == sut.multiplier)
+            #expect(.width == sut.firstAttribute)
+            #expect(.height == sut.secondAttribute)
+            #expect(container.constraints == [sut])
+        }
+
         @Test(
             "View to superview constraint",
             arguments: [NSLayoutConstraint.Attribute.top, .bottom, .left, .right, .leading, .trailing, .firstBaseline, .lastBaseline]
