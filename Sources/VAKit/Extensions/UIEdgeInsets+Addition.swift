@@ -9,6 +9,7 @@
 import UIKit
 
 extension UIEdgeInsets {
+    public var vertical: CGFloat { top + bottom }
 
     public init(all value: CGFloat) {
         self.init(

@@ -13,6 +13,14 @@ import UIKit
 @Suite("UIEdgeInsets extensions")
 struct UIEdgeInsetsTests {
 
+    @Test("Vertical value")
+    func vertical() {
+        let expectedHalf: CGFloat = 1
+        let sut = UIEdgeInsets(all: expectedHalf)
+
+        #expect(expectedHalf * 2 == sut.vertical)
+    }
+
     @Suite("UIEdgeInsets initializers")
     struct UIEdgeInsetsInitTests {
 
