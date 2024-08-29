@@ -271,6 +271,38 @@ struct ViewConstraintsTests {
             #expect(container.constraints == [cTop, cBottom])
         }
 
+        @Test("View to superview edges constraints")
+        func toSuperEdges() {
+            let containerView = PlatformView()
+            let view = PlatformView()
+            containerView.addAutolayoutSubview(view)
+            var cTop: NSLayoutConstraint!
+            var cLeading: NSLayoutConstraint!
+            var cBottom: NSLayoutConstraint!
+            var cTrailing: NSLayoutConstraint!
+            let insets = NSDirectionalEdgeInsets(top: 1, leading: 2, bottom: 3, trailing: 4)
+            let container = view.toSuperEdges(insets: insets, configure: {
+                cTop = $0
+                cLeading = $1
+                cBottom = $2
+                cTrailing = $3
+            })
+
+            #expect(insets.top == cTop.constant)
+            #expect(.top == cTop.firstAttribute)
+            #expect(.top == cTop.secondAttribute)
+            #expect(insets.leading == cLeading.constant)
+            #expect(.leading == cLeading.firstAttribute)
+            #expect(.leading == cLeading.secondAttribute)
+            #expect(insets.bottom == cBottom.constant)
+            #expect(.bottom == cBottom.firstAttribute)
+            #expect(.bottom == cBottom.secondAttribute)
+            #expect(insets.trailing == cTrailing.constant)
+            #expect(.trailing == cTrailing.firstAttribute)
+            #expect(.trailing == cTrailing.secondAttribute)
+            #expect(container.constraints == [cTop, cLeading, cBottom, cTrailing])
+        }
+
         @Test(
             "Layout guide to superview constraint",
             arguments: [NSLayoutConstraint.Attribute.top, .bottom, .left, .right, .leading, .trailing, .firstBaseline, .lastBaseline]

@@ -15,12 +15,20 @@ import AppKit
 public typealias PlatformView = NSView
 public typealias PlatformLayoutGuide = NSLayoutGuide
 public typealias PlatformAxis = NSLayoutConstraint.Orientation
+
+extension NSDirectionalEdgeInsets {
+    public static var zeroValue: NSDirectionalEdgeInsets { NSDirectionalEdgeInsetsZero }
+}
 #else
 import UIKit
 
 public typealias PlatformView = UIView
 public typealias PlatformLayoutGuide = UILayoutGuide
 public typealias PlatformAxis = NSLayoutConstraint.Axis
+
+extension NSDirectionalEdgeInsets {
+    public static var zeroValue: NSDirectionalEdgeInsets { .zero }
+}
 #endif
 
 extension PlatformView: ConstrainedItem {
@@ -134,6 +142,30 @@ extension ConstrainedItem {
             isSafe: isSafe,
             configure: configure
         )
+    }
+
+    @inline(__always) public func toSuperEdges(
+        relation: NSLayoutConstraint.Relation = .equal,
+        multiplier: CGFloat = 1,
+        insets: NSDirectionalEdgeInsets = .zeroValue,
+        priority: Float? = nil,
+        isSafe: Bool = false,
+        configure: (
+            _ top: NSLayoutConstraint,
+            _ leading: NSLayoutConstraint,
+            _ bottom: NSLayoutConstraint,
+            _ trailing: NSLayoutConstraint
+        ) -> Void = { _, _, _, _ in }
+    ) -> ConstraintsContainer<Self> where Self: PlatformView {
+        .init(item: self).toSuperEdges(
+            relation: relation,
+            multiplier: multiplier,
+            insets: insets,
+            priority: priority,
+            isSafe: isSafe,
+            configure: configure
+        )
+
     }
 
     @inline(__always) public func toSuper(
@@ -581,6 +613,64 @@ extension ConstraintsContainer where Item: PlatformView {
             configure: { cBottomOrTrailing = $0 }
         )
         configure(cTopOrLeading, cBottomOrTrailing)
+
+        return self
+    }
+
+    public func toSuperEdges(
+        relation: NSLayoutConstraint.Relation = .equal,
+        multiplier: CGFloat = 1,
+        insets: NSDirectionalEdgeInsets = .zeroValue,
+        priority: Float? = nil,
+        isSafe: Bool = false,
+        configure: (
+            _ top: NSLayoutConstraint,
+            _ leading: NSLayoutConstraint,
+            _ bottom: NSLayoutConstraint,
+            _ trailing: NSLayoutConstraint
+        ) -> Void = { _, _, _, _ in }
+    ) -> ConstraintsContainer {
+        var cTop: NSLayoutConstraint!
+        var cLeading: NSLayoutConstraint!
+        var cBottom: NSLayoutConstraint!
+        var cTrailing: NSLayoutConstraint!
+        _ = toSuper(
+            .top,
+            relation: relation,
+            multiplier: multiplier,
+            constant: insets.top,
+            priority: priority,
+            isSafe: isSafe,
+            configure: { cTop = $0 }
+        )
+        _ = toSuper(
+            .leading,
+            relation: relation,
+            multiplier: multiplier,
+            constant: insets.leading,
+            priority: priority,
+            isSafe: isSafe,
+            configure: { cLeading = $0 }
+        )
+        _ = toSuper(
+            .bottom,
+            relation: relation,
+            multiplier: multiplier,
+            constant: insets.bottom,
+            priority: priority,
+            isSafe: isSafe,
+            configure: { cBottom = $0 }
+        )
+        _ = toSuper(
+            .trailing,
+            relation: relation,
+            multiplier: multiplier,
+            constant: insets.trailing,
+            priority: priority,
+            isSafe: isSafe,
+            configure: { cTrailing = $0 }
+        )
+        configure(cTop, cLeading, cBottom, cTrailing)
 
         return self
     }
