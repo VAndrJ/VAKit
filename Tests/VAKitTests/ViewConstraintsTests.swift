@@ -220,7 +220,7 @@ struct ViewConstraintsTests {
         }
 
         @Test("View to superview center constraints")
-        func toSuperAnchor() {
+        func toSuperCenter() {
             let containerView = PlatformView()
             let view = PlatformView()
             containerView.addAutolayoutSubview(view)
@@ -236,6 +236,22 @@ struct ViewConstraintsTests {
             #expect(.centerY == cCenterY.firstAttribute)
             #expect(.centerY == cCenterY.secondAttribute)
             #expect(container.constraints == [cCenterX, cCenterY])
+        }
+
+        @Test("View to superview anchors")
+        func toSuperAnchors() {
+            let containerView = PlatformView()
+            let view = PlatformView()
+            containerView.addAutolayoutSubview(view)
+            let container = view.toSuper(anchors: .leading, .bottom, .trailing)
+
+            #expect(3 == container.constraints.count)
+            #expect(.leading == container.constraints[0].firstAttribute)
+            #expect(.leading == container.constraints[0].secondAttribute)
+            #expect(.bottom == container.constraints[1].firstAttribute)
+            #expect(.bottom == container.constraints[1].secondAttribute)
+            #expect(.trailing == container.constraints[2].firstAttribute)
+            #expect(.trailing == container.constraints[2].secondAttribute)
         }
 
         @Test("View to superview horizontal axis constraints")

@@ -165,7 +165,24 @@ extension ConstrainedItem {
             isSafe: isSafe,
             configure: configure
         )
+    }
 
+    public func toSuper(
+        anchors: NSLayoutConstraint.Attribute...,
+        relation: NSLayoutConstraint.Relation = .equal,
+        multiplier: CGFloat = 1,
+        constant: CGFloat = 0,
+        priority: Float? = nil,
+        isSafe: Bool = false
+    ) -> ConstraintsContainer<Self> where Self: PlatformView {
+        .init(item: self).toSuper(
+            anchorsArray: anchors,
+            relation: relation,
+            multiplier: multiplier,
+            constant: constant,
+            priority: priority,
+            isSafe: isSafe
+        )
     }
 
     @inline(__always) public func toSuper(
@@ -747,6 +764,46 @@ extension ConstraintsContainer where Item: PlatformView {
             configure: { cTrailing = $0 }
         )
         configure(cTop, cLeading, cBottom, cTrailing)
+
+        return self
+    }
+
+    public func toSuper(
+        anchors: NSLayoutConstraint.Attribute...,
+        relation: NSLayoutConstraint.Relation = .equal,
+        multiplier: CGFloat = 1,
+        constant: CGFloat = 0,
+        priority: Float? = nil,
+        isSafe: Bool = false
+    ) -> ConstraintsContainer {
+        toSuper(
+            anchorsArray: anchors,
+            relation: relation,
+            multiplier: multiplier,
+            constant: constant,
+            priority: priority,
+            isSafe: isSafe
+        )
+    }
+
+    @inline(__always) fileprivate func toSuper(
+        anchorsArray: [NSLayoutConstraint.Attribute],
+        relation: NSLayoutConstraint.Relation = .equal,
+        multiplier: CGFloat = 1,
+        constant: CGFloat = 0,
+        priority: Float? = nil,
+        isSafe: Bool = false
+    ) -> ConstraintsContainer {
+        anchorsArray.forEach {
+            _ = toSuper(
+                $0,
+                relation: relation,
+                multiplier: multiplier,
+                constant: constant,
+                priority: priority,
+                isSafe: isSafe
+            )
+        }
 
         return self
     }
