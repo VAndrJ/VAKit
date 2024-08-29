@@ -179,7 +179,7 @@ extension ConstrainedItem {
         )
     }
 
-    public func size(
+    @inline(__always) public func size(
         width: CGFloat,
         relation: NSLayoutConstraint.Relation = .equal,
         multiplier: CGFloat = 1,
@@ -190,6 +190,20 @@ extension ConstrainedItem {
             width: width,
             relation: relation,
             multiplier: multiplier,
+            priority: priority,
+            configure: configure
+        )
+    }
+
+    @inline(__always) public func size(
+        _ size: CGSize,
+        relation: NSLayoutConstraint.Relation = .equal,
+        priority: Float? = nil,
+        configure: (_ width: NSLayoutConstraint, _ height: NSLayoutConstraint) -> Void = { _, _ in }
+    ) -> ConstraintsContainer<Self> {
+        .init(item: self).size(
+            size,
+            relation: relation,
             priority: priority,
             configure: configure
         )
@@ -327,6 +341,31 @@ public final class ConstraintsContainer<Item: ConstrainedItem>: Constraints {
         }
         configure(constraint)
         constraints.append(constraint)
+
+        return self
+    }
+
+    public func size(
+        _ size: CGSize,
+        relation: NSLayoutConstraint.Relation = .equal,
+        priority: Float? = nil,
+        configure: (_ width: NSLayoutConstraint, _ height: NSLayoutConstraint) -> Void = { _, _ in }
+    ) -> ConstraintsContainer {
+        var cWidth: NSLayoutConstraint!
+        var cheight: NSLayoutConstraint!
+        _ = self.size(
+            width: size.width,
+            relation: relation,
+            priority: priority,
+            configure: { cWidth = $0 }
+        )
+        _ = self.size(
+            height: size.height,
+            relation: relation,
+            priority: priority,
+            configure: { cheight = $0 }
+        )
+        configure(cWidth, cheight)
 
         return self
     }

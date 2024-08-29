@@ -135,6 +135,19 @@ struct ViewConstraintsTests {
             #expect(container.constraints == [sut])
         }
 
+        @Test("Item's size constraints")
+        func size() {
+            let view = PlatformView()
+            var cWidth: NSLayoutConstraint!
+            var cHeight: NSLayoutConstraint!
+            let expectedSize = CGSize(width: 100, height: 20)
+            let container = view.size(expectedSize, configure: { cWidth = $0; cHeight = $1 })
+
+            #expect(expectedSize.width == cWidth.constant)
+            #expect(expectedSize.height == cHeight.constant)
+            #expect(container.constraints == [cWidth, cHeight])
+        }
+
         @Test(
             "View to superview constraint",
             arguments: [NSLayoutConstraint.Attribute.top, .bottom, .left, .right, .leading, .trailing, .firstBaseline, .lastBaseline]
