@@ -119,6 +119,22 @@ struct ViewConstraintsTests {
             #expect(container.constraints == [sut])
         }
 
+        @Test("Item's width constraint")
+        func sizeWidth() {
+            let view = PlatformView()
+            var sut: NSLayoutConstraint!
+            let expectedWidth: CGFloat = 100
+            let container = view.size(width: expectedWidth, configure: { sut = $0 })
+
+            #expect(!sut.isActive)
+            #expect(.required == sut.priority)
+            #expect(1 == sut.multiplier)
+            #expect(expectedWidth == sut.constant)
+            #expect(.width == sut.firstAttribute)
+            #expect(.notAnAttribute == sut.secondAttribute)
+            #expect(container.constraints == [sut])
+        }
+
         @Test(
             "View to superview constraint",
             arguments: [NSLayoutConstraint.Attribute.top, .bottom, .left, .right, .leading, .trailing, .firstBaseline, .lastBaseline]
