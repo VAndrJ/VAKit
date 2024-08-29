@@ -35,5 +35,20 @@ struct UIStackViewTests {
 
         #expect([subview1, subview2, subview3] == stackView.subviews)
     }
+
+    @Test("Remove all subviews")
+    func removeSubviews() async throws {
+        let subview1 = UIView()
+        let subview2 = UIView()
+        let subview3 = UIView()
+        let stackView = UIStackView()
+        stackView.addArrangedSubviewsArray([subview1, subview2, subview3])
+
+        #expect([subview1, subview2, subview3] == stackView.subviews)
+
+        stackView.removeAllArrangedSubviewsDeactivatingConstraints()
+
+        #expect(stackView.subviews.isEmpty)
+    }
 }
 #endif

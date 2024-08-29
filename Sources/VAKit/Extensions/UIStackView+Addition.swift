@@ -17,5 +17,15 @@ extension UIStackView {
     @inline(__always) public func addArrangedSubviewsArray(_ subviews: [UIView]) {
         subviews.forEach { addArrangedSubview($0) }
     }
+
+    public func removeAllArrangedSubviewsDeactivatingConstraints() {
+        let removedSubviews: [UIView] = arrangedSubviews.reduce([]) {
+            removeArrangedSubview($1)
+
+            return $0 + [$1]
+        }
+        NSLayoutConstraint.deactivate(removedSubviews.flatMap { $0.constraints })
+        removedSubviews.forEach { $0.removeFromSuperview() }
+    }
 }
 #endif
