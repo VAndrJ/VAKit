@@ -21,6 +21,14 @@ struct UIEdgeInsetsTests {
         #expect(expectedHalf * 2 == sut.vertical)
     }
 
+    @Test("Horizontal value")
+    func horizontal() {
+        let expectedHalf: CGFloat = 1
+        let sut = UIEdgeInsets(all: expectedHalf)
+
+        #expect(expectedHalf * 2 == sut.horizontal)
+    }
+
     @Suite("UIEdgeInsets initializers")
     struct UIEdgeInsetsInitTests {
 
