@@ -208,6 +208,20 @@ extension ConstrainedItem {
             configure: configure
         )
     }
+
+    @inline(__always) public func size(
+        same value: CGFloat,
+        relation: NSLayoutConstraint.Relation = .equal,
+        priority: Float? = nil,
+        configure: (_ width: NSLayoutConstraint, _ height: NSLayoutConstraint) -> Void = { _, _ in }
+    ) -> ConstraintsContainer<Self> {
+        .init(item: self).size(
+            same: value,
+            relation: relation,
+            priority: priority,
+            configure: configure
+        )
+    }
 }
 
 @MainActor
@@ -368,6 +382,20 @@ public final class ConstraintsContainer<Item: ConstrainedItem>: Constraints {
         configure(cWidth, cheight)
 
         return self
+    }
+
+    public func size(
+        same value: CGFloat,
+        relation: NSLayoutConstraint.Relation = .equal,
+        priority: Float? = nil,
+        configure: (_ width: NSLayoutConstraint, _ height: NSLayoutConstraint) -> Void = { _, _ in }
+    ) -> ConstraintsContainer {
+        self.size(
+            .init(same: value),
+            relation: relation,
+            priority: priority,
+            configure: configure
+        )
     }
 }
 
