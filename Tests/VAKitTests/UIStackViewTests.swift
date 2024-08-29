@@ -24,5 +24,16 @@ struct UIStackViewTests {
 
         #expect([subview1, subview2, subview3] == stackView.subviews)
     }
+
+    @Test("Add multiple arranged subviews")
+    func addSubviewsArray() async throws {
+        let subview1 = UIView()
+        let subview2 = UIView()
+        let subview3 = UIView()
+        let stackView = UIStackView()
+        stackView.addArrangedSubviewsArray([subview1, subview2, subview3])
+
+        #expect([subview1, subview2, subview3] == stackView.subviews)
+    }
 }
 #endif

@@ -13,5 +13,9 @@ extension UIStackView {
     @inline(__always) public func addArrangedSubviews(_ subviews: UIView...) {
         subviews.forEach { addArrangedSubview($0) }
     }
+
+    @inline(__always) public func addArrangedSubviewsArray(_ subviews: [UIView]) {
+        subviews.forEach { addArrangedSubview($0) }
+    }
 }
 #endif
