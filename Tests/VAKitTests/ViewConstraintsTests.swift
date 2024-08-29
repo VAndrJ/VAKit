@@ -248,6 +248,29 @@ struct ViewConstraintsTests {
             #expect(container.constraints == [cTop, cBottom])
         }
 
+        @Test("View to superview vertical axis padding constraints")
+        func toSuperAxisVerticalPadding() {
+            let containerView = PlatformView()
+            let view = PlatformView()
+            containerView.addAutolayoutSubview(view)
+            var cTop: NSLayoutConstraint!
+            var cBottom: NSLayoutConstraint!
+            let expectedValue: CGFloat = 42
+            let container = view.toSuperAxis(
+                .vertical,
+                padding: expectedValue,
+                configure: { cTop = $0; cBottom = $1 }
+            )
+
+            #expect(expectedValue == cTop.constant)
+            #expect(.top == cTop.firstAttribute)
+            #expect(.top == cTop.secondAttribute)
+            #expect(-expectedValue == cBottom.constant)
+            #expect(.bottom == cBottom.firstAttribute)
+            #expect(.bottom == cBottom.secondAttribute)
+            #expect(container.constraints == [cTop, cBottom])
+        }
+
         @Test(
             "Layout guide to superview constraint",
             arguments: [NSLayoutConstraint.Attribute.top, .bottom, .left, .right, .leading, .trailing, .firstBaseline, .lastBaseline]

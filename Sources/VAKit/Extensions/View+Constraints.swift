@@ -94,7 +94,7 @@ extension ConstrainedItem {
         )
     }
 
-    public func toSuperAxis(
+    @inline(__always) public func toSuperAxis(
         _ axis: PlatformAxis,
         relation: NSLayoutConstraint.Relation = .equal,
         multiplier: CGFloat = 1,
@@ -110,6 +110,26 @@ extension ConstrainedItem {
             multiplier: multiplier,
             topOrLeadingConstant: topOrLeadingConstant,
             bottomOrTrailingConstant: bottomOrTrailingConstant,
+            priority: priority,
+            isSafe: isSafe,
+            configure: configure
+        )
+    }
+
+    @inline(__always) public func toSuperAxis(
+        _ axis: PlatformAxis,
+        relation: NSLayoutConstraint.Relation = .equal,
+        multiplier: CGFloat = 1,
+        padding: CGFloat = 0,
+        priority: Float? = nil,
+        isSafe: Bool = false,
+        configure: (_ topOrLeading: NSLayoutConstraint, _ bottomOrTrailing: NSLayoutConstraint) -> Void = { _, _ in }
+    ) -> ConstraintsContainer<Self> where Self: PlatformView {
+        .init(item: self).toSuperAxis(
+            axis,
+            relation: relation,
+            multiplier: multiplier,
+            padding: padding,
             priority: priority,
             isSafe: isSafe,
             configure: configure
@@ -495,6 +515,27 @@ extension ConstraintsContainer where Item: PlatformView {
         configure(cCenterX, cCenterY)
 
         return self
+    }
+
+    public func toSuperAxis(
+        _ axis: PlatformAxis,
+        relation: NSLayoutConstraint.Relation = .equal,
+        multiplier: CGFloat = 1,
+        padding: CGFloat = 0,
+        priority: Float? = nil,
+        isSafe: Bool = false,
+        configure: (_ topOrLeading: NSLayoutConstraint, _ bottomOrTrailing: NSLayoutConstraint) -> Void = { _, _ in }
+    ) -> ConstraintsContainer {
+        toSuperAxis(
+            axis,
+            relation: relation,
+            multiplier: multiplier,
+            topOrLeadingConstant: padding,
+            bottomOrTrailingConstant: -padding,
+            priority: priority,
+            isSafe: isSafe,
+            configure: configure
+        )
     }
 
     public func toSuperAxis(
