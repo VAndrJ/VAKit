@@ -181,11 +181,29 @@ struct ViewConstraintsTests {
             #expect(container.constraints == [sut])
         }
 
+        @Test("View to superview center constraint")
+        func toSuperAnchor() {
+            let containerView = PlatformView()
+            let view = PlatformView()
+            containerView.addAutolayoutSubview(view)
+            var cCenterX: NSLayoutConstraint!
+            var cCenterY: NSLayoutConstraint!
+            let offset = CGSize(width: 100, height: 20)
+            let container = view.toSuperCenter(offset: offset, configure: { cCenterX = $0; cCenterY = $1 })
+
+            #expect(offset.width == cCenterX.constant)
+            #expect(.centerX == cCenterX.firstAttribute)
+            #expect(.centerX == cCenterX.secondAttribute)
+            #expect(offset.height == cCenterY.constant)
+            #expect(.centerY == cCenterY.firstAttribute)
+            #expect(.centerY == cCenterY.secondAttribute)
+        }
+
         @Test(
             "Layout guide to superview constraint",
             arguments: [NSLayoutConstraint.Attribute.top, .bottom, .left, .right, .leading, .trailing, .firstBaseline, .lastBaseline]
         )
-        func toSuperAnchorПгшву(value: NSLayoutConstraint.Attribute) {
+        func toSuperAnchorGuide(value: NSLayoutConstraint.Attribute) {
             let containerView = PlatformView()
             let guide = PlatformLayoutGuide()
             containerView.addLayoutGuide(guide)

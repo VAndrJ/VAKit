@@ -74,6 +74,24 @@ extension ConstrainedItem {
         )
     }
 
+    @inline(__always) public func toSuperCenter(
+        relation: NSLayoutConstraint.Relation = .equal,
+        multiplier: CGFloat = 1,
+        offset: CGSize = .zero,
+        priority: Float? = nil,
+        isSafe: Bool = false,
+        configure: (_ centerX: NSLayoutConstraint, _ centerY: NSLayoutConstraint) -> Void = { _, _ in }
+    ) -> ConstraintsContainer<Self> where Self: PlatformView {
+        .init(item: self).toSuperCenter(
+            relation: relation,
+            multiplier: multiplier,
+            offset: offset,
+            priority: priority,
+            isSafe: isSafe,
+            configure: configure
+        )
+    }
+
     @inline(__always) public func toSuper(
         _ anchor: NSLayoutConstraint.Attribute,
         relation: NSLayoutConstraint.Relation = .equal,
@@ -420,6 +438,39 @@ extension ConstraintsContainer where Item: PlatformView {
             isSafe: isSafe,
             configure: configure
         )
+    }
+
+    public func toSuperCenter(
+        relation: NSLayoutConstraint.Relation = .equal,
+        multiplier: CGFloat = 1,
+        offset: CGSize = .zero,
+        priority: Float? = nil,
+        isSafe: Bool = false,
+        configure: (_ centerX: NSLayoutConstraint, _ centerY: NSLayoutConstraint) -> Void = { _, _ in }
+    ) -> ConstraintsContainer {
+        var cCenterX: NSLayoutConstraint!
+        var cCenterY: NSLayoutConstraint!
+        _ = toSuper(
+            .centerX,
+            relation: relation,
+            multiplier: multiplier,
+            constant: offset.width,
+            priority: priority,
+            isSafe: isSafe,
+            configure: { cCenterX = $0 }
+        )
+        _ = toSuper(
+            .centerY,
+            relation: relation,
+            multiplier: multiplier,
+            constant: offset.height,
+            priority: priority,
+            isSafe: isSafe,
+            configure: { cCenterY = $0 }
+        )
+        configure(cCenterX, cCenterY)
+
+        return self
     }
 }
 
