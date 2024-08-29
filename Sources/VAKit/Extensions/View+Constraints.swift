@@ -14,11 +14,13 @@ import AppKit
 
 public typealias PlatformView = NSView
 public typealias PlatformLayoutGuide = NSLayoutGuide
+public typealias PlatformAxis = NSLayoutConstraint.Orientation
 #else
 import UIKit
 
 public typealias PlatformView = UIView
 public typealias PlatformLayoutGuide = UILayoutGuide
+public typealias PlatformAxis = NSLayoutConstraint.Axis
 #endif
 
 extension PlatformView: ConstrainedItem {
@@ -86,6 +88,28 @@ extension ConstrainedItem {
             relation: relation,
             multiplier: multiplier,
             offset: offset,
+            priority: priority,
+            isSafe: isSafe,
+            configure: configure
+        )
+    }
+
+    public func toSuperAxis(
+        _ axis: PlatformAxis,
+        relation: NSLayoutConstraint.Relation = .equal,
+        multiplier: CGFloat = 1,
+        topOrLeadingConstant: CGFloat = 0,
+        bottomOrTrailingConstant: CGFloat = 0,
+        priority: Float? = nil,
+        isSafe: Bool = false,
+        configure: (_ topOrLeading: NSLayoutConstraint, _ bottomOrTrailing: NSLayoutConstraint) -> Void = { _, _ in }
+    ) -> ConstraintsContainer<Self> where Self: PlatformView {
+        .init(item: self).toSuperAxis(
+            axis,
+            relation: relation,
+            multiplier: multiplier,
+            topOrLeadingConstant: topOrLeadingConstant,
+            bottomOrTrailingConstant: bottomOrTrailingConstant,
             priority: priority,
             isSafe: isSafe,
             configure: configure
@@ -469,6 +493,53 @@ extension ConstraintsContainer where Item: PlatformView {
             configure: { cCenterY = $0 }
         )
         configure(cCenterX, cCenterY)
+
+        return self
+    }
+
+    public func toSuperAxis(
+        _ axis: PlatformAxis,
+        relation: NSLayoutConstraint.Relation = .equal,
+        multiplier: CGFloat = 1,
+        topOrLeadingConstant: CGFloat = 0,
+        bottomOrTrailingConstant: CGFloat = 0,
+        priority: Float? = nil,
+        isSafe: Bool = false,
+        configure: (_ topOrLeading: NSLayoutConstraint, _ bottomOrTrailing: NSLayoutConstraint) -> Void = { _, _ in }
+    ) -> ConstraintsContainer {
+        var cTopOrLeading: NSLayoutConstraint!
+        var cBottomOrTrailing: NSLayoutConstraint!
+        let topOrLeading: NSLayoutConstraint.Attribute
+        let bottomOrTrailing: NSLayoutConstraint.Attribute
+        switch axis {
+        case .horizontal:
+            topOrLeading = .leading
+            bottomOrTrailing = .trailing
+        case .vertical:
+            topOrLeading = .top
+            bottomOrTrailing = .bottom
+        @unknown default:
+            fatalError("Not implement")
+        }
+        _ = toSuper(
+            topOrLeading,
+            relation: relation,
+            multiplier: multiplier,
+            constant: topOrLeadingConstant,
+            priority: priority,
+            isSafe: isSafe,
+            configure: { cTopOrLeading = $0 }
+        )
+        _ = toSuper(
+            bottomOrTrailing,
+            relation: relation,
+            multiplier: multiplier,
+            constant: bottomOrTrailingConstant,
+            priority: priority,
+            isSafe: isSafe,
+            configure: { cBottomOrTrailing = $0 }
+        )
+        configure(cTopOrLeading, cBottomOrTrailing)
 
         return self
     }

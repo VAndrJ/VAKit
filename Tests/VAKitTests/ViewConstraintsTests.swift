@@ -181,7 +181,7 @@ struct ViewConstraintsTests {
             #expect(container.constraints == [sut])
         }
 
-        @Test("View to superview center constraint")
+        @Test("View to superview center constraints")
         func toSuperAnchor() {
             let containerView = PlatformView()
             let view = PlatformView()
@@ -197,6 +197,55 @@ struct ViewConstraintsTests {
             #expect(offset.height == cCenterY.constant)
             #expect(.centerY == cCenterY.firstAttribute)
             #expect(.centerY == cCenterY.secondAttribute)
+            #expect(container.constraints == [cCenterX, cCenterY])
+        }
+
+        @Test("View to superview horizontal axis constraints")
+        func toSuperAxisHorizontal() {
+            let containerView = PlatformView()
+            let view = PlatformView()
+            containerView.addAutolayoutSubview(view)
+            var cLeading: NSLayoutConstraint!
+            var cTrailing: NSLayoutConstraint!
+            let expectedValue: CGFloat = 42
+            let container = view.toSuperAxis(
+                .horizontal,
+                topOrLeadingConstant: expectedValue,
+                bottomOrTrailingConstant: expectedValue,
+                configure: { cLeading = $0; cTrailing = $1 }
+            )
+
+            #expect(expectedValue == cLeading.constant)
+            #expect(.leading == cLeading.firstAttribute)
+            #expect(.leading == cLeading.secondAttribute)
+            #expect(expectedValue == cTrailing.constant)
+            #expect(.trailing == cTrailing.firstAttribute)
+            #expect(.trailing == cTrailing.secondAttribute)
+            #expect(container.constraints == [cLeading, cTrailing])
+        }
+
+        @Test("View to superview vertical axis constraints")
+        func toSuperAxisVertical() {
+            let containerView = PlatformView()
+            let view = PlatformView()
+            containerView.addAutolayoutSubview(view)
+            var cTop: NSLayoutConstraint!
+            var cBottom: NSLayoutConstraint!
+            let expectedValue: CGFloat = 42
+            let container = view.toSuperAxis(
+                .vertical,
+                topOrLeadingConstant: expectedValue,
+                bottomOrTrailingConstant: expectedValue,
+                configure: { cTop = $0; cBottom = $1 }
+            )
+
+            #expect(expectedValue == cTop.constant)
+            #expect(.top == cTop.firstAttribute)
+            #expect(.top == cTop.secondAttribute)
+            #expect(expectedValue == cBottom.constant)
+            #expect(.bottom == cBottom.firstAttribute)
+            #expect(.bottom == cBottom.secondAttribute)
+            #expect(container.constraints == [cTop, cBottom])
         }
 
         @Test(
