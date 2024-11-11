@@ -33,7 +33,7 @@ extension NSDirectionalEdgeInsets {
 
 extension PlatformView: ConstrainedItem {
 
-    @inline(__always) func activate(@ArrayBuilder<any Constraints> anyConstraints: () -> [any Constraints]) {
+    @inline(__always) public func activate(@ArrayBuilder<any Constraints> anyConstraints: () -> [any Constraints]) {
         NSLayoutConstraint.activate(anyConstraints().flatMap { $0.constraints })
     }
 
