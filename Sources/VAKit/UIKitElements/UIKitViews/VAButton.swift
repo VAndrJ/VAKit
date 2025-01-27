@@ -18,7 +18,7 @@ open class VAButton: VASimpleButton {
         }
     }
 
-    public func onTap<T: AnyObject>(_ target: T, action: @escaping (T) -> Void) {
+    public func onTap<T: AnyObject>(_ target: T?, action: @escaping (T) -> Void) {
         onTap = { [weak target] in
             guard let target else { return }
 

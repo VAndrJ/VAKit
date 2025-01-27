@@ -40,14 +40,17 @@ private class TestVAView: VAView {
     var isBinded = false
 
     override func addElements() {
+        super.addElements()
         isElementsAdded = true
     }
 
     override func configure() {
+        super.configure()
         isConfigured = true
     }
 
     override func bind() {
+        super.bind()
         isBinded = true
     }
 }
