@@ -74,7 +74,13 @@ struct ViewConstraintsTests {
         func anchorSame() {
             let view = PlatformView()
             var sut: NSLayoutConstraint!
-            let container = view.anchor(.width, sameTo: view, priority: 999, isSafe: true, configure: { sut = $0 })
+            let container = view.anchor(
+                .width,
+                sameTo: view,
+                priority: 999,
+                isSafe: true,
+                configure: { sut = $0 }
+            )
 
             #expect(!sut.isActive)
             #expect(999 == sut.priority.rawValue)
@@ -92,7 +98,11 @@ struct ViewConstraintsTests {
         func anchorOpposed(value: NSLayoutConstraint.Attribute) {
             let view = PlatformView()
             var sut: NSLayoutConstraint!
-            let container = view.anchor(value, opposedTo: view, configure: { sut = $0 })
+            let container = view.anchor(
+                value,
+                opposedTo: view,
+                configure: { sut = $0 }
+            )
 
             #expect(!sut.isActive)
             #expect(.required == sut.priority)
@@ -108,10 +118,15 @@ struct ViewConstraintsTests {
             let view = PlatformView()
             var sut: NSLayoutConstraint!
             let expectedHeight: CGFloat = 100
-            let container = view.size(height: expectedHeight, configure: { sut = $0 })
+            let priority: Float = 999
+            let container = view.size(
+                height: expectedHeight,
+                priority: priority,
+                configure: { sut = $0 }
+            )
 
             #expect(!sut.isActive)
-            #expect(.required == sut.priority)
+            #expect(priority == sut.priority.rawValue)
             #expect(1 == sut.multiplier)
             #expect(expectedHeight == sut.constant)
             #expect(.height == sut.firstAttribute)
@@ -124,10 +139,15 @@ struct ViewConstraintsTests {
             let view = PlatformView()
             var sut: NSLayoutConstraint!
             let expectedWidth: CGFloat = 100
-            let container = view.size(width: expectedWidth, configure: { sut = $0 })
+            let priority: Float = 999
+            let container = view.size(
+                width: expectedWidth,
+                priority: priority,
+                configure: { sut = $0 }
+            )
 
             #expect(!sut.isActive)
-            #expect(.required == sut.priority)
+            #expect(999 == sut.priority.rawValue)
             #expect(1 == sut.multiplier)
             #expect(expectedWidth == sut.constant)
             #expect(.width == sut.firstAttribute)
@@ -167,13 +187,16 @@ struct ViewConstraintsTests {
             var sut: NSLayoutConstraint!
             let expectedValue: CGFloat = 100
             let expectedMultiplier: CGFloat = 2
+            let priority: Float = 999
             let container = view.aspectWidth(
                 heightMultiplier: expectedMultiplier,
                 constant: expectedValue,
+                priority: priority,
                 configure: { sut = $0 }
             )
 
             #expect(expectedValue == sut.constant)
+            #expect(priority == sut.priority.rawValue)
             #expect(expectedMultiplier == sut.multiplier)
             #expect(.width == sut.firstAttribute)
             #expect(.height == sut.secondAttribute)
@@ -186,13 +209,16 @@ struct ViewConstraintsTests {
             var sut: NSLayoutConstraint!
             let expectedValue: CGFloat = 100
             let expectedMultiplier: CGFloat = 2
+            let priority: Float = 999
             let container = view.aspectHeight(
                 widthMultiplier: expectedMultiplier,
                 constant: expectedValue,
+                priority: priority,
                 configure: { sut = $0 }
             )
 
             #expect(expectedValue == sut.constant)
+            #expect(priority == sut.priority.rawValue)
             #expect(expectedMultiplier == sut.multiplier)
             #expect(.height == sut.firstAttribute)
             #expect(.width == sut.secondAttribute)
@@ -209,7 +235,11 @@ struct ViewConstraintsTests {
             containerView.addAutolayoutSubview(view)
             var sut: NSLayoutConstraint!
             let expectedConstant: CGFloat = 10
-            let container = view.toSuper(value, constant: expectedConstant, configure: { sut = $0 })
+            let container = view.toSuper(
+                value,
+                constant: expectedConstant,
+                configure: { sut = $0 }
+            )
 
             #expect(!sut.isActive)
             #expect(.required == sut.priority)
@@ -227,7 +257,13 @@ struct ViewConstraintsTests {
             var cCenterX: NSLayoutConstraint!
             var cCenterY: NSLayoutConstraint!
             let offset = CGSize(width: 100, height: 20)
-            let container = view.toSuperCenter(offset: offset, configure: { cCenterX = $0; cCenterY = $1 })
+            let container = view.toSuperCenter(
+                offset: offset,
+                configure: {
+                    cCenterX = $0
+                    cCenterY = $1
+                }
+            )
 
             #expect(offset.width == cCenterX.constant)
             #expect(.centerX == cCenterX.firstAttribute)
@@ -243,15 +279,32 @@ struct ViewConstraintsTests {
             let containerView = PlatformView()
             let view = PlatformView()
             containerView.addAutolayoutSubview(view)
-            let container = view.toSuper(anchors: .leading, .bottom, .trailing)
+            let sut = view.toSuper(anchors: .leading, .bottom, .trailing)
 
-            #expect(3 == container.constraints.count)
-            #expect(.leading == container.constraints[0].firstAttribute)
-            #expect(.leading == container.constraints[0].secondAttribute)
-            #expect(.bottom == container.constraints[1].firstAttribute)
-            #expect(.bottom == container.constraints[1].secondAttribute)
-            #expect(.trailing == container.constraints[2].firstAttribute)
-            #expect(.trailing == container.constraints[2].secondAttribute)
+            #expect(3 == sut.constraints.count)
+            #expect(.leading == sut.constraints[0].firstAttribute)
+            #expect(.leading == sut.constraints[0].secondAttribute)
+            #expect(.bottom == sut.constraints[1].firstAttribute)
+            #expect(.bottom == sut.constraints[1].secondAttribute)
+            #expect(.trailing == sut.constraints[2].firstAttribute)
+            #expect(.trailing == sut.constraints[2].secondAttribute)
+        }
+
+        @Test("View Container to superview anchors")
+        func toSuperAnchorsContainer() {
+            let containerView = PlatformView()
+            let view = PlatformView()
+            let container = ConstraintsContainer(item: view)
+            containerView.addAutolayoutSubview(view)
+            let sut = container.toSuper(anchors: .leading, .bottom, .trailing)
+
+            #expect(3 == sut.constraints.count)
+            #expect(.leading == sut.constraints[0].firstAttribute)
+            #expect(.leading == sut.constraints[0].secondAttribute)
+            #expect(.bottom == sut.constraints[1].firstAttribute)
+            #expect(.bottom == sut.constraints[1].secondAttribute)
+            #expect(.trailing == sut.constraints[2].firstAttribute)
+            #expect(.trailing == sut.constraints[2].secondAttribute)
         }
 
         @Test("View to superview horizontal axis constraints")
@@ -335,12 +388,15 @@ struct ViewConstraintsTests {
             var cBottom: NSLayoutConstraint!
             var cTrailing: NSLayoutConstraint!
             let insets = NSDirectionalEdgeInsets(top: 1, leading: 2, bottom: 3, trailing: 4)
-            let container = view.toSuperEdges(insets: insets, configure: {
-                cTop = $0
-                cLeading = $1
-                cBottom = $2
-                cTrailing = $3
-            })
+            let container = view.toSuperEdges(
+                insets: insets,
+                configure: {
+                    cTop = $0
+                    cLeading = $1
+                    cBottom = $2
+                    cTrailing = $3
+                }
+            )
 
             #expect(insets.top == cTop.constant)
             #expect(.top == cTop.firstAttribute)
@@ -357,6 +413,29 @@ struct ViewConstraintsTests {
             #expect(container.constraints == [cTop, cLeading, cBottom, cTrailing])
         }
 
+        @Test("View to superview edges")
+        func toSuperEdgesContainer() {
+            let containerView = PlatformView()
+            let view = PlatformView()
+            containerView.addAutolayoutSubview(view)
+            let insets = NSDirectionalEdgeInsets(top: 1, leading: 2, bottom: 3, trailing: 4)
+            let container = view.toSuperEdges(insets: insets)
+
+            #expect(4 == container.constraints.count)
+            #expect(insets.top == container.constraints[0].constant)
+            #expect(.top == container.constraints[0].firstAttribute)
+            #expect(.top == container.constraints[0].secondAttribute)
+            #expect(insets.leading == container.constraints[1].constant)
+            #expect(.leading == container.constraints[1].firstAttribute)
+            #expect(.leading == container.constraints[1].secondAttribute)
+            #expect(insets.bottom == container.constraints[2].constant)
+            #expect(.bottom == container.constraints[2].firstAttribute)
+            #expect(.bottom == container.constraints[2].secondAttribute)
+            #expect(insets.trailing == container.constraints[3].constant)
+            #expect(.trailing == container.constraints[3].firstAttribute)
+            #expect(.trailing == container.constraints[3].secondAttribute)
+        }
+
         @Test(
             "Layout guide to superview constraint",
             arguments: [NSLayoutConstraint.Attribute.top, .bottom, .left, .right, .leading, .trailing, .firstBaseline, .lastBaseline]
@@ -367,7 +446,11 @@ struct ViewConstraintsTests {
             containerView.addLayoutGuide(guide)
             var sut: NSLayoutConstraint!
             let expectedConstant: CGFloat = 10
-            let container = guide.toSuper(value, constant: expectedConstant, configure: { sut = $0 })
+            let container = guide.toSuper(
+                value,
+                constant: expectedConstant,
+                configure: { sut = $0 }
+            )
 
             #expect(!sut.isActive)
             #expect(.required == sut.priority)
