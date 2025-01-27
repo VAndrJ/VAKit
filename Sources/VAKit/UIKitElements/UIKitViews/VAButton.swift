@@ -7,8 +7,17 @@
 
 #if canImport(UIKit)
 import UIKit
+import Combine
 
 open class VAButton: VASimpleButton {
+    public var onTapPubl: AnyPublisher<Void, Never> {
+        let subject = PassthroughSubject<Void, Never>()
+        onTap = {
+            subject.send(())
+        }
+
+        return subject.eraseToAnyPublisher()
+    }
     public var onTap: (() -> Void)? {
         didSet {
             removeTarget(self, action: #selector(onButtonTap), for: .touchUpInside)

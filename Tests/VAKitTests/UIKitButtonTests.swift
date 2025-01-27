@@ -8,6 +8,7 @@
 #if canImport(UIKit)
 import Testing
 import UIKit
+import Combine
 @testable import VAKit
 
 @Suite("UIButton views primitives")
@@ -15,17 +16,50 @@ import UIKit
 struct UIKitButtonTests {
     class MockTarget {
         var isTapped = false
+        var tapsCount = 0
     }
 
     @Test func testVASimpleButtonTap() {
         let target = MockTarget()
+        let tapsCount = Int.random(in: 1...10)
         let sut = VAButton()
         sut.onTap(target) {
             $0.isTapped = true
+            target.tapsCount += 1
         }
-        sut.callTapControlEvent()
+        for _ in 0..<tapsCount {
+            sut.callTapControlEvent()
+        }
 
         #expect(target.isTapped)
+        #expect(tapsCount == target.tapsCount)
+    }
+
+    @Test func testVASimpleButtonTapPublisher() {
+        let target = MockTarget()
+        let sut = VAButton()
+        let tapsCount = Int.random(in: 1...100)
+        let cancellable = sut.onTapPubl
+            .sink {
+                target.isTapped = true
+                target.tapsCount += 1
+            }
+        for _ in 0..<tapsCount {
+            sut.callTapControlEvent()
+        }
+
+        #expect(target.isTapped)
+        #expect(tapsCount == target.tapsCount)
+
+        cancellable.cancel()
+        target.isTapped = false
+        target.tapsCount = 0
+        for _ in 0..<tapsCount {
+            sut.callTapControlEvent()
+        }
+
+        #expect(!target.isTapped)
+        #expect(0 == target.tapsCount)
     }
 
     @Test func testVASimpleButtonTapTargetIsDeinitialized() {
