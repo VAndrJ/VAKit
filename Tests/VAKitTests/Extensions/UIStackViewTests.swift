@@ -15,7 +15,7 @@ import UIKit
 struct UIStackViewTests {
 
     @Test("Add multiple arranged subviews")
-    func addSubviews() async throws {
+    func addSubviews() {
         let subview1 = UIView()
         let subview2 = UIView()
         let subview3 = UIView()
@@ -26,7 +26,7 @@ struct UIStackViewTests {
     }
 
     @Test("Add multiple arranged subviews")
-    func addSubviewsArray() async throws {
+    func addSubviewsArray() {
         let subview1 = UIView()
         let subview2 = UIView()
         let subview3 = UIView()
@@ -37,7 +37,7 @@ struct UIStackViewTests {
     }
 
     @Test("Remove all subviews")
-    func removeSubviews() async throws {
+    func removeSubviews() {
         let subview1 = UIView()
         let subview2 = UIView()
         let subview3 = UIView()
