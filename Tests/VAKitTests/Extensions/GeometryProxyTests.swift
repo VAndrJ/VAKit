@@ -10,7 +10,7 @@ import SwiftUI
 import Testing
 @testable import VAKit
 
-@Suite
+@Suite("GeometryProxy extensions")
 struct GeometryProxyTests {
 
     @Test(
