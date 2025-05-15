@@ -459,6 +459,35 @@ struct ViewConstraintsTests {
             #expect(value == sut.firstAttribute)
             #expect(container.constraints == [sut])
         }
+
+        // TODO: - indirect for other functions.
+        @Test(
+            "Layout guide to superview constraint indirect",
+            arguments: [NSLayoutConstraint.Attribute.top, .bottom, .left, .right, .leading, .trailing, .firstBaseline, .lastBaseline]
+        )
+        func toSuperAnchorGuideIndirect(value: NSLayoutConstraint.Attribute) throws {
+            let containerView = PlatformView()
+            let guide = PlatformLayoutGuide()
+            containerView.addLayoutGuide(guide)
+            let expectedConstant: CGFloat = 10
+            let container = guide.toSuper(
+                value,
+                constant: expectedConstant
+            )
+            containerView.activate {
+                container
+            }
+
+            #expect(1 == container.constraints.count)
+
+            try #require(containerView.constraints.first != nil)
+            let constraint = containerView.constraints.first!
+            #expect(constraint.isActive)
+            #expect(.required == constraint.priority)
+            #expect(1 == constraint.multiplier)
+            #expect(expectedConstant == constraint.constant)
+            #expect(value == constraint.firstAttribute)
+        }
     }
 }
 #endif
