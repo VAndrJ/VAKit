@@ -331,6 +331,33 @@ struct ViewConstraintsTests {
             #expect(container.constraints == [cLeading, cTrailing])
         }
 
+        @Test("View to superview horizontal axis constraints indirect")
+        func toSuperAxisHorizontalIndirect() throws {
+            let containerView = PlatformView()
+            let view = PlatformView()
+            containerView.addAutolayoutSubview(view)
+            let expectedValue: CGFloat = 42
+            let container = view.toSuperAxis(
+                .horizontal,
+                topOrLeadingConstant: expectedValue,
+                bottomOrTrailingConstant: expectedValue
+            )
+            containerView.activate {
+                container
+            }
+
+            #expect(2 == container.constraints.count)
+
+            let cLeading = try #require(containerView.constraints.first)
+            let cTrailing = try #require(containerView.constraints.last)
+            #expect(expectedValue == cLeading.constant)
+            #expect(.leading == cLeading.firstAttribute)
+            #expect(.leading == cLeading.secondAttribute)
+            #expect(expectedValue == cTrailing.constant)
+            #expect(.trailing == cTrailing.firstAttribute)
+            #expect(.trailing == cTrailing.secondAttribute)
+        }
+
         @Test("View to superview vertical axis constraints")
         func toSuperAxisVertical() {
             let containerView = PlatformView()
@@ -372,14 +399,14 @@ struct ViewConstraintsTests {
 
             #expect(2 == container.constraints.count)
 
-            let firstConstraint = try #require(containerView.constraints.first)
-            let secondConstraint = try #require(containerView.constraints.last)
-            #expect(expectedValue == firstConstraint.constant)
-            #expect(.top == firstConstraint.firstAttribute)
-            #expect(.top == firstConstraint.secondAttribute)
-            #expect(expectedValue == secondConstraint.constant)
-            #expect(.bottom == secondConstraint.firstAttribute)
-            #expect(.bottom == secondConstraint.secondAttribute)
+            let cTop = try #require(containerView.constraints.first)
+            let cBottom = try #require(containerView.constraints.last)
+            #expect(expectedValue == cTop.constant)
+            #expect(.top == cTop.firstAttribute)
+            #expect(.top == cTop.secondAttribute)
+            #expect(expectedValue == cBottom.constant)
+            #expect(.bottom == cBottom.firstAttribute)
+            #expect(.bottom == cBottom.secondAttribute)
         }
 
         @Test("View to superview vertical axis padding constraints")
@@ -420,14 +447,14 @@ struct ViewConstraintsTests {
             }
             #expect(2 == container.constraints.count)
 
-            let firstConstraint = try #require(containerView.constraints.first)
-            let secondConstraint = try #require(containerView.constraints.last)
-            #expect(expectedValue == firstConstraint.constant)
-            #expect(.top == firstConstraint.firstAttribute)
-            #expect(.top == firstConstraint.secondAttribute)
-            #expect(-expectedValue == secondConstraint.constant)
-            #expect(.bottom == secondConstraint.firstAttribute)
-            #expect(.bottom == secondConstraint.secondAttribute)
+            let cTop = try #require(containerView.constraints.first)
+            let cBottom = try #require(containerView.constraints.last)
+            #expect(expectedValue == cTop.constant)
+            #expect(.top == cTop.firstAttribute)
+            #expect(.top == cTop.secondAttribute)
+            #expect(-expectedValue == cBottom.constant)
+            #expect(.bottom == cBottom.firstAttribute)
+            #expect(.bottom == cBottom.secondAttribute)
         }
 
         @Test("View to superview edges constraints")
