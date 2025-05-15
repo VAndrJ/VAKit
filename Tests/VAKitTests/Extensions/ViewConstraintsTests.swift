@@ -355,6 +355,33 @@ struct ViewConstraintsTests {
             #expect(container.constraints == [cTop, cBottom])
         }
 
+        @Test("View to superview vertical axis constraints indirect")
+        func toSuperAxisVerticalIndirect() throws {
+            let containerView = PlatformView()
+            let view = PlatformView()
+            containerView.addAutolayoutSubview(view)
+            let expectedValue: CGFloat = 42
+            let container = view.toSuperAxis(
+                .vertical,
+                topOrLeadingConstant: expectedValue,
+                bottomOrTrailingConstant: expectedValue
+            )
+            containerView.activate {
+                container
+            }
+
+            #expect(2 == container.constraints.count)
+
+            let firstConstraint = try #require(containerView.constraints.first)
+            let secondConstraint = try #require(containerView.constraints.last)
+            #expect(expectedValue == firstConstraint.constant)
+            #expect(.top == firstConstraint.firstAttribute)
+            #expect(.top == firstConstraint.secondAttribute)
+            #expect(expectedValue == secondConstraint.constant)
+            #expect(.bottom == secondConstraint.firstAttribute)
+            #expect(.bottom == secondConstraint.secondAttribute)
+        }
+
         @Test("View to superview vertical axis padding constraints")
         func toSuperAxisVerticalPadding() {
             let containerView = PlatformView()
@@ -376,6 +403,31 @@ struct ViewConstraintsTests {
             #expect(.bottom == cBottom.firstAttribute)
             #expect(.bottom == cBottom.secondAttribute)
             #expect(container.constraints == [cTop, cBottom])
+        }
+
+        @Test("View to superview vertical axis padding constraints indirect")
+        func toSuperAxisVerticalPaddingIndirect() throws {
+            let containerView = PlatformView()
+            let view = PlatformView()
+            containerView.addAutolayoutSubview(view)
+            let expectedValue: CGFloat = 42
+            let container = view.toSuperAxis(
+                .vertical,
+                padding: expectedValue
+            )
+            containerView.activate {
+                container
+            }
+            #expect(2 == container.constraints.count)
+
+            let firstConstraint = try #require(containerView.constraints.first)
+            let secondConstraint = try #require(containerView.constraints.last)
+            #expect(expectedValue == firstConstraint.constant)
+            #expect(.top == firstConstraint.firstAttribute)
+            #expect(.top == firstConstraint.secondAttribute)
+            #expect(-expectedValue == secondConstraint.constant)
+            #expect(.bottom == secondConstraint.firstAttribute)
+            #expect(.bottom == secondConstraint.secondAttribute)
         }
 
         @Test("View to superview edges constraints")
@@ -460,7 +512,6 @@ struct ViewConstraintsTests {
             #expect(container.constraints == [sut])
         }
 
-        // TODO: - indirect for other functions.
         @Test(
             "Layout guide to superview constraint indirect",
             arguments: [NSLayoutConstraint.Attribute.top, .bottom, .left, .right, .leading, .trailing, .firstBaseline, .lastBaseline]
@@ -480,8 +531,7 @@ struct ViewConstraintsTests {
 
             #expect(1 == container.constraints.count)
 
-            try #require(containerView.constraints.first != nil)
-            let constraint = containerView.constraints.first!
+            let constraint = try #require(containerView.constraints.first)
             #expect(constraint.isActive)
             #expect(.required == constraint.priority)
             #expect(1 == constraint.multiplier)
