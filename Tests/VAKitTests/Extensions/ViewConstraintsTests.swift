@@ -91,6 +91,28 @@ struct ViewConstraintsTests {
             #expect(container.constraints == [sut])
         }
 
+        @Test("Anchor same to item's anchor constraint indirect")
+        func anchorSameIndirect() throws {
+            let view = PlatformView()
+            let container = view.anchor(
+                .width,
+                sameTo: view,
+                priority: 999,
+                isSafe: true
+            )
+            view.activate {
+                container
+            }
+
+            let sut = try #require(view.constraints.first)
+            #expect(sut.isActive)
+            #expect(999 == sut.priority.rawValue)
+            #expect(1 == sut.multiplier)
+            #expect(0 == sut.constant)
+            #expect(.width == sut.firstAttribute)
+            #expect(.width == sut.secondAttribute)
+        }
+
         @Test(
             "Anchor oposed to item's anchor constraint",
             arguments: [NSLayoutConstraint.Attribute.top, .bottom, .left, .right, .leading, .trailing, .firstBaseline, .lastBaseline]
@@ -113,6 +135,29 @@ struct ViewConstraintsTests {
             #expect(container.constraints == [sut])
         }
 
+        @Test(
+            "Anchor oposed to item's anchor constraint indirect",
+            arguments: [NSLayoutConstraint.Attribute.top, .bottom, .left, .right, .leading, .trailing, .firstBaseline, .lastBaseline]
+        )
+        func anchorOpposedIndirect(value: NSLayoutConstraint.Attribute) throws {
+            let view = PlatformView()
+            let container = view.anchor(
+                value,
+                opposedTo: view
+            )
+            view.activate {
+                container
+            }
+
+            let sut = try #require(view.constraints.first)
+            #expect(sut.isActive)
+            #expect(.required == sut.priority)
+            #expect(1 == sut.multiplier)
+            #expect(0 == sut.constant)
+            #expect(value == sut.firstAttribute)
+            #expect(value.opposed == sut.secondAttribute)
+        }
+
         @Test("Item's height constraint")
         func sizeHeight() {
             let view = PlatformView()
@@ -126,6 +171,29 @@ struct ViewConstraintsTests {
             )
 
             #expect(!sut.isActive)
+            #expect(priority == sut.priority.rawValue)
+            #expect(1 == sut.multiplier)
+            #expect(expectedHeight == sut.constant)
+            #expect(.height == sut.firstAttribute)
+            #expect(.notAnAttribute == sut.secondAttribute)
+            #expect(container.constraints == [sut])
+        }
+
+        @Test("Item's height constraint indirect")
+        func sizeHeightIndirect() throws {
+            let view = PlatformView()
+            let expectedHeight: CGFloat = 100
+            let priority: Float = 999
+            let container = view.size(
+                height: expectedHeight,
+                priority: priority
+            )
+            view.activate {
+                container
+            }
+
+            let sut = try #require(view.constraints.first)
+            #expect(sut.isActive)
             #expect(priority == sut.priority.rawValue)
             #expect(1 == sut.multiplier)
             #expect(expectedHeight == sut.constant)
@@ -556,14 +624,12 @@ struct ViewConstraintsTests {
                 container
             }
 
-            #expect(1 == container.constraints.count)
-
-            let constraint = try #require(containerView.constraints.first)
-            #expect(constraint.isActive)
-            #expect(.required == constraint.priority)
-            #expect(1 == constraint.multiplier)
-            #expect(expectedConstant == constraint.constant)
-            #expect(value == constraint.firstAttribute)
+            let sut = try #require(containerView.constraints.first)
+            #expect(sut.isActive)
+            #expect(.required == sut.priority)
+            #expect(1 == sut.multiplier)
+            #expect(expectedConstant == sut.constant)
+            #expect(value == sut.firstAttribute)
         }
     }
 }
