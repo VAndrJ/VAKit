@@ -10,6 +10,10 @@ import Foundation
 extension Date {
 
     func weekday(calendar: Calendar = .current) -> Int? {
-        calendar.dateComponents([.weekday], from: self).weekday
+        return calendar.dateComponents([.weekday], from: self).weekday
+    }
+
+    func addingMonth(_ value: Int, calendar: Calendar = .current) -> Date? {
+        return calendar.date(byAdding: .month, value: value, to: self)
     }
 }
