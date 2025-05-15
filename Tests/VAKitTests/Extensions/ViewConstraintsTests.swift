@@ -223,6 +223,29 @@ struct ViewConstraintsTests {
             #expect(container.constraints == [sut])
         }
 
+        @Test("Item's width constraint indirect")
+        func sizeWidthIndirect() throws {
+            let view = PlatformView()
+            let expectedWidth: CGFloat = 100
+            let priority: Float = 999
+            let container = view.size(
+                width: expectedWidth,
+                priority: priority
+            )
+            view.activate {
+                container
+            }
+
+            let sut = try #require(view.constraints.first)
+            #expect(sut.isActive)
+            #expect(999 == sut.priority.rawValue)
+            #expect(1 == sut.multiplier)
+            #expect(expectedWidth == sut.constant)
+            #expect(.width == sut.firstAttribute)
+            #expect(.notAnAttribute == sut.secondAttribute)
+            #expect(container.constraints == [sut])
+        }
+
         @Test("Item's size constraints")
         func size() {
             let view = PlatformView()
@@ -236,6 +259,21 @@ struct ViewConstraintsTests {
             #expect(container.constraints == [cWidth, cHeight])
         }
 
+        @Test("Item's size constraints indirect")
+        func sizeIndirect() throws {
+            let view = PlatformView()
+            let expectedSize = CGSize(width: 100, height: 20)
+            let container = view.size(expectedSize)
+            view.activate {
+                container
+            }
+
+            let cWidth = try #require(view.constraints.first)
+            let cHeight = try #require(view.constraints.last)
+            #expect(expectedSize.width == cWidth.constant)
+            #expect(expectedSize.height == cHeight.constant)
+        }
+
         @Test("Item's size same constant constraints")
         func sizeSame() {
             let view = PlatformView()
@@ -247,6 +285,21 @@ struct ViewConstraintsTests {
             #expect(expectedValue == cWidth.constant)
             #expect(expectedValue == cHeight.constant)
             #expect(container.constraints == [cWidth, cHeight])
+        }
+
+        @Test("Item's size same constant constraints indirect")
+        func sizeSameIndirect() throws {
+            let view = PlatformView()
+            let expectedValue: CGFloat = 100
+            let container = view.size(same: expectedValue)
+            view.activate {
+                container
+            }
+
+            let cWidth = try #require(view.constraints.first)
+            let cHeight = try #require(view.constraints.last)
+            #expect(expectedValue == cWidth.constant)
+            #expect(expectedValue == cHeight.constant)
         }
 
         @Test("Item's aspect ratio width to height constraints")
@@ -269,6 +322,29 @@ struct ViewConstraintsTests {
             #expect(.width == sut.firstAttribute)
             #expect(.height == sut.secondAttribute)
             #expect(container.constraints == [sut])
+        }
+
+        @Test("Item's aspect ratio width to height constraints indirect")
+        func aspectWidthIndirect() throws {
+            let view = PlatformView()
+            let expectedValue: CGFloat = 100
+            let expectedMultiplier: CGFloat = 2
+            let priority: Float = 999
+            let container = view.aspectWidth(
+                heightMultiplier: expectedMultiplier,
+                constant: expectedValue,
+                priority: priority
+            )
+            view.activate {
+                container
+            }
+
+            let sut = try #require(view.constraints.first)
+            #expect(expectedValue == sut.constant)
+            #expect(priority == sut.priority.rawValue)
+            #expect(expectedMultiplier == sut.multiplier)
+            #expect(.width == sut.firstAttribute)
+            #expect(.height == sut.secondAttribute)
         }
 
         @Test("Item's aspect ratio height to width constraints")
