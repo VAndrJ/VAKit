@@ -36,6 +36,30 @@ struct GeometryProxyTests {
         #expect(expected == center)
     }
 
+    @available(iOS 17.0, *)
+    @Test(
+        "GeometryProxy size with Safe Area",
+        arguments: [
+            (CGSize(same: 100), EdgeInsets(all: 10)),
+            (CGSize(same: 100), EdgeInsets()),
+            (CGSize(width: 25, height: 30), EdgeInsets(all: 10)),
+            (CGSize(width: 25, height: 30), EdgeInsets()),
+        ]
+    )
+    func sizeWithSafeArea(size: CGSize, safeArea: EdgeInsets) async throws {
+        let sizeWithSafe = try await getViewResult { emit in
+            GeometryReader { proxy in
+                Color.clear
+                    .onAppear {
+                        emit(proxy.sizeWithSafeArea)
+                    }
+            }
+            .safeAreaPadding(safeArea)
+            .frame(width: size.width, height: size.height)
+        }
+        #expect(size == sizeWithSafe)
+    }
+
     @Test(
         "GeometryProxy size fraction",
         arguments: [

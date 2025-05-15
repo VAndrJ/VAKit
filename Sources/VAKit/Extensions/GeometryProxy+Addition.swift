@@ -10,6 +10,9 @@ import SwiftUI
 
 extension GeometryProxy {
     public var center: CGPoint { .init(x: size.width / 2, y: size.height / 2) }
+    public var sizeWithSafeArea: CGSize {
+        .init(width: size.width + safeAreaInsets.horizontal, height: size.height + safeAreaInsets.vertical)
+    }
 
     public enum Dimension: Sendable {
         case width
