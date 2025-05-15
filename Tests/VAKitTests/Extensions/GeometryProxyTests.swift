@@ -35,5 +35,33 @@ struct GeometryProxyTests {
         }
         #expect(expected == center)
     }
+
+    @Test(
+        "GeometryProxy size fraction",
+        arguments: [
+            (CGSize(same: 100), GeometryProxy.Dimension.width, 0.3, 30),
+            (CGSize(same: 100), GeometryProxy.Dimension.height, 0.3, 30),
+            (CGSize(same: 100), GeometryProxy.Dimension.width, 1, 100),
+            (CGSize(same: 100), GeometryProxy.Dimension.height, 1, 100),
+            (CGSize(same: 100), GeometryProxy.Dimension.width, 2, 100),
+            (CGSize(same: 100), GeometryProxy.Dimension.height, 2, 100),
+            (CGSize(same: 100), GeometryProxy.Dimension.width, 0, 0),
+            (CGSize(same: 100), GeometryProxy.Dimension.height, 0, 0),
+            (CGSize(same: 100), GeometryProxy.Dimension.width, -1, 0),
+            (CGSize(same: 100), GeometryProxy.Dimension.height, -1, 0),
+        ]
+    )
+    func fraction(size: CGSize, dimension: GeometryProxy.Dimension, value: CGFloat, expected: CGFloat) async throws {
+        let fraction = try await getViewResult { emit in
+            GeometryReader { proxy in
+                Color.clear
+                    .onAppear {
+                        emit(proxy.fraction(dimension, value: value))
+                    }
+            }
+            .frame(width: size.width, height: size.height)
+        }
+        #expect(expected == fraction)
+    }
 }
 #endif
