@@ -15,7 +15,6 @@ struct ArrayTests {
     @Suite("Array builder")
     struct ArrayBuilderTests {
 
-
         @Test("Array builder empty initializer")
         func builderEmpty() {
             let sut: [Int] = Array {}

@@ -91,6 +91,28 @@ struct ViewConstraintsTests {
             #expect(container.constraints == [sut])
         }
 
+        @Test("Anchor same to item's anchor constraint indirect")
+        func anchorSameIndirect() throws {
+            let view = PlatformView()
+            let container = view.anchor(
+                .width,
+                sameTo: view,
+                priority: 999,
+                isSafe: true
+            )
+            view.activate {
+                container
+            }
+
+            let sut = try #require(view.constraints.first)
+            #expect(sut.isActive)
+            #expect(999 == sut.priority.rawValue)
+            #expect(1 == sut.multiplier)
+            #expect(0 == sut.constant)
+            #expect(.width == sut.firstAttribute)
+            #expect(.width == sut.secondAttribute)
+        }
+
         @Test(
             "Anchor oposed to item's anchor constraint",
             arguments: [NSLayoutConstraint.Attribute.top, .bottom, .left, .right, .leading, .trailing, .firstBaseline, .lastBaseline]
@@ -113,6 +135,29 @@ struct ViewConstraintsTests {
             #expect(container.constraints == [sut])
         }
 
+        @Test(
+            "Anchor oposed to item's anchor constraint indirect",
+            arguments: [NSLayoutConstraint.Attribute.top, .bottom, .left, .right, .leading, .trailing, .firstBaseline, .lastBaseline]
+        )
+        func anchorOpposedIndirect(value: NSLayoutConstraint.Attribute) throws {
+            let view = PlatformView()
+            let container = view.anchor(
+                value,
+                opposedTo: view
+            )
+            view.activate {
+                container
+            }
+
+            let sut = try #require(view.constraints.first)
+            #expect(sut.isActive)
+            #expect(.required == sut.priority)
+            #expect(1 == sut.multiplier)
+            #expect(0 == sut.constant)
+            #expect(value == sut.firstAttribute)
+            #expect(value.opposed == sut.secondAttribute)
+        }
+
         @Test("Item's height constraint")
         func sizeHeight() {
             let view = PlatformView()
@@ -126,6 +171,29 @@ struct ViewConstraintsTests {
             )
 
             #expect(!sut.isActive)
+            #expect(priority == sut.priority.rawValue)
+            #expect(1 == sut.multiplier)
+            #expect(expectedHeight == sut.constant)
+            #expect(.height == sut.firstAttribute)
+            #expect(.notAnAttribute == sut.secondAttribute)
+            #expect(container.constraints == [sut])
+        }
+
+        @Test("Item's height constraint indirect")
+        func sizeHeightIndirect() throws {
+            let view = PlatformView()
+            let expectedHeight: CGFloat = 100
+            let priority: Float = 999
+            let container = view.size(
+                height: expectedHeight,
+                priority: priority
+            )
+            view.activate {
+                container
+            }
+
+            let sut = try #require(view.constraints.first)
+            #expect(sut.isActive)
             #expect(priority == sut.priority.rawValue)
             #expect(1 == sut.multiplier)
             #expect(expectedHeight == sut.constant)
@@ -155,6 +223,29 @@ struct ViewConstraintsTests {
             #expect(container.constraints == [sut])
         }
 
+        @Test("Item's width constraint indirect")
+        func sizeWidthIndirect() throws {
+            let view = PlatformView()
+            let expectedWidth: CGFloat = 100
+            let priority: Float = 999
+            let container = view.size(
+                width: expectedWidth,
+                priority: priority
+            )
+            view.activate {
+                container
+            }
+
+            let sut = try #require(view.constraints.first)
+            #expect(sut.isActive)
+            #expect(999 == sut.priority.rawValue)
+            #expect(1 == sut.multiplier)
+            #expect(expectedWidth == sut.constant)
+            #expect(.width == sut.firstAttribute)
+            #expect(.notAnAttribute == sut.secondAttribute)
+            #expect(container.constraints == [sut])
+        }
+
         @Test("Item's size constraints")
         func size() {
             let view = PlatformView()
@@ -168,6 +259,21 @@ struct ViewConstraintsTests {
             #expect(container.constraints == [cWidth, cHeight])
         }
 
+        @Test("Item's size constraints indirect")
+        func sizeIndirect() throws {
+            let view = PlatformView()
+            let expectedSize = CGSize(width: 100, height: 20)
+            let container = view.size(expectedSize)
+            view.activate {
+                container
+            }
+
+            let cWidth = try #require(view.constraints.first)
+            let cHeight = try #require(view.constraints.last)
+            #expect(expectedSize.width == cWidth.constant)
+            #expect(expectedSize.height == cHeight.constant)
+        }
+
         @Test("Item's size same constant constraints")
         func sizeSame() {
             let view = PlatformView()
@@ -179,6 +285,21 @@ struct ViewConstraintsTests {
             #expect(expectedValue == cWidth.constant)
             #expect(expectedValue == cHeight.constant)
             #expect(container.constraints == [cWidth, cHeight])
+        }
+
+        @Test("Item's size same constant constraints indirect")
+        func sizeSameIndirect() throws {
+            let view = PlatformView()
+            let expectedValue: CGFloat = 100
+            let container = view.size(same: expectedValue)
+            view.activate {
+                container
+            }
+
+            let cWidth = try #require(view.constraints.first)
+            let cHeight = try #require(view.constraints.last)
+            #expect(expectedValue == cWidth.constant)
+            #expect(expectedValue == cHeight.constant)
         }
 
         @Test("Item's aspect ratio width to height constraints")
@@ -203,6 +324,29 @@ struct ViewConstraintsTests {
             #expect(container.constraints == [sut])
         }
 
+        @Test("Item's aspect ratio width to height constraints indirect")
+        func aspectWidthIndirect() throws {
+            let view = PlatformView()
+            let expectedValue: CGFloat = 100
+            let expectedMultiplier: CGFloat = 2
+            let priority: Float = 999
+            let container = view.aspectWidth(
+                heightMultiplier: expectedMultiplier,
+                constant: expectedValue,
+                priority: priority
+            )
+            view.activate {
+                container
+            }
+
+            let sut = try #require(view.constraints.first)
+            #expect(expectedValue == sut.constant)
+            #expect(priority == sut.priority.rawValue)
+            #expect(expectedMultiplier == sut.multiplier)
+            #expect(.width == sut.firstAttribute)
+            #expect(.height == sut.secondAttribute)
+        }
+
         @Test("Item's aspect ratio height to width constraints")
         func aspectHeight() {
             let view = PlatformView()
@@ -223,6 +367,29 @@ struct ViewConstraintsTests {
             #expect(.height == sut.firstAttribute)
             #expect(.width == sut.secondAttribute)
             #expect(container.constraints == [sut])
+        }
+
+        @Test("Item's aspect ratio height to width constraints indirect")
+        func aspectHeightIndirect() throws {
+            let view = PlatformView()
+            let expectedValue: CGFloat = 100
+            let expectedMultiplier: CGFloat = 2
+            let priority: Float = 999
+            let container = view.aspectHeight(
+                widthMultiplier: expectedMultiplier,
+                constant: expectedValue,
+                priority: priority
+            )
+            view.activate {
+                container
+            }
+
+            let sut = try #require(view.constraints.first)
+            #expect(expectedValue == sut.constant)
+            #expect(priority == sut.priority.rawValue)
+            #expect(expectedMultiplier == sut.multiplier)
+            #expect(.height == sut.firstAttribute)
+            #expect(.width == sut.secondAttribute)
         }
 
         @Test(
@@ -249,6 +416,31 @@ struct ViewConstraintsTests {
             #expect(container.constraints == [sut])
         }
 
+        @Test(
+            "View to superview constraint indirect",
+            arguments: [NSLayoutConstraint.Attribute.top, .bottom, .left, .right, .leading, .trailing, .firstBaseline, .lastBaseline]
+        )
+        func toSuperAnchorIndirect(value: NSLayoutConstraint.Attribute) throws {
+            let containerView = PlatformView()
+            let view = PlatformView()
+            containerView.addAutolayoutSubview(view)
+            let expectedConstant: CGFloat = 10
+            let container = view.toSuper(
+                value,
+                constant: expectedConstant
+            )
+            containerView.activate {
+                container
+            }
+
+            let sut = try #require(containerView.constraints.first)
+            #expect(sut.isActive)
+            #expect(.required == sut.priority)
+            #expect(1 == sut.multiplier)
+            #expect(expectedConstant == sut.constant)
+            #expect(value == sut.firstAttribute)
+        }
+
         @Test("View to superview center constraints")
         func toSuperCenter() {
             let containerView = PlatformView()
@@ -272,6 +464,27 @@ struct ViewConstraintsTests {
             #expect(.centerY == cCenterY.firstAttribute)
             #expect(.centerY == cCenterY.secondAttribute)
             #expect(container.constraints == [cCenterX, cCenterY])
+        }
+
+        @Test("View to superview center constraints indirect")
+        func toSuperCenterIndirect() throws {
+            let containerView = PlatformView()
+            let view = PlatformView()
+            containerView.addAutolayoutSubview(view)
+            let offset = CGSize(width: 100, height: 20)
+            let container = view.toSuperCenter(offset: offset)
+            containerView.activate {
+                container
+            }
+
+            let cCenterX = try #require(containerView.constraints.first)
+            let cCenterY = try #require(containerView.constraints.last)
+            #expect(offset.width == cCenterX.constant)
+            #expect(.centerX == cCenterX.firstAttribute)
+            #expect(.centerX == cCenterX.secondAttribute)
+            #expect(offset.height == cCenterY.constant)
+            #expect(.centerY == cCenterY.firstAttribute)
+            #expect(.centerY == cCenterY.secondAttribute)
         }
 
         @Test("View to superview anchors")
@@ -331,6 +544,33 @@ struct ViewConstraintsTests {
             #expect(container.constraints == [cLeading, cTrailing])
         }
 
+        @Test("View to superview horizontal axis constraints indirect")
+        func toSuperAxisHorizontalIndirect() throws {
+            let containerView = PlatformView()
+            let view = PlatformView()
+            containerView.addAutolayoutSubview(view)
+            let expectedValue: CGFloat = 42
+            let container = view.toSuperAxis(
+                .horizontal,
+                topOrLeadingConstant: expectedValue,
+                bottomOrTrailingConstant: expectedValue
+            )
+            containerView.activate {
+                container
+            }
+
+            #expect(2 == container.constraints.count)
+
+            let cLeading = try #require(containerView.constraints.first)
+            let cTrailing = try #require(containerView.constraints.last)
+            #expect(expectedValue == cLeading.constant)
+            #expect(.leading == cLeading.firstAttribute)
+            #expect(.leading == cLeading.secondAttribute)
+            #expect(expectedValue == cTrailing.constant)
+            #expect(.trailing == cTrailing.firstAttribute)
+            #expect(.trailing == cTrailing.secondAttribute)
+        }
+
         @Test("View to superview vertical axis constraints")
         func toSuperAxisVertical() {
             let containerView = PlatformView()
@@ -355,6 +595,33 @@ struct ViewConstraintsTests {
             #expect(container.constraints == [cTop, cBottom])
         }
 
+        @Test("View to superview vertical axis constraints indirect")
+        func toSuperAxisVerticalIndirect() throws {
+            let containerView = PlatformView()
+            let view = PlatformView()
+            containerView.addAutolayoutSubview(view)
+            let expectedValue: CGFloat = 42
+            let container = view.toSuperAxis(
+                .vertical,
+                topOrLeadingConstant: expectedValue,
+                bottomOrTrailingConstant: expectedValue
+            )
+            containerView.activate {
+                container
+            }
+
+            #expect(2 == container.constraints.count)
+
+            let cTop = try #require(containerView.constraints.first)
+            let cBottom = try #require(containerView.constraints.last)
+            #expect(expectedValue == cTop.constant)
+            #expect(.top == cTop.firstAttribute)
+            #expect(.top == cTop.secondAttribute)
+            #expect(expectedValue == cBottom.constant)
+            #expect(.bottom == cBottom.firstAttribute)
+            #expect(.bottom == cBottom.secondAttribute)
+        }
+
         @Test("View to superview vertical axis padding constraints")
         func toSuperAxisVerticalPadding() {
             let containerView = PlatformView()
@@ -376,6 +643,31 @@ struct ViewConstraintsTests {
             #expect(.bottom == cBottom.firstAttribute)
             #expect(.bottom == cBottom.secondAttribute)
             #expect(container.constraints == [cTop, cBottom])
+        }
+
+        @Test("View to superview vertical axis padding constraints indirect")
+        func toSuperAxisVerticalPaddingIndirect() throws {
+            let containerView = PlatformView()
+            let view = PlatformView()
+            containerView.addAutolayoutSubview(view)
+            let expectedValue: CGFloat = 42
+            let container = view.toSuperAxis(
+                .vertical,
+                padding: expectedValue
+            )
+            containerView.activate {
+                container
+            }
+            #expect(2 == container.constraints.count)
+
+            let cTop = try #require(containerView.constraints.first)
+            let cBottom = try #require(containerView.constraints.last)
+            #expect(expectedValue == cTop.constant)
+            #expect(.top == cTop.firstAttribute)
+            #expect(.top == cTop.secondAttribute)
+            #expect(-expectedValue == cBottom.constant)
+            #expect(.bottom == cBottom.firstAttribute)
+            #expect(.bottom == cBottom.secondAttribute)
         }
 
         @Test("View to superview edges constraints")
@@ -458,6 +750,31 @@ struct ViewConstraintsTests {
             #expect(expectedConstant == sut.constant)
             #expect(value == sut.firstAttribute)
             #expect(container.constraints == [sut])
+        }
+
+        @Test(
+            "Layout guide to superview constraint indirect",
+            arguments: [NSLayoutConstraint.Attribute.top, .bottom, .left, .right, .leading, .trailing, .firstBaseline, .lastBaseline]
+        )
+        func toSuperAnchorGuideIndirect(value: NSLayoutConstraint.Attribute) throws {
+            let containerView = PlatformView()
+            let guide = PlatformLayoutGuide()
+            containerView.addLayoutGuide(guide)
+            let expectedConstant: CGFloat = 10
+            let container = guide.toSuper(
+                value,
+                constant: expectedConstant
+            )
+            containerView.activate {
+                container
+            }
+
+            let sut = try #require(containerView.constraints.first)
+            #expect(sut.isActive)
+            #expect(.required == sut.priority)
+            #expect(1 == sut.multiplier)
+            #expect(expectedConstant == sut.constant)
+            #expect(value == sut.firstAttribute)
         }
     }
 }
