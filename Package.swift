@@ -21,6 +21,9 @@ let package = Package(
             targets: ["VAKit"]
         ),
     ],
+    dependencies: [
+        .package(url: "https://github.com/pointfreeco/swift-snapshot-testing.git", from: "1.18.0")
+    ],
     targets: [
         .target(
             name: "VAKit",
@@ -28,7 +31,10 @@ let package = Package(
         ),
         .testTarget(
             name: "VAKitTests",
-            dependencies: ["VAKit"],
+            dependencies: [
+                "VAKit",
+                .product(name: "SnapshotTesting", package: "swift-snapshot-testing"),
+            ],
             swiftSettings: settings
         ),
     ],
