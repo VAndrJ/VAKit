@@ -37,16 +37,16 @@ struct ExclusiveTaskRunnerTests {
         let tag = 1
 
         let accepted = await runner.run(tag: tag) {
-            try? await Task.sleep(for: .seconds(1))
+            try? await Task.sleep(for: .milliseconds(100))
         }
 
         #expect(accepted == true)
         #expect(runner.tag == nil)
     }
 
-    @Test
+    @Test("Run tasks sequentially")
     @MainActor
-    func runsSequential() async {
+    func runsSequentially() async {
         let runner = ExclusiveTaskRunner<Int>()
         var output: [String] = []
 
@@ -63,38 +63,118 @@ struct ExclusiveTaskRunnerTests {
         #expect(runner.tag == nil)
     }
 
-    @Test
+    @available(iOS 16.0, *)
+    @Test("Run task and reject next while running")
     @MainActor
     func runsAndRejectsTaskWhileRunning() async throws {
         let runner = ExclusiveTaskRunner<Int>()
         let tag1 = 1
         let tag2 = 2
-        let startSignal = AsyncStream<Void>.makeStream()
-        let continueSignal = AsyncStream<Void>.makeStream()
+        let startExpectation = AsyncExpectation()
+        let continueExpectation = AsyncExpectation()
         var firstExecuted = false
         var secondExecuted = false
 
         let task1 = Task {
             await runner.run(tag: tag1) {
                 firstExecuted = true
-                startSignal.continuation.yield(())
-                for await _ in continueSignal.stream {
-                    break
-                }
+                startExpectation.fulfill()
+                await continueExpectation.wait()
             }
         }
-        for await _ in startSignal.stream {
-            break
-        }
+        await startExpectation.wait()
         let accepted2 = await runner.run(tag: tag2) {
             secondExecuted = true
         }
-        continueSignal.continuation.yield(())
+        continueExpectation.fulfill()
         _ = await task1.value
 
         #expect(firstExecuted == true)
         #expect(accepted2 == false)
         #expect(secondExecuted == false)
         #expect(runner.tag == nil)
+    }
+}
+
+@Suite
+@MainActor
+struct ExclusiveTaskLauncherTests {
+
+    @available(iOS 16.0, *)
+    @Test("Run task when idle")
+    @MainActor
+    func runsWhenIdle() async throws {
+        let runner = ExclusiveTaskLauncher()
+        var executed = false
+        let expectation = AsyncExpectation()
+
+        let accepted = runner.run {
+            try? await Task.sleep(for: .milliseconds(100))
+            executed = true
+            expectation.fulfill()
+        }
+        await expectation.wait()
+
+        #expect(accepted == true)
+        #expect(executed == true)
+        #expect(runner.currentTask == nil)
+    }
+
+    @available(iOS 16.0, *)
+    @Test("Run task and reject next while running")
+    @MainActor
+    func runsAndRejectsTaskWhileRunning() async throws {
+        let runner = ExclusiveTaskLauncher()
+        var firstExecuted = false
+        var secondExecuted = false
+        let expectation = AsyncExpectation()
+
+        let accepted1 = runner.run {
+            try? await Task.sleep(for: .milliseconds(200))
+            firstExecuted = true
+            expectation.fulfill()
+        }
+        let accepted2 = runner.run {
+            secondExecuted = true
+            expectation.fulfill()
+        }
+        await expectation.wait()
+
+        #expect(accepted1 == true)
+        #expect(accepted2 == false)
+        #expect(firstExecuted == true)
+        #expect(secondExecuted == false)
+        #expect(runner.currentTask == nil)
+    }
+
+    @available(iOS 16.0, *)
+    @Test("Run task, cancel it and run next task")
+    @MainActor
+    func runsAndRunNextAfterCancellation() async throws {
+        let runner = ExclusiveTaskLauncher()
+        var firstExecuted = false
+        var secondExecuted = false
+        let expectation = AsyncExpectation()
+
+        let accepted1 = runner.run {
+            try? await Task.sleep(for: .milliseconds(50))
+            guard !Task.isCancelled else { return }
+
+            firstExecuted = true
+            expectation.fulfill()
+        }
+        runner.cancel()
+        let accepted2 = runner.run {
+            try? await Task.sleep(for: .milliseconds(200))
+            secondExecuted = true
+            expectation.fulfill()
+        }
+        await expectation.wait()
+
+        #expect(accepted1 == true)
+        #expect(accepted2 == true)
+        #expect(firstExecuted == false)
+        #expect(secondExecuted == true)
+        #expect(runner.currentTask == nil)
     }
 }
