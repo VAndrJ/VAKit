@@ -122,5 +122,37 @@ struct CGRectTests {
 
             #expect(value == sut.aspectRatio)
         }
+
+        @Test("Checking if CGRect returns correct center")
+        func readsCenterCorrectly() {
+            let rect = CGRect(x: 10, y: 20, width: 40, height: 60)
+
+            let center = rect.center
+
+            #expect(30 == center.x)
+            #expect(50 == center.y)
+        }
+
+        @Test("Checking if center can be set correctly")
+        func setsCenterCorrectly() {
+            let center = CGPoint(xy: 150)
+            var rect = CGRect(width: 100, height: 60)
+
+            rect.center = center
+
+            #expect(100 == rect.origin.x)
+            #expect(120 == rect.origin.y)
+            #expect(center == rect.center)
+        }
+
+        @Test("Checking if setting center does not change size, only origin")
+        func settingCenterDoesNotChangeSize() {
+            let size = CGSize(width: 100, height: 60)
+            var rect = CGRect(size: size)
+
+            rect.center = CGPoint(xy: 200)
+
+            #expect(size == rect.size)
+        }
     }
 }
