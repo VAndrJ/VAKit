@@ -7,11 +7,11 @@
 
 import Foundation
 
-public extension Collection {
-    var isNotEmpty: Bool { !isEmpty }
+extension Collection {
+    public var isNotEmpty: Bool { !isEmpty }
 }
 
-public extension Optional where Wrapped: Collection {
-    var isEmpty: Bool { self?.isEmpty ?? true }
-    var isNotEmpty: Bool { !isEmpty }
+extension Optional where Wrapped: Collection {
+    public var isEmpty: Bool { self?.isEmpty ?? true }
+    public var isNotEmpty: Bool { !isEmpty }
 }

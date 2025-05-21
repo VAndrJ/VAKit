@@ -1,0 +1,578 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A30EC4402DDE14B700386C00 /* VAKit in Frameworks */ = {isa = PBXBuildFile; productRef = A30EC43F2DDE14B700386C00 /* VAKit */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A30EC4162DDE148700386C00 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A30EC4002DDE148500386C00 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A30EC4072DDE148500386C00;
+			remoteInfo = HostingApp;
+		};
+		A30EC4202DDE148700386C00 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A30EC4002DDE148500386C00 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A30EC4072DDE148500386C00;
+			remoteInfo = HostingApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A30EC4082DDE148500386C00 /* HostingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HostingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A30EC4152DDE148700386C00 /* HostingAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HostingAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A30EC41F2DDE148700386C00 /* HostingAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HostingAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		A30EC40A2DDE148500386C00 /* HostingApp */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = HostingApp;
+			sourceTree = "<group>";
+		};
+		A30EC4182DDE148700386C00 /* HostingAppTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = HostingAppTests;
+			sourceTree = "<group>";
+		};
+		A30EC4222DDE148700386C00 /* HostingAppUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = HostingAppUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A30EC4052DDE148500386C00 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A30EC4402DDE14B700386C00 /* VAKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A30EC4122DDE148700386C00 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A30EC41C2DDE148700386C00 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A30EC3FF2DDE148500386C00 = {
+			isa = PBXGroup;
+			children = (
+				A30EC40A2DDE148500386C00 /* HostingApp */,
+				A30EC4182DDE148700386C00 /* HostingAppTests */,
+				A30EC4222DDE148700386C00 /* HostingAppUITests */,
+				A30EC4092DDE148500386C00 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A30EC4092DDE148500386C00 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A30EC4082DDE148500386C00 /* HostingApp.app */,
+				A30EC4152DDE148700386C00 /* HostingAppTests.xctest */,
+				A30EC41F2DDE148700386C00 /* HostingAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A30EC4072DDE148500386C00 /* HostingApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A30EC4292DDE148700386C00 /* Build configuration list for PBXNativeTarget "HostingApp" */;
+			buildPhases = (
+				A30EC4042DDE148500386C00 /* Sources */,
+				A30EC4052DDE148500386C00 /* Frameworks */,
+				A30EC4062DDE148500386C00 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				A30EC40A2DDE148500386C00 /* HostingApp */,
+			);
+			name = HostingApp;
+			packageProductDependencies = (
+				A30EC43F2DDE14B700386C00 /* VAKit */,
+			);
+			productName = HostingApp;
+			productReference = A30EC4082DDE148500386C00 /* HostingApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A30EC4142DDE148700386C00 /* HostingAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A30EC42C2DDE148700386C00 /* Build configuration list for PBXNativeTarget "HostingAppTests" */;
+			buildPhases = (
+				A30EC4112DDE148700386C00 /* Sources */,
+				A30EC4122DDE148700386C00 /* Frameworks */,
+				A30EC4132DDE148700386C00 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A30EC4172DDE148700386C00 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				A30EC4182DDE148700386C00 /* HostingAppTests */,
+			);
+			name = HostingAppTests;
+			packageProductDependencies = (
+			);
+			productName = HostingAppTests;
+			productReference = A30EC4152DDE148700386C00 /* HostingAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A30EC41E2DDE148700386C00 /* HostingAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A30EC42F2DDE148700386C00 /* Build configuration list for PBXNativeTarget "HostingAppUITests" */;
+			buildPhases = (
+				A30EC41B2DDE148700386C00 /* Sources */,
+				A30EC41C2DDE148700386C00 /* Frameworks */,
+				A30EC41D2DDE148700386C00 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A30EC4212DDE148700386C00 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				A30EC4222DDE148700386C00 /* HostingAppUITests */,
+			);
+			name = HostingAppUITests;
+			packageProductDependencies = (
+			);
+			productName = HostingAppUITests;
+			productReference = A30EC41F2DDE148700386C00 /* HostingAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A30EC4002DDE148500386C00 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1630;
+				LastUpgradeCheck = 1630;
+				TargetAttributes = {
+					A30EC4072DDE148500386C00 = {
+						CreatedOnToolsVersion = 16.3;
+					};
+					A30EC4142DDE148700386C00 = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = A30EC4072DDE148500386C00;
+					};
+					A30EC41E2DDE148700386C00 = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = A30EC4072DDE148500386C00;
+					};
+				};
+			};
+			buildConfigurationList = A30EC4032DDE148500386C00 /* Build configuration list for PBXProject "HostingApp" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A30EC3FF2DDE148500386C00;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				A30EC43E2DDE14B700386C00 /* XCLocalSwiftPackageReference "../../VAKit" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = A30EC4092DDE148500386C00 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A30EC4072DDE148500386C00 /* HostingApp */,
+				A30EC4142DDE148700386C00 /* HostingAppTests */,
+				A30EC41E2DDE148700386C00 /* HostingAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A30EC4062DDE148500386C00 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A30EC4132DDE148700386C00 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A30EC41D2DDE148700386C00 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A30EC4042DDE148500386C00 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A30EC4112DDE148700386C00 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A30EC41B2DDE148700386C00 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A30EC4172DDE148700386C00 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A30EC4072DDE148500386C00 /* HostingApp */;
+			targetProxy = A30EC4162DDE148700386C00 /* PBXContainerItemProxy */;
+		};
+		A30EC4212DDE148700386C00 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A30EC4072DDE148500386C00 /* HostingApp */;
+			targetProxy = A30EC4202DDE148700386C00 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		A30EC4272DDE148700386C00 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A30EC4282DDE148700386C00 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A30EC42A2DDE148700386C00 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vandrj.HostingApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A30EC42B2DDE148700386C00 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vandrj.HostingApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A30EC42D2DDE148700386C00 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vandrj.HostingAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HostingApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HostingApp";
+			};
+			name = Debug;
+		};
+		A30EC42E2DDE148700386C00 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vandrj.HostingAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HostingApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HostingApp";
+			};
+			name = Release;
+		};
+		A30EC4302DDE148700386C00 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vandrj.HostingAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HostingApp;
+			};
+			name = Debug;
+		};
+		A30EC4312DDE148700386C00 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vandrj.HostingAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HostingApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A30EC4032DDE148500386C00 /* Build configuration list for PBXProject "HostingApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A30EC4272DDE148700386C00 /* Debug */,
+				A30EC4282DDE148700386C00 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A30EC4292DDE148700386C00 /* Build configuration list for PBXNativeTarget "HostingApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A30EC42A2DDE148700386C00 /* Debug */,
+				A30EC42B2DDE148700386C00 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A30EC42C2DDE148700386C00 /* Build configuration list for PBXNativeTarget "HostingAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A30EC42D2DDE148700386C00 /* Debug */,
+				A30EC42E2DDE148700386C00 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A30EC42F2DDE148700386C00 /* Build configuration list for PBXNativeTarget "HostingAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A30EC4302DDE148700386C00 /* Debug */,
+				A30EC4312DDE148700386C00 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		A30EC43E2DDE14B700386C00 /* XCLocalSwiftPackageReference "../../VAKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../VAKit;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A30EC43F2DDE14B700386C00 /* VAKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = VAKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = A30EC4002DDE148500386C00 /* Project object */;
+}

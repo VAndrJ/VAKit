@@ -20,6 +20,13 @@ extension CGRect {
 
         return width / height
     }
+    public var center: CGPoint {
+        get { .init(x: midX, y: midY) }
+        set {
+            origin.x = newValue.x - size.width / 2
+            origin.y = newValue.y - size.height / 2
+        }
+    }
 
     public init(width: CGFloat, height: CGFloat) {
         self.init(

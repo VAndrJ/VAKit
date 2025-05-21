@@ -5,6 +5,49 @@
 //  Created by VAndrJ on 5/15/25.
 //
 
+import Foundation
+
+@available(iOS 16.0, *)
+final class AsyncExpectation: Sendable {
+    enum AsyncExpectationError: Error {
+        case timedOut
+    }
+
+    private let stream = AsyncStream<Void>.makeStream()
+
+    func fulfill() {
+        stream.continuation.yield()
+        stream.continuation.finish()
+    }
+
+    func wait() async {
+        for await _ in stream.stream {
+            break
+        }
+    }
+
+    func wait(timeout: Duration) async throws {
+        try await withThrowingTaskGroup(of: Void.self) { group in
+            group.addTask {
+                await self.wait()
+            }
+            group.addTask {
+                try? await Task.sleep(for: timeout)
+                guard !Task.isCancelled else { return }
+
+                throw AsyncExpectationError.timedOut
+            }
+
+            try await group.next()
+            group.cancelAll()
+        }
+    }
+
+    func wait(resumeIn: Duration) async {
+        try? await wait(timeout: resumeIn)
+    }
+}
+
 #if canImport(SwiftUI)
 import SwiftUI
 import Testing
