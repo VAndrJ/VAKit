@@ -9,6 +9,8 @@
 public final class ExclusiveTaskRunner<Tag: Equatable> {
     public private(set) var tag: Tag?
 
+    public init() {}
+
     @discardableResult
     public func run(tag: Tag, operation: @escaping () async -> Void) async -> Bool {
         guard self.tag == nil else {
@@ -26,6 +28,8 @@ public final class ExclusiveTaskRunner<Tag: Equatable> {
 @MainActor
 public final class ExclusiveTaskLauncher {
     private(set) var currentTask: Task<Void, Never>?
+
+    public init() {}
 
     @discardableResult
     public func run(_ operation: @escaping () async -> Void) -> Bool {

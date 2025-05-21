@@ -7,9 +7,9 @@
 
 import Foundation
 
-public extension Array {
+extension Array {
 
-    init(@ArrayBuilder<Element> _ builder: () -> [Element]) {
+    public init(@ArrayBuilder<Element> _ builder: () -> [Element]) {
         self = builder()
     }
 }
@@ -45,7 +45,7 @@ public struct ArrayBuilder<Element> {
         Array(elements)
     }
 
-    public static func buildExpression<C: Collection>(_ elements: C) -> [Element] where C.Element == Optional<Element> {
+    public static func buildExpression<C: Collection>(_ elements: C) -> [Element] where C.Element == Element? {
         elements.compactMap { $0 }
     }
 

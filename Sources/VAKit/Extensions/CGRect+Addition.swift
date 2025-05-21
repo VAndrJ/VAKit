@@ -20,7 +20,7 @@ extension CGRect {
 
         return width / height
     }
-    var center: CGPoint {
+    public var center: CGPoint {
         get { .init(x: midX, y: midY) }
         set {
             origin.x = newValue.x - size.width / 2

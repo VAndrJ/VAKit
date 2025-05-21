@@ -6,8 +6,8 @@
 //
 
 extension Optional {
-    
-    func mapOr<U>(_ transform: (Wrapped) -> U, default fallback: @autoclosure () -> U) -> U {
+
+    public func mapOr<U>(_ transform: (Wrapped) -> U, default fallback: @autoclosure () -> U) -> U {
         return map(transform) ?? fallback()
     }
 }
