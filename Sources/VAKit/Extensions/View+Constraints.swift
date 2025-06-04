@@ -73,7 +73,7 @@ extension ConstrainedItem {
         isSafe: Bool = false,
         configure: (NSLayoutConstraint) -> Void = { _ in }
     ) -> ConstraintsContainer<Self> where Self: PlatformView {
-        .init(item: self).toSuper(
+        return .init(item: self).toSuper(
             anchor,
             relation: relation,
             multiplier: multiplier,
@@ -92,7 +92,7 @@ extension ConstrainedItem {
         isSafe: Bool = false,
         configure: (_ centerX: NSLayoutConstraint, _ centerY: NSLayoutConstraint) -> Void = { _, _ in }
     ) -> ConstraintsContainer<Self> where Self: PlatformView {
-        .init(item: self).toSuperCenter(
+        return .init(item: self).toSuperCenter(
             relation: relation,
             multiplier: multiplier,
             offset: offset,
@@ -112,7 +112,7 @@ extension ConstrainedItem {
         isSafe: Bool = false,
         configure: (_ topOrLeading: NSLayoutConstraint, _ bottomOrTrailing: NSLayoutConstraint) -> Void = { _, _ in }
     ) -> ConstraintsContainer<Self> where Self: PlatformView {
-        .init(item: self).toSuperAxis(
+        return .init(item: self).toSuperAxis(
             axis,
             relation: relation,
             multiplier: multiplier,
@@ -133,7 +133,7 @@ extension ConstrainedItem {
         isSafe: Bool = false,
         configure: (_ topOrLeading: NSLayoutConstraint, _ bottomOrTrailing: NSLayoutConstraint) -> Void = { _, _ in }
     ) -> ConstraintsContainer<Self> where Self: PlatformView {
-        .init(item: self).toSuperAxis(
+        return .init(item: self).toSuperAxis(
             axis,
             relation: relation,
             multiplier: multiplier,
@@ -157,7 +157,7 @@ extension ConstrainedItem {
             _ trailing: NSLayoutConstraint
         ) -> Void = { _, _, _, _ in }
     ) -> ConstraintsContainer<Self> where Self: PlatformView {
-        .init(item: self).toSuperEdges(
+        return .init(item: self).toSuperEdges(
             relation: relation,
             multiplier: multiplier,
             insets: insets,
@@ -175,7 +175,7 @@ extension ConstrainedItem {
         priority: Float? = nil,
         isSafe: Bool = false
     ) -> ConstraintsContainer<Self> where Self: PlatformView {
-        .init(item: self).toSuper(
+        return .init(item: self).toSuper(
             anchorsArray: anchors,
             relation: relation,
             multiplier: multiplier,
@@ -194,7 +194,7 @@ extension ConstrainedItem {
         isSafe: Bool = false,
         configure: (NSLayoutConstraint) -> Void = { _ in }
     ) -> ConstraintsContainer<Self> where Self: PlatformLayoutGuide {
-        .init(item: self).toSuper(
+        return .init(item: self).toSuper(
             anchor,
             relation: relation,
             multiplier: multiplier,
@@ -215,7 +215,7 @@ extension ConstrainedItem {
         isSafe: Bool = false,
         configure: (NSLayoutConstraint) -> Void = { _ in }
     ) -> ConstraintsContainer<Self> {
-        .init(item: self).anchor(
+        return .init(item: self).anchor(
             selfAnchor,
             opposedTo: toItem,
             relation: relation,
@@ -237,7 +237,7 @@ extension ConstrainedItem {
         isSafe: Bool = false,
         configure: (NSLayoutConstraint) -> Void = { _ in }
     ) -> ConstraintsContainer<Self> {
-        .init(item: self).anchor(
+        return .init(item: self).anchor(
             selfAnchor,
             sameTo: toItem,
             relation: relation,
@@ -260,7 +260,7 @@ extension ConstrainedItem {
         isSafe: Bool = false,
         configure: (NSLayoutConstraint) -> Void = { _ in }
     ) -> ConstraintsContainer<Self> {
-        .init(item: self).anchor(
+        return .init(item: self).anchor(
             selfAnchor,
             to: toItem,
             anchor: anchor,
@@ -281,7 +281,7 @@ extension ConstrainedItem {
         priority: Float? = nil,
         configure: (NSLayoutConstraint) -> Void = { _ in }
     ) -> ConstraintsContainer<Self> {
-        .init(item: self).size(
+        return .init(item: self).size(
             height: height,
             relation: relation,
             multiplier: multiplier,
@@ -297,7 +297,7 @@ extension ConstrainedItem {
         priority: Float? = nil,
         configure: (NSLayoutConstraint) -> Void = { _ in }
     ) -> ConstraintsContainer<Self> {
-        .init(item: self).size(
+        return .init(item: self).size(
             width: width,
             relation: relation,
             multiplier: multiplier,
@@ -312,7 +312,7 @@ extension ConstrainedItem {
         priority: Float? = nil,
         configure: (_ width: NSLayoutConstraint, _ height: NSLayoutConstraint) -> Void = { _, _ in }
     ) -> ConstraintsContainer<Self> {
-        .init(item: self).size(
+        return .init(item: self).size(
             size,
             relation: relation,
             priority: priority,
@@ -326,7 +326,7 @@ extension ConstrainedItem {
         priority: Float? = nil,
         configure: (_ width: NSLayoutConstraint, _ height: NSLayoutConstraint) -> Void = { _, _ in }
     ) -> ConstraintsContainer<Self> {
-        .init(item: self).size(
+        return .init(item: self).size(
             same: value,
             relation: relation,
             priority: priority,
@@ -340,7 +340,7 @@ extension ConstrainedItem {
         priority: Float? = nil,
         configure: (NSLayoutConstraint) -> Void = { _ in }
     ) -> ConstraintsContainer<Self> {
-        .init(item: self).aspectWidth(
+        return .init(item: self).aspectWidth(
             heightMultiplier: heightMultiplier,
             constant: constant,
             priority: priority,
@@ -354,7 +354,7 @@ extension ConstrainedItem {
         priority: Float? = nil,
         configure: (NSLayoutConstraint) -> Void = { _ in }
     ) -> ConstraintsContainer<Self> {
-        .init(item: self).aspectHeight(
+        return .init(item: self).aspectHeight(
             widthMultiplier: widthMultiplier,
             constant: constant,
             priority: priority,
@@ -406,7 +406,7 @@ public final class ConstraintsContainer<Item: ConstrainedItem>: Constraints {
         isSafe: Bool = false,
         configure: (NSLayoutConstraint) -> Void = { _ in }
     ) -> ConstraintsContainer {
-        self.anchor(
+        return self.anchor(
             selfAnchor,
             to: toItem,
             anchor: selfAnchor,
@@ -529,7 +529,7 @@ public final class ConstraintsContainer<Item: ConstrainedItem>: Constraints {
         priority: Float? = nil,
         configure: (_ width: NSLayoutConstraint, _ height: NSLayoutConstraint) -> Void = { _, _ in }
     ) -> ConstraintsContainer {
-        self.size(
+        return self.size(
             .init(same: value),
             relation: relation,
             priority: priority,
@@ -597,7 +597,7 @@ extension ConstraintsContainer where Item: PlatformView {
         isSafe: Bool = false,
         configure: (NSLayoutConstraint) -> Void = { _ in }
     ) -> ConstraintsContainer {
-        self.anchor(
+        return self.anchor(
             anchor,
             sameTo: constrainedItem.superview!,
             relation: relation,
@@ -651,7 +651,7 @@ extension ConstraintsContainer where Item: PlatformView {
         isSafe: Bool = false,
         configure: (_ topOrLeading: NSLayoutConstraint, _ bottomOrTrailing: NSLayoutConstraint) -> Void = { _, _ in }
     ) -> ConstraintsContainer {
-        toSuperAxis(
+        return toSuperAxis(
             axis,
             relation: relation,
             multiplier: multiplier,
@@ -776,7 +776,7 @@ extension ConstraintsContainer where Item: PlatformView {
         priority: Float? = nil,
         isSafe: Bool = false
     ) -> ConstraintsContainer {
-        toSuper(
+        return toSuper(
             anchorsArray: anchors,
             relation: relation,
             multiplier: multiplier,
@@ -820,7 +820,7 @@ extension ConstraintsContainer where Item: PlatformLayoutGuide {
         isSafe: Bool = false,
         configure: (NSLayoutConstraint) -> Void = { _ in }
     ) -> ConstraintsContainer {
-        self.anchor(
+        return self.anchor(
             anchor,
             sameTo: constrainedItem.owningView!,
             relation: relation,
