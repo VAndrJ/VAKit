@@ -8,15 +8,26 @@
 import SwiftUI
 import VAKit
 
+enum Destination {
+    case constraintsDSL
+}
+
 struct ContentView: View {
+    @State private var path: [Destination] = []
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack(path: $path) {
+            List {
+                NavigationLink("ConstraintsDSL", value: Destination.constraintsDSL)
+            }
+            .navigationTitle("Examples")
+            .navigationDestination(for: Destination.self) { destination in
+                switch destination {
+                case .constraintsDSL:
+                    ConstraintsDSLExampleView().embeddedInController.representable
+                }
+            }
         }
-        .padding()
     }
 }
 
