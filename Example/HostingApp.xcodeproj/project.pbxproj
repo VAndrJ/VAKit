@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A30EC4402DDE14B700386C00 /* VAKit in Frameworks */ = {isa = PBXBuildFile; productRef = A30EC43F2DDE14B700386C00 /* VAKit */; };
+		A334BB032DF07F9B00F295DF /* VAKit in Frameworks */ = {isa = PBXBuildFile; productRef = A334BB022DF07F9B00F295DF /* VAKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A334BB032DF07F9B00F295DF /* VAKit in Frameworks */,
 				A30EC4402DDE14B700386C00 /* VAKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -118,6 +120,7 @@
 			name = HostingApp;
 			packageProductDependencies = (
 				A30EC43F2DDE14B700386C00 /* VAKit */,
+				A334BB022DF07F9B00F295DF /* VAKit */,
 			);
 			productName = HostingApp;
 			productReference = A30EC4082DDE148500386C00 /* HostingApp.app */;
@@ -202,7 +205,7 @@
 			mainGroup = A30EC3FF2DDE148500386C00;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				A30EC43E2DDE14B700386C00 /* XCLocalSwiftPackageReference "../../VAKit" */,
+				A334BB012DF07F9B00F295DF /* XCRemoteSwiftPackageReference "VAKit" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = A30EC4092DDE148500386C00 /* Products */;
@@ -411,6 +414,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -439,6 +443,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -460,7 +465,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vandrj.HostingAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -478,7 +483,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vandrj.HostingAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -495,6 +500,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vandrj.HostingAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -511,6 +517,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vandrj.HostingAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -562,16 +569,25 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCLocalSwiftPackageReference section */
-		A30EC43E2DDE14B700386C00 /* XCLocalSwiftPackageReference "../../VAKit" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = ../../VAKit;
+/* Begin XCRemoteSwiftPackageReference section */
+		A334BB012DF07F9B00F295DF /* XCRemoteSwiftPackageReference "VAKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/VAndrJ/VAKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.6;
+			};
 		};
-/* End XCLocalSwiftPackageReference section */
+/* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
 		A30EC43F2DDE14B700386C00 /* VAKit */ = {
 			isa = XCSwiftPackageProductDependency;
+			productName = VAKit;
+		};
+		A334BB022DF07F9B00F295DF /* VAKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A334BB012DF07F9B00F295DF /* XCRemoteSwiftPackageReference "VAKit" */;
 			productName = VAKit;
 		};
 /* End XCSwiftPackageProductDependency section */

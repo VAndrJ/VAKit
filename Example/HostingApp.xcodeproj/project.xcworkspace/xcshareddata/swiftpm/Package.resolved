@@ -1,0 +1,15 @@
+{
+  "originHash" : "07f7b936370212d75fbac5a27dd1d63f6e6695dcde3af5e375d4a2f06d608038",
+  "pins" : [
+    {
+      "identity" : "vakit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/VAndrJ/VAKit",
+      "state" : {
+        "revision" : "cffbaeb71a98d2fd2ac9c7c0b58565551a2be6a4",
+        "version" : "0.0.6"
+      }
+    }
+  ],
+  "version" : 3
+}
