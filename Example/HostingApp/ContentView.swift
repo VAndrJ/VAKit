@@ -10,6 +10,7 @@ import VAKit
 
 enum Destination {
     case constraintsDSL
+    case layerAnimations
 }
 
 struct ContentView: View {
@@ -18,13 +19,18 @@ struct ContentView: View {
     var body: some View {
         NavigationStack(path: $path) {
             List {
-                NavigationLink("ConstraintsDSL", value: Destination.constraintsDSL)
+                Section("UIKit") {
+                    NavigationLink("Constraints DSL", value: Destination.constraintsDSL)
+                    NavigationLink("Layer Animations", value: Destination.layerAnimations)
+                }
             }
             .navigationTitle("Examples")
             .navigationDestination(for: Destination.self) { destination in
                 switch destination {
                 case .constraintsDSL:
                     ConstraintsDSLExampleView().embeddedInController.representable
+                case .layerAnimations:
+                    CALayerAnimationsExamplesView().embeddedInController.representable
                 }
             }
         }
