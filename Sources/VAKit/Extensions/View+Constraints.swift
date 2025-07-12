@@ -167,7 +167,7 @@ extension ConstrainedItem {
         )
     }
 
-    public func toSuper(
+    @inline(__always) public func toSuper(
         anchors: NSLayoutConstraint.Attribute...,
         relation: NSLayoutConstraint.Relation = .equal,
         multiplier: CGFloat = 1,
