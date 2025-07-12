@@ -249,6 +249,28 @@ extension ConstrainedItem {
         )
     }
 
+    @inline(__always) public func anchors(
+        _ selfAnchors: NSLayoutConstraint.Attribute...,
+        sameTo toItem: ConstrainedItem,
+        relation: NSLayoutConstraint.Relation = .equal,
+        multiplier: CGFloat = 1,
+        constant: CGFloat = 0,
+        priority: Float? = nil,
+        isSafe: Bool = false,
+        configure: ([NSLayoutConstraint]) -> Void = { _ in }
+    ) -> ConstraintsContainer<Self> {
+        return .init(item: self).anchors(
+            selfAnchors,
+            sameTo: toItem,
+            relation: relation,
+            multiplier: multiplier,
+            constant: constant,
+            priority: priority,
+            isSafe: isSafe,
+            configure: configure
+        )
+    }
+
     @inline(__always) public func anchor(
         _ selfAnchor: NSLayoutConstraint.Attribute,
         to toItem: ConstrainedItem,
@@ -444,6 +466,39 @@ public final class ConstraintsContainer<Item: ConstrainedItem>: Constraints {
         }
         configure(constraint)
         constraints.append(constraint)
+
+        return self
+    }
+
+    public func anchors(
+        _ selfAnchors: [NSLayoutConstraint.Attribute],
+        sameTo toItem: ConstrainedItem,
+        relation: NSLayoutConstraint.Relation = .equal,
+        multiplier: CGFloat = 1,
+        constant: CGFloat = 0,
+        priority: Float? = nil,
+        isSafe: Bool = false,
+        configure: ([NSLayoutConstraint]) -> Void = { _ in }
+    ) -> ConstraintsContainer {
+        var constraints: [NSLayoutConstraint] = []
+        constraints.reserveCapacity(selfAnchors.count)
+        for selfAnchor in selfAnchors {
+            let constraint = NSLayoutConstraint(
+                item: constrainedItem,
+                attribute: selfAnchor,
+                relatedBy: relation,
+                toItem: isSafe ? (toItem as? PlatformView)?.safeAreaLayoutGuide ?? toItem : toItem,
+                attribute: selfAnchor,
+                multiplier: multiplier,
+                constant: constant
+            )
+            if let priority {
+                constraint.priority = .init(rawValue: priority)
+            }
+            constraints.append(constraint)
+        }
+        configure(constraints)
+        self.constraints.append(contentsOf: constraints)
 
         return self
     }
